@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JFlex" default="scanner" basedir="../">
+    <description>
+        Generate Scanner from lex-files
+    </description>
+
+    <taskdef classname="jflex.anttask.JFlexTask" name="jflex" classpath="lib/jflex-1.6.1.jar"/>
+
+    <target name="scannerAS">
+        <jflex file="src/de/dhbw/compiler/jflexasscanner/JFlexASScanner.lex"/>
+    </target>
+    <target name="scannerX">
+        <jflex file="src/de/dhbw/compiler/XParser/JFlexXScanner.lex"/>
+    </target>
+
+</project>

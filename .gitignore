@@ -1,0 +1,7 @@
+*.log
+*.jar
+*.iml
+*.java~
+.idea/
+bin/
+target/
