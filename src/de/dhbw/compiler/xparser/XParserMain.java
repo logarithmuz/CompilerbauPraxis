@@ -10,6 +10,8 @@
 
 package de.dhbw.compiler.xparser;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.io.StringReader;
 
 
@@ -72,7 +74,7 @@ public class XParserMain {
 
     String test =	"program assign;\n"+
             "begin\n"+
-            "	x :=0;"+
+            "	x :=(0+1*5)/1;"+
             "end.";
 
     @SuppressWarnings("unused")
@@ -82,8 +84,9 @@ public class XParserMain {
 
     XParser xParser = new XParser(tokenReader);
     Tree out = xParser.parseAProgram();
-    System.out.println(out);
-
+    System.out.println(out.toString());
+    System.out.println(out.toGraphvizDot());
+    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(out.toGraphvizDot()), null);
   }
 
 }

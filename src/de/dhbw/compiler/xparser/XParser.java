@@ -127,7 +127,60 @@ public class XParser {
 
 
 	private Tree parseCondStatement() {
-		//todo
+		int myPosition = in.getPosition();
+		Tree t = new Tree(new Token(Token.CONDSTAT));
+		Tree ifToken, cond, thenToken, stat1, elseToken, stat2;
+		if ((ifToken = parseToken(Token.IF)) != null
+				&& (cond = parseCond()) != null
+				&& (thenToken = parseToken(Token.THEN)) != null
+				&& (stat1 = parseStat()) != null) {
+			int myPositionAfterIfBlock = in.getPosition();
+			t.addLastChild(ifToken);
+			t.addLastChild(cond);
+			t.addLastChild(thenToken);
+			t.addLastChild(stat1);
+			if ((elseToken = parseToken(Token.ELSE)) != null
+					&& (stat2 = parseStat()) != null) {
+				t.addLastChild(elseToken);
+				t.addLastChild(stat2);
+				return t;
+			}
+			in.setPosition(myPositionAfterIfBlock);
+			return t;
+		}
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	private Tree parseCond() {
+		int myPosition = in.getPosition();
+		Tree t = new Tree(new Token(Token.COND));
+		Tree numExpr1, numExpr2, operator;
+		if ((numExpr1 = parseNumExpr()) != null
+				&& (operator = parseComperator()) != null
+				&& (numExpr2 = parseNumExpr()) != null) {
+			t.addLastChild(numExpr1);
+			t.addLastChild(operator);
+			t.addLastChild(numExpr2);
+			return t;
+		}
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	private Tree parseComperator() {
+		int myPosition = in.getPosition();
+		Tree t;
+		if ((t = parseToken(Token.LESS))!= null){
+			return t;
+		}
+		if ((t = parseToken(Token.EQUALS))!= null){
+			return t;
+		}
+		if ((t = parseToken(Token.MORE))!= null){
+			return t;
+		}
+		in.setPosition(myPosition);
 		return null;
 	}
 
