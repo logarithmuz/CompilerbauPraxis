@@ -11,11 +11,11 @@
 
 package de.dhbw.compiler.xparser;
 
-public class XParser {
+public class XParserXmin {
 
 	TokenReader in;
 
-	public XParser(TokenReader in) {
+	public XParserXmin(TokenReader in) {
 		this.in = in;
 	}
 
@@ -26,11 +26,10 @@ public class XParser {
 	 */
 	public Tree parseAProgram() {
 		int myPosition = in.getPosition();
-		Tree program, programName, semi, declist, block, dot, eof;
+		Tree program, programName, semi, block, dot, eof;
 		if (((program = parseToken(Token.PROGRAM)) != null)
 				&& ((programName = parseToken(Token.ID)) != null)
 				&& ((semi = parseToken(Token.SEMICOLON)) != null)
-				&& ((declist = parseDeclist()) != null)
 				&& ((block = parseBlock()) != null)
 				&& ((dot = parseToken(Token.DOT)) != null)
 				&& ((eof = parseToken(Token.EOF)) != null)) {
@@ -38,82 +37,9 @@ public class XParser {
 			t.addLastChild(program);
 			t.addLastChild(programName);
 			t.addLastChild(semi);
-			t.addLastChild(declist);
 			t.addLastChild(block);
 			t.addLastChild(dot);
 			t.addLastChild(eof);
-			return t;
-		}
-		in.setPosition(myPosition);
-		return null;
-	}
-
-	/**
-	 * declist := {declaration}
-	 *
-	 * @return
-	 */
-	private Tree parseDeclist() {
-		Tree t = new Tree(new Token(Token.DECLLIST));
-		Tree declaration;
-		while ((declaration = parseDeclaration()) != null) {
-			t.addLastChild(declaration);
-		}
-		return t;
-	}
-
-	/**
-	 * declaration := todo
-	 *
-	 * @return
-	 */
-	private Tree parseDeclaration() {
-		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.DECL));
-		Tree modifier, id, colon, type, semi;
-		if ((modifier = parseModifier()) != null) {
-			t.addLastChild(modifier);
-		}
-		if ((id = parseToken(Token.ID)) != null
-				&& (colon = parseToken(Token.COLON)) != null
-				&& (type = parseType()) != null
-				&& (semi = parseToken(Token.SEMICOLON)) != null) {
-			t.addLastChild(id);
-			t.addLastChild(colon);
-			t.addLastChild(type);
-			t.addLastChild(semi);
-			return t;
-		}
-		in.setPosition(myPosition);
-		return null;
-	}
-
-	private Tree parseModifier() {
-		Tree t = new Tree(new Token(Token.MODIFIER));
-		Tree read, print;
-		if ((read = parseToken(Token.READ))!= null){
-			t.addLastChild(read);
-		}
-		if ((print = parseToken(Token.PRINT))!= null){
-			t.addLastChild(print);
-		}
-		return t;
-	}
-
-	private Tree parseType() {
-		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.TYPE));
-		Tree intType, floatType, stringType;
-		if ((intType = parseToken(Token.INT))!= null){
-			t.addLastChild(intType);
-			return t;
-		}
-		if ((floatType = parseToken(Token.FLOAT))!= null){
-			t.addLastChild(floatType);
-			return t;
-		}
-		if ((stringType = parseToken(Token.STRING))!= null){
-			t.addLastChild(stringType);
 			return t;
 		}
 		in.setPosition(myPosition);
