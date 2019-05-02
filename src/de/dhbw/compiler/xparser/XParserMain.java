@@ -72,10 +72,11 @@ public class XParserMain {
 
   public static void main(String[] args) throws Exception {
 
-    String test =	"program assign;\n"+
-            "begin\n"+
-            "	x :=(0+1*5)/1;"+
-            "end.";
+	  String test =	"program exprAll;\n"+
+			  "  x: string;"+
+			  "begin\n"+
+			  "	while (2<x) x:= x+1;"+
+			  "end.";
 
     @SuppressWarnings("unused")
     JFlexXScanner scanner = new JFlexXScanner(new StringReader(test));

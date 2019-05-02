@@ -91,10 +91,10 @@ public class XParser {
 	private Tree parseModifier() {
 		Tree t = new Tree(new Token(Token.MODIFIER));
 		Tree read, print;
-		if ((read = parseToken(Token.READ))!= null){
+		if ((read = parseToken(Token.READ)) != null) {
 			t.addLastChild(read);
 		}
-		if ((print = parseToken(Token.PRINT))!= null){
+		if ((print = parseToken(Token.PRINT)) != null) {
 			t.addLastChild(print);
 		}
 		return t;
@@ -104,15 +104,15 @@ public class XParser {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.TYPE));
 		Tree intType, floatType, stringType;
-		if ((intType = parseToken(Token.INT))!= null){
+		if ((intType = parseToken(Token.INT)) != null) {
 			t.addLastChild(intType);
 			return t;
 		}
-		if ((floatType = parseToken(Token.FLOAT))!= null){
+		if ((floatType = parseToken(Token.FLOAT)) != null) {
 			t.addLastChild(floatType);
 			return t;
 		}
-		if ((stringType = parseToken(Token.STRING))!= null){
+		if ((stringType = parseToken(Token.STRING)) != null) {
 			t.addLastChild(stringType);
 			return t;
 		}
@@ -182,7 +182,7 @@ public class XParser {
 	private Tree parseStat() {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.STAT));
-		Tree assignStat, condStat, block;
+		Tree assignStat, condStat, whileStat, forStat, block;
 		if (((assignStat = parseAssignStat()) != null)) {
 			t.addLastChild(assignStat);
 			return t;
@@ -191,8 +191,65 @@ public class XParser {
 			t.addLastChild(condStat);
 			return t;
 		}
+		if ((whileStat = parseWhileStat()) != null) {
+			t.addLastChild(whileStat);
+			return t;
+		}
+		if ((forStat = parseForStat()) != null) {
+			t.addLastChild(forStat);
+			return t;
+		}
 		if (((block = parseBlock()) != null)) {
 			t.addLastChild(block);
+			return t;
+		}
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	private Tree parseForStat() {
+		int myPosition = in.getPosition();
+		Tree t = new Tree(new Token(Token.FORSTAT));
+		Tree forToken, leftBracket, numAssign, semi, cond, semi2, numAssign2, rightBracket, stmt;
+		if ((forToken = parseToken(Token.FOR)) != null
+				&& (leftBracket = parseToken(Token.LBR)) != null
+				&& (numAssign = parseAssignStat()) != null
+				&& (semi = parseToken(Token.SEMICOLON)) != null
+				&& (cond = parseCond()) != null
+				&& (semi2 = parseToken(Token.SEMICOLON)) != null
+				&& (numAssign2 = parseAssignStat()) != null
+				&& (rightBracket = parseToken(Token.RBR)) != null
+				&& (stmt = parseStat()) != null) {
+			t.addLastChild(forToken);
+			t.addLastChild(leftBracket);
+			t.addLastChild(numAssign);
+			t.addLastChild(semi);
+			t.addLastChild(cond);
+			t.addLastChild(semi2);
+			t.addLastChild(numAssign2);
+			t.addLastChild(rightBracket);
+			t.addLastChild(stmt);
+			return t;
+		}
+
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	private Tree parseWhileStat() {
+		int myPosition = in.getPosition();
+		Tree t = new Tree(new Token(Token.WHILESTAT));
+		Tree whileToken, leftBracket, cond, rightBracket, stmt;
+		if ((whileToken = parseToken(Token.WHILE)) != null
+				&& (leftBracket = parseToken(Token.LBR)) != null
+				&& (cond = parseCond()) != null
+				&& (rightBracket = parseToken(Token.RBR)) != null
+				&& (stmt = parseStat()) != null) {
+			t.addLastChild(whileToken);
+			t.addLastChild(leftBracket);
+			t.addLastChild(cond);
+			t.addLastChild(rightBracket);
+			t.addLastChild(stmt);
 			return t;
 		}
 		in.setPosition(myPosition);
@@ -383,7 +440,7 @@ public class XParser {
 	private Tree parseNumExpr3() {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.EXPR3));
-		Tree intConst, minus, id, leftBracket, numExpr1, rightBracket;
+		Tree intConst, floatConst, stringConst, minus, id, leftBracket, numExpr1, rightBracket;
 
 		// intConst
 		if ((intConst = parseToken(Token.INTCONST)) != null) {
@@ -399,6 +456,27 @@ public class XParser {
 			return t;
 		}
 		in.setPosition(myPosition);
+
+		// floatconst
+		if ((floatConst = parseToken(Token.FLOATCONST)) != null) {
+			t.addLastChild(floatConst);
+			return t;
+		}
+
+		// "-" floatConst
+		if ((minus = parseToken(Token.MINUS)) != null
+				&& (floatConst = parseToken(Token.FLOATCONST)) != null) {
+			t.addLastChild(minus);
+			t.addLastChild(floatConst);
+			return t;
+		}
+
+		// stringconst
+		if ((stringConst = parseToken(Token.STRINGCONST)) != null) {
+			t.addLastChild(stringConst);
+			return t;
+		}
+
 
 		// id
 		if ((id = parseToken(Token.ID)) != null) {
