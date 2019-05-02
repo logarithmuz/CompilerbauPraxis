@@ -125,7 +125,11 @@ public class XParser {
 		return null;
 	}
 
-
+	/**
+	 * condStat := "if" cond "then" stat ["else" stat]
+	 *
+	 * @return
+	 */
 	private Tree parseCondStatement() {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.CONDSTAT));
@@ -152,6 +156,11 @@ public class XParser {
 		return null;
 	}
 
+	/**
+	 * cond := numExpr comperator numExpr
+	 *
+	 * @return
+	 */
 	private Tree parseCond() {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.COND));
@@ -168,16 +177,21 @@ public class XParser {
 		return null;
 	}
 
+	/**
+	 * compreator := < | > | =
+	 *
+	 * @return
+	 */
 	private Tree parseComperator() {
 		int myPosition = in.getPosition();
 		Tree t;
-		if ((t = parseToken(Token.LESS))!= null){
+		if ((t = parseToken(Token.LESS)) != null) {
 			return t;
 		}
-		if ((t = parseToken(Token.EQUALS))!= null){
+		if ((t = parseToken(Token.EQUALS)) != null) {
 			return t;
 		}
-		if ((t = parseToken(Token.MORE))!= null){
+		if ((t = parseToken(Token.MORE)) != null) {
 			return t;
 		}
 		in.setPosition(myPosition);
