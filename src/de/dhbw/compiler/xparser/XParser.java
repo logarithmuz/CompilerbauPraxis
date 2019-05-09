@@ -13,7 +13,12 @@ package de.dhbw.compiler.xparser;
 
 public class XParser {
 
-	TokenReader in;
+	private long comparecount = 0;
+	private TokenReader in;
+
+	public long getComparecount() {
+		return comparecount;
+	}
 
 	public XParser(TokenReader in) {
 		this.in = in;
@@ -26,23 +31,18 @@ public class XParser {
 	 */
 	public Tree parseAProgram() {
 		int myPosition = in.getPosition();
-		Tree program, programName, semi, declist, block, dot, eof;
-		if (((program = parseToken(Token.PROGRAM)) != null)
-				&& ((programName = parseToken(Token.ID)) != null)
-				&& ((semi = parseToken(Token.SEMICOLON)) != null)
-				&& ((declist = parseDeclist()) != null)
-				&& ((block = parseBlock()) != null)
-				&& ((dot = parseToken(Token.DOT)) != null)
-				&& ((eof = parseToken(Token.EOF)) != null)) {
-			Tree t = new Tree(new Token(Token.APROGRAM));
-			t.addLastChild(program);
-			t.addLastChild(programName);
-			t.addLastChild(semi);
-			t.addLastChild(declist);
-			t.addLastChild(block);
-			t.addLastChild(dot);
-			t.addLastChild(eof);
-			return t;
+		Tree program, programName, declist, block;
+		if ((program = parseToken(Token.PROGRAM)) != null
+				&& (programName = parseToken(Token.ID)) != null
+				&& parseToken(Token.SEMICOLON) != null
+				&& (declist = parseDeclist()) != null
+				&& (block = parseBlock()) != null
+				&& parseToken(Token.DOT) != null
+				&& parseToken(Token.EOF) != null) {
+			program.addLastChild(programName);
+			program.addLastChild(declist);
+			program.addLastChild(block);
+			return program;
 		}
 		in.setPosition(myPosition);
 		return null;
@@ -63,31 +63,35 @@ public class XParser {
 	}
 
 	/**
-	 * declaration := todo
+	 * declaration := modifier id ":" type ";"
 	 *
 	 * @return
 	 */
 	private Tree parseDeclaration() {
 		int myPosition = in.getPosition();
 		Tree t = new Tree(new Token(Token.DECL));
-		Tree modifier, id, colon, type, semi;
-		if ((modifier = parseModifier()) != null) {
-			t.addLastChild(modifier);
-		}
+		Tree modifier, id, type;
+		modifier = parseModifier();
 		if ((id = parseToken(Token.ID)) != null
-				&& (colon = parseToken(Token.COLON)) != null
+				&& parseToken(Token.COLON) != null
 				&& (type = parseType()) != null
-				&& (semi = parseToken(Token.SEMICOLON)) != null) {
+				&& parseToken(Token.SEMICOLON) != null) {
 			t.addLastChild(id);
-			t.addLastChild(colon);
 			t.addLastChild(type);
-			t.addLastChild(semi);
+			for (int i = 0; i < modifier.getChildCount(); i++) {
+				t.addLastChild(modifier.getChild(i));
+			}
 			return t;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
+	/**
+	 * modifier := [read] [print]
+	 *
+	 * @return
+	 */
 	private Tree parseModifier() {
 		Tree t = new Tree(new Token(Token.MODIFIER));
 		Tree read, print;
@@ -100,188 +104,172 @@ public class XParser {
 		return t;
 	}
 
+	/**
+	 * type := int | float | string
+	 *
+	 * @return
+	 */
 	private Tree parseType() {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.TYPE));
 		Tree intType, floatType, stringType;
 		if ((intType = parseToken(Token.INT)) != null) {
-			t.addLastChild(intType);
-			return t;
+			return intType;
 		}
 		if ((floatType = parseToken(Token.FLOAT)) != null) {
-			t.addLastChild(floatType);
-			return t;
+			return floatType;
 		}
 		if ((stringType = parseToken(Token.STRING)) != null) {
-			t.addLastChild(stringType);
-			return t;
+			return stringType;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
 	/**
-	 * block := begin statlist end
+	 * block := begin stmtList end
 	 *
 	 * @return
 	 */
 	private Tree parseBlock() {
 		int myPosition = in.getPosition();
-		Tree begin, statList, end;
-		if (((begin = parseToken(Token.BEGIN)) != null)
-				&& ((statList = parseStatList()) != null)
-				&& ((end = parseToken(Token.END)) != null)) {
-			Tree t = new Tree(new Token(Token.BLOCK));
-			t.addLastChild(begin);
-			t.addLastChild(statList);
-			t.addLastChild(end);
-			return t;
+		Tree stmtList;
+		if (parseToken(Token.BEGIN) != null
+				&& (stmtList = parseStmtList()) != null
+				&& parseToken(Token.END) != null) {
+			return stmtList;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
 	/**
-	 * statlist := {statWithSemi}
+	 * stmtlist := {stmtWithSemi}
 	 *
 	 * @return
 	 */
-	private Tree parseStatList() {
+	private Tree parseStmtList() {
 		Tree t = new Tree(new Token(Token.STATLIST));
-		Tree statWithSemi;
-		while ((statWithSemi = parseStatWithSemi()) != null) {
-			t.addLastChild(statWithSemi);
+		Tree stmtWithSemi;
+		while ((stmtWithSemi = parseStmtWithSemi()) != null) {
+			t.addLastChild(stmtWithSemi);
 		}
 		return t;
 	}
 
 	/**
-	 * statWithSemi := stat ";"
+	 * stmtWithSemi := stmt ";"
 	 *
 	 * @return
 	 */
-	private Tree parseStatWithSemi() {
+	private Tree parseStmtWithSemi() {
 		int myPosition = in.getPosition();
-		Tree statement, semi;
-		if ((statement = parseStat()) != null
-				&& (semi = parseToken(Token.SEMICOLON)) != null) {
-			Tree t = new Tree(new Token(Token.STATWITHSEMI));
-			t.addLastChild(statement);
-			t.addLastChild(semi);
-			return t;
+		Tree stmt;
+		if ((stmt = parseStmt()) != null
+				&& parseToken(Token.SEMICOLON) != null) {
+			return stmt;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
 	/**
-	 * stat := assignStat | condStat | block
+	 * stmt := assignStat | condStat | block
 	 *
 	 * @return
 	 */
-	private Tree parseStat() {
+	private Tree parseStmt() {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.STAT));
-		Tree assignStat, condStat, whileStat, forStat, block;
-		if (((assignStat = parseAssignStat()) != null)) {
-			t.addLastChild(assignStat);
-			return t;
+		Tree assignStmt, condStmt, whileStmt, forStmt, block;
+		if (((assignStmt = parseAssignStmt()) != null)) {
+			return assignStmt;
 		}
-		if (((condStat = parseCondStatement()) != null)) {
-			t.addLastChild(condStat);
-			return t;
+		if (((condStmt = parseCondStmt()) != null)) {
+			return condStmt;
 		}
-		if ((whileStat = parseWhileStat()) != null) {
-			t.addLastChild(whileStat);
-			return t;
+		if ((whileStmt = parseWhileStmt()) != null) {
+			return whileStmt;
 		}
-		if ((forStat = parseForStat()) != null) {
-			t.addLastChild(forStat);
-			return t;
+		if ((forStmt = parseForStmt()) != null) {
+			return forStmt;
 		}
 		if (((block = parseBlock()) != null)) {
-			t.addLastChild(block);
-			return t;
-		}
-		in.setPosition(myPosition);
-		return null;
-	}
-
-	private Tree parseForStat() {
-		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.FORSTAT));
-		Tree forToken, leftBracket, numAssign, semi, cond, semi2, numAssign2, rightBracket, stmt;
-		if ((forToken = parseToken(Token.FOR)) != null
-				&& (leftBracket = parseToken(Token.LBR)) != null
-				&& (numAssign = parseAssignStat()) != null
-				&& (semi = parseToken(Token.SEMICOLON)) != null
-				&& (cond = parseCond()) != null
-				&& (semi2 = parseToken(Token.SEMICOLON)) != null
-				&& (numAssign2 = parseAssignStat()) != null
-				&& (rightBracket = parseToken(Token.RBR)) != null
-				&& (stmt = parseStat()) != null) {
-			t.addLastChild(forToken);
-			t.addLastChild(leftBracket);
-			t.addLastChild(numAssign);
-			t.addLastChild(semi);
-			t.addLastChild(cond);
-			t.addLastChild(semi2);
-			t.addLastChild(numAssign2);
-			t.addLastChild(rightBracket);
-			t.addLastChild(stmt);
-			return t;
-		}
-
-		in.setPosition(myPosition);
-		return null;
-	}
-
-	private Tree parseWhileStat() {
-		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.WHILESTAT));
-		Tree whileToken, leftBracket, cond, rightBracket, stmt;
-		if ((whileToken = parseToken(Token.WHILE)) != null
-				&& (leftBracket = parseToken(Token.LBR)) != null
-				&& (cond = parseCond()) != null
-				&& (rightBracket = parseToken(Token.RBR)) != null
-				&& (stmt = parseStat()) != null) {
-			t.addLastChild(whileToken);
-			t.addLastChild(leftBracket);
-			t.addLastChild(cond);
-			t.addLastChild(rightBracket);
-			t.addLastChild(stmt);
-			return t;
+			return block;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
 	/**
-	 * condStat := "if" cond "then" stat ["else" stat]
+	 * forStmt := "for" "(" assignStmt ";" cond ";" assignStmt ")" stmt
 	 *
 	 * @return
 	 */
-	private Tree parseCondStatement() {
+	private Tree parseForStmt() {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.CONDSTAT));
-		Tree ifToken, cond, thenToken, stat1, elseToken, stat2;
+		Tree forToken, numAssign, cond, numAssign2, stmt;
+		if ((forToken = parseToken(Token.FOR)) != null
+				&& parseToken(Token.LBR) != null
+				&& (numAssign = parseAssignStmt()) != null
+				&& parseToken(Token.SEMICOLON) != null
+				&& (cond = parseCond()) != null
+				&& parseToken(Token.SEMICOLON) != null
+				&& (numAssign2 = parseAssignStmt()) != null
+				&& parseToken(Token.RBR) != null
+				&& (stmt = parseStmt()) != null) {
+			forToken.addLastChild(numAssign);
+			forToken.addLastChild(cond);
+			forToken.addLastChild(numAssign2);
+			forToken.addLastChild(stmt);
+			return forToken;
+		}
+
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	/**
+	 * whileStmt := "while" "(" cond ")" stmt
+	 *
+	 * @return
+	 */
+	private Tree parseWhileStmt() {
+		int myPosition = in.getPosition();
+		Tree whileToken, cond, stmt;
+		if ((whileToken = parseToken(Token.WHILE)) != null
+				&& parseToken(Token.LBR) != null
+				&& (cond = parseCond()) != null
+				&& parseToken(Token.RBR) != null
+				&& (stmt = parseStmt()) != null) {
+			whileToken.addLastChild(cond);
+			whileToken.addLastChild(stmt);
+			return whileToken;
+		}
+		in.setPosition(myPosition);
+		return null;
+	}
+
+	/**
+	 * condStmt := "if" cond "then" stat ["else" stat]
+	 *
+	 * @return
+	 */
+	private Tree parseCondStmt() {
+		int myPosition = in.getPosition();
+		Tree ifToken, cond, stmt1, stmt2;
 		if ((ifToken = parseToken(Token.IF)) != null
 				&& (cond = parseCond()) != null
-				&& (thenToken = parseToken(Token.THEN)) != null
-				&& (stat1 = parseStat()) != null) {
+				&& parseToken(Token.THEN) != null
+				&& (stmt1 = parseStmt()) != null) {
 			int myPositionAfterIfBlock = in.getPosition();
-			t.addLastChild(ifToken);
-			t.addLastChild(cond);
-			t.addLastChild(thenToken);
-			t.addLastChild(stat1);
-			if ((elseToken = parseToken(Token.ELSE)) != null
-					&& (stat2 = parseStat()) != null) {
-				t.addLastChild(elseToken);
-				t.addLastChild(stat2);
-				return t;
+			ifToken.addLastChild(cond);
+			ifToken.addLastChild(stmt1);
+			if (parseToken(Token.ELSE) != null
+					&& (stmt2 = parseStmt()) != null) {
+				ifToken.addLastChild(stmt2);
+				return ifToken;
 			}
 			in.setPosition(myPositionAfterIfBlock);
-			return t;
+			return ifToken;
 		}
 		in.setPosition(myPosition);
 		return null;
@@ -294,26 +282,24 @@ public class XParser {
 	 */
 	private Tree parseCond() {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.COND));
-		Tree numExpr1, numExpr2, operator;
-		if ((numExpr1 = parseNumExpr()) != null
-				&& (operator = parseComperator()) != null
-				&& (numExpr2 = parseNumExpr()) != null) {
-			t.addLastChild(numExpr1);
-			t.addLastChild(operator);
-			t.addLastChild(numExpr2);
-			return t;
+		Tree numExpr1, numExpr2, comp;
+		if ((numExpr1 = parseNumExpr(null)) != null
+				&& (comp = parseComp()) != null
+				&& (numExpr2 = parseNumExpr(null)) != null) {
+			comp.addLastChild(numExpr1);
+			comp.addLastChild(numExpr2);
+			return comp;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
 
 	/**
-	 * compreator := < | > | =
+	 * comp := < | > | =
 	 *
 	 * @return
 	 */
-	private Tree parseComperator() {
+	private Tree parseComp() {
 		int myPosition = in.getPosition();
 		Tree t;
 		if ((t = parseToken(Token.LESS)) != null) {
@@ -330,24 +316,40 @@ public class XParser {
 	}
 
 	/**
-	 * assignStat := id ":=" numExpr
+	 * assignStmt := id ":=" numExpr
 	 *
 	 * @return
 	 */
-	private Tree parseAssignStat() {
-		int myPostition = in.getPosition();
+	private Tree parseAssignStmt() {
+		int myPosition = in.getPosition();
 		Tree id, assign, numExpr;
 		if ((id = parseToken(Token.ID)) != null
 				&& (assign = parseToken(Token.ASSIGN)) != null
-				&& (numExpr = parseNumExpr()) != null) {
-			Tree t = new Tree(new Token(Token.ASSIGNSTAT));
-			t.addLastChild(id);
-			t.addLastChild(assign);
-			t.addLastChild(numExpr);
-			return t;
+				&& (numExpr = parseNumExpr(null)) != null) {
+			assign.addLastChild(id);
+			assign.addLastChild(numExpr);
+			return assign;
 		}
-		in.setPosition(myPostition);
+		in.setPosition(myPosition);
 		return null;
+	}
+
+	/**
+	 * builds a leave from a previous leftTree and a numExpr that should be appended
+	 *
+	 * @param leftTree the previous leftTree. Can be null if there is no previous left tree
+	 * @param numExpr  the numExpr that should be appended
+	 * @return
+	 */
+	private Tree buildLeave(Tree leftTree, Tree numExpr) {
+		Tree leave;
+		if (leftTree == null) {
+			leave = numExpr;
+		} else {
+			leave = leftTree;
+			leave.addLastChild(numExpr);
+		}
+		return leave;
 	}
 
 	/**
@@ -355,78 +357,77 @@ public class XParser {
 	 *
 	 * @return
 	 */
-	private Tree parseNumExpr() {
+	private Tree parseNumExpr(Tree leftTree) {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.EXPR));
-		Tree numExpr1, numExpr2, operator, expr2;
+		Tree numExpr1, numExpr2, operator;
 
 		// numExpr2 + numExpr
-		if ((numExpr1 = parseNumExpr2()) != null
-				&& (operator = parseToken(Token.PLUS)) != null
-				&& (numExpr2 = parseNumExpr()) != null) {
-			t.addLastChild(numExpr1);
-			t.addLastChild(operator);
-			t.addLastChild(numExpr2);
-			return t;
+		if ((numExpr1 = parseNumExpr2(null)) != null
+				&& (operator = parseToken(Token.PLUS)) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			operator.addLastChild(leftTree);
+			if ((numExpr2 = parseNumExpr(operator)) != null) {
+				return numExpr2;
+			}
 		}
 		in.setPosition(myPosition);
 
 		// numExpr2 - numExpr
-		if ((numExpr1 = parseNumExpr2()) != null
-				&& (operator = parseToken(Token.MINUS)) != null
-				&& (numExpr2 = parseNumExpr()) != null) {
-			t.addLastChild(numExpr1);
-			t.addLastChild(operator);
-			t.addLastChild(numExpr2);
-			return t;
+		if ((numExpr1 = parseNumExpr2(null)) != null
+				&& (operator = parseToken(Token.MINUS)) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			operator.addLastChild(leftTree);
+			if ((numExpr2 = parseNumExpr(operator)) != null) {
+				return numExpr2;
+			}
 		}
 		in.setPosition(myPosition);
 
 		// numExpr2
-		if ((expr2 = parseNumExpr2()) != null) {
-			t.addLastChild(expr2);
-			return t;
+		if ((numExpr1 = parseNumExpr2(null)) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			return leftTree;
 		}
 		in.setPosition(myPosition);
 		return null;
 	}
+
 
 	/**
 	 * numExpr2 := numExpr3 "*" numExpr2 | numExpr3 "/" numExpr2
 	 *
 	 * @return
 	 */
-	private Tree parseNumExpr2() {
+	private Tree parseNumExpr2(Tree leftTree) {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.EXPR2));
-		Tree numExpr1, numExpr2, operator, expr3;
+		Tree numExpr1, numExpr2, operator;
 
 		// numExpr3 * numExpr2
 		if ((numExpr1 = parseNumExpr3()) != null
-				&& (operator = parseToken(Token.MULT)) != null
-				&& (numExpr2 = parseNumExpr2()) != null) {
-			t.addLastChild(numExpr1);
-			t.addLastChild(operator);
-			t.addLastChild(numExpr2);
-			return t;
+				&& (operator = parseToken(Token.MULT)) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			operator.addLastChild(leftTree);
+			if ((numExpr2 = parseNumExpr2(operator)) != null) {
+				return numExpr2;
+			}
 		}
 		in.setPosition(myPosition);
 
 		// numExpr3 / numExpr2
 		if ((numExpr1 = parseNumExpr3()) != null
-				&& (operator = parseToken(Token.DIV)) != null
-				&& (numExpr2 = parseNumExpr2()) != null) {
-			t.addLastChild(numExpr1);
-			t.addLastChild(operator);
-			t.addLastChild(numExpr2);
-			return t;
+				&& (operator = parseToken(Token.DIV)) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			operator.addLastChild(leftTree);
+			if ((numExpr2 = parseNumExpr2(operator)) != null) {
+				return numExpr2;
+			}
 		}
 		in.setPosition(myPosition);
 
 		// numExpr3
-		if ((expr3 = parseNumExpr3()) != null) {
-			t.addLastChild(expr3);
-			return t;
+		if ((numExpr1 = parseNumExpr3()) != null) {
+			leftTree = buildLeave(leftTree, numExpr1);
+			return leftTree;
 		}
 		in.setPosition(myPosition);
 		return null;
@@ -439,59 +440,49 @@ public class XParser {
 	 */
 	private Tree parseNumExpr3() {
 		int myPosition = in.getPosition();
-		Tree t = new Tree(new Token(Token.EXPR3));
-		Tree intConst, floatConst, stringConst, minus, id, leftBracket, numExpr1, rightBracket;
+		Tree intConst, floatConst, stringConst, minus, id, numExpr1;
 
 		// intConst
 		if ((intConst = parseToken(Token.INTCONST)) != null) {
-			t.addLastChild(intConst);
-			return t;
+			return intConst;
 		}
 
 		// "-" intConst
 		if ((minus = parseToken(Token.MINUS)) != null
 				&& (intConst = parseToken(Token.INTCONST)) != null) {
-			t.addLastChild(minus);
-			t.addLastChild(intConst);
-			return t;
+			minus.addLastChild(intConst);
+			return minus;
 		}
 		in.setPosition(myPosition);
 
 		// floatconst
 		if ((floatConst = parseToken(Token.FLOATCONST)) != null) {
-			t.addLastChild(floatConst);
-			return t;
+			return floatConst;
 		}
 
 		// "-" floatConst
 		if ((minus = parseToken(Token.MINUS)) != null
 				&& (floatConst = parseToken(Token.FLOATCONST)) != null) {
-			t.addLastChild(minus);
-			t.addLastChild(floatConst);
-			return t;
+			minus.addLastChild(floatConst);
+			return minus;
 		}
+		in.setPosition(myPosition);
 
 		// stringconst
 		if ((stringConst = parseToken(Token.STRINGCONST)) != null) {
-			t.addLastChild(stringConst);
-			return t;
+			return stringConst;
 		}
-
 
 		// id
 		if ((id = parseToken(Token.ID)) != null) {
-			t.addLastChild(id);
-			return t;
+			return id;
 		}
 
 		// ( numExpr )
-		if ((leftBracket = parseToken(Token.LBR)) != null
-				&& (numExpr1 = parseNumExpr()) != null
-				&& (rightBracket = parseToken(Token.RBR)) != null) {
-			t.addLastChild(leftBracket);
-			t.addLastChild(numExpr1);
-			t.addLastChild(rightBracket);
-			return t;
+		if (parseToken(Token.LBR) != null
+				&& (numExpr1 = parseNumExpr(null)) != null
+				&& parseToken(Token.RBR) != null) {
+			return numExpr1;
 		}
 		in.setPosition(myPosition);
 		return null;
@@ -504,6 +495,7 @@ public class XParser {
 	 * @return
 	 */
 	Tree parseToken(int tokenType) {
+		comparecount++;
 		int myPosition = in.getPosition();
 		Token token = in.nextToken();
 		if (token.getType() == tokenType) {
