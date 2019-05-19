@@ -341,9 +341,9 @@ public class XParser {
 	 */
 	private Tree parseCond() {
 		Tree numExpr1, numExpr2, comp;
-		if ((numExpr1 = parseNumExpr()) != null
+		if ((numExpr1 = parseNumExpr(null)) != null
 				&& (comp = parseComp()) != null
-				&& (numExpr2 = parseNumExpr()) != null) {
+				&& (numExpr2 = parseNumExpr(null)) != null) {
 			comp.addLastChild(numExpr1);
 			comp.addLastChild(numExpr2);
 			return comp;
@@ -382,7 +382,7 @@ public class XParser {
 		Tree id, assign, numExpr;
 		if ((id = parseToken(Token.ID)) != null
 				&& (assign = parseToken(Token.ASSIGN)) != null
-				&& (numExpr = parseNumExpr()) != null) {
+				&& (numExpr = parseNumExpr(null)) != null) {
 			assign.addLastChild(id);
 			assign.addLastChild(numExpr);
 			return assign;
@@ -413,35 +413,43 @@ public class XParser {
 	 *
 	 * @return
 	 */
-	private Tree parseNumExpr() {
+	private Tree parseNumExpr(Tree leftTree) {
 		Tree numExpr, t;
 
-		if ((numExpr = parseNumExpr2()) != null
-				&& (t = parseNumExpr$(numExpr)) != null) {
+		if ((numExpr = parseNumExpr2(null)) != null
+				&& (t = parseNumExpr$(leftTree, numExpr)) != null) {
 			return t;
 		}
 		return null;
 	}
 
-	private Tree parseNumExpr$(Tree numExpr1) {
+	private Tree parseNumExpr$(Tree leftTree, Tree numExpr1) {
 		Token nextToken = in.lookaheadToken();
 		Tree operator, numExpr2;
 		switch (nextToken.getType()) {
 			case Token.PLUS:
-				if ((operator = parseToken(Token.PLUS)) != null
-						&& (numExpr2 = parseNumExpr()) != null) {
-					operator.addLastChild(numExpr1);
-					operator.addLastChild(numExpr2);
-					return operator;
+				if ((operator = parseToken(Token.PLUS)) != null) {
+					leftTree = buildLeave(leftTree, numExpr1);
+					operator.addLastChild(leftTree);
+					if ((numExpr2 = parseNumExpr(operator)) != null) {
+						return numExpr2;
+					} else {
+						return null;
+					}
 				} else {
 					return null;
 				}
 			case Token.MINUS:
-				if ((operator = parseToken(Token.MINUS)) != null
-						&& (numExpr2 = parseNumExpr()) != null) {
-					operator.addLastChild(numExpr1);
-					operator.addLastChild(numExpr2);
-					return operator;
+				if ((operator = parseToken(Token.MINUS)) != null) {
+					leftTree = buildLeave(leftTree, numExpr1);
+					operator.addLastChild(leftTree);
+					if ((numExpr2 = parseNumExpr(operator)) != null) {
+						return numExpr2;
+					} else {
+						return null;
+					}
+				} else {
+					return null;
 				}
 			case Token.LESS:
 			case Token.EQUALS:
@@ -450,39 +458,50 @@ public class XParser {
 			case Token.SEMICOLON:
 			case Token.THEN:
 			case Token.ELSE:
-				return numExpr1;
+				leftTree = buildLeave(leftTree, numExpr1);
+				return leftTree;
 			default:
 				return null;
 		}
 	}
 
-	private Tree parseNumExpr2() {
+	private Tree parseNumExpr2(Tree leftTree) {
 		Tree numExpr, t;
 
 		if ((numExpr = parseNumExpr3()) != null
-				&& (t = parseNumExpr2$(numExpr)) != null) {
+				&& (t = parseNumExpr2$(leftTree, numExpr)) != null) {
 			return t;
 		}
 		return null;
 	}
 
-	private Tree parseNumExpr2$(Tree numExpr1) {
+	private Tree parseNumExpr2$(Tree leftTree, Tree numExpr1) {
 		Token nextToken = in.lookaheadToken();
 		Tree operator, numExpr2;
 		switch (nextToken.getType()) {
 			case Token.MULT:
-				if ((operator = parseToken(Token.MULT)) != null
-						&& (numExpr2 = parseNumExpr2()) != null) {
-					operator.addLastChild(numExpr1);
-					operator.addLastChild(numExpr2);
-					return operator;
+				if ((operator = parseToken(Token.MULT)) != null) {
+					leftTree = buildLeave(leftTree, numExpr1);
+					operator.addLastChild(leftTree);
+					if ((numExpr2 = parseNumExpr2(operator)) != null) {
+						return numExpr2;
+					} else {
+						return null;
+					}
+				} else {
+					return null;
 				}
 			case Token.DIV:
-				if ((operator = parseToken(Token.DIV)) != null
-						&& (numExpr2 = parseNumExpr2()) != null) {
-					operator.addLastChild(numExpr1);
-					operator.addLastChild(numExpr2);
-					return operator;
+				if ((operator = parseToken(Token.DIV)) != null) {
+					leftTree = buildLeave(leftTree, numExpr1);
+					operator.addLastChild(leftTree);
+					if ((numExpr2 = parseNumExpr2(operator)) != null) {
+						return numExpr2;
+					} else {
+						return null;
+					}
+				} else {
+					return null;
 				}
 			case Token.LESS:
 			case Token.EQUALS:
@@ -493,7 +512,8 @@ public class XParser {
 			case Token.ELSE:
 			case Token.PLUS:
 			case Token.MINUS:
-				return numExpr1;
+				leftTree = buildLeave(leftTree, numExpr1);
+				return leftTree;
 			default:
 				return null;
 		}
@@ -521,7 +541,7 @@ public class XParser {
 				return parseToken(Token.ID);
 			case Token.LBR:
 				if (parseToken(Token.LBR) != null
-						&& (numExpr = parseNumExpr()) != null
+						&& (numExpr = parseNumExpr(null)) != null
 						&& parseToken(Token.RBR) != null) {
 					return numExpr;
 				}
