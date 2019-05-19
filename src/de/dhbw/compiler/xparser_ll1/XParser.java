@@ -208,7 +208,7 @@ public class XParser {
 			case Token.WHILE:
 			case Token.FOR:
 			case Token.BEGIN:
-				t.addFirstChild(parseStmtWithSemi());
+				t.addLastChild(parseStmtWithSemi());
 				return parseStmtList(t);
 			case Token.END:
 				return t;
