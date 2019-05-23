@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g 2019-05-23 17:33:59
+// $ANTLR 3.5.2 gfiles/X.g 2019-05-23 18:45:57
 package de.dhbw.compiler.antlrxtreegrammar;
 
 import org.antlr.runtime.*;
@@ -87,7 +87,7 @@ public class XParser extends Parser {
 		return adaptor;
 	}
 	@Override public String[] getTokenNames() { return XParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g"; }
+	@Override public String getGrammarFileName() { return "gfiles/X.g"; }
 
 
 	public static class decl_return extends ParserRuleReturnScope {
@@ -98,7 +98,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "decl"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:1: decl : ( ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type) | 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' ) | 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'print' ) | 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' 'print' ) );
+	// gfiles/X.g:55:1: decl : ( ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type) | 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' ) | 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'print' ) | 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' 'print' ) );
 	public final XParser.decl_return decl() throws RecognitionException {
 		XParser.decl_return retval = new XParser.decl_return();
 		retval.start = input.LT(1);
@@ -150,7 +150,7 @@ public class XParser extends Parser {
 		RewriteRuleTokenStream stream_43=new RewriteRuleTokenStream(adaptor,"token 43");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:5: ( ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type) | 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' ) | 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'print' ) | 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' 'print' ) )
+			// gfiles/X.g:55:5: ( ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type) | 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' ) | 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'print' ) | 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';' -> ^( DECL ID $type 'read' 'print' ) )
 			int alt5=4;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -194,7 +194,7 @@ public class XParser extends Parser {
 			}
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:14: ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
+					// gfiles/X.g:55:14: ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
 					{
 					ID1=(Token)match(input,ID,FOLLOW_ID_in_decl395);  
 					stream_ID.add(ID1);
@@ -202,7 +202,7 @@ public class XParser extends Parser {
 					char_literal2=(Token)match(input,27,FOLLOW_27_in_decl397);  
 					stream_27.add(char_literal2);
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:21: (type= 'int' |type= 'float' |type= 'string' )
+					// gfiles/X.g:55:21: (type= 'int' |type= 'float' |type= 'string' )
 					int alt1=3;
 					switch ( input.LA(1) ) {
 					case 39:
@@ -227,7 +227,7 @@ public class XParser extends Parser {
 					}
 					switch (alt1) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:22: type= 'int'
+							// gfiles/X.g:55:22: type= 'int'
 							{
 							type=(Token)match(input,39,FOLLOW_39_in_decl402);  
 							stream_39.add(type);
@@ -235,7 +235,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:35: type= 'float'
+							// gfiles/X.g:55:35: type= 'float'
 							{
 							type=(Token)match(input,36,FOLLOW_36_in_decl408);  
 							stream_36.add(type);
@@ -243,7 +243,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:50: type= 'string'
+							// gfiles/X.g:55:50: type= 'string'
 							{
 							type=(Token)match(input,43,FOLLOW_43_in_decl414);  
 							stream_43.add(type);
@@ -270,7 +270,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 55:69: -> ^( DECL ID $type)
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:55:72: ^( DECL ID $type)
+						// gfiles/X.g:55:72: ^( DECL ID $type)
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DECL, "DECL"), root_1);
@@ -287,7 +287,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:14: 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
+					// gfiles/X.g:56:14: 'read' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
 					{
 					string_literal4=(Token)match(input,42,FOLLOW_42_in_decl443);  
 					stream_42.add(string_literal4);
@@ -298,7 +298,7 @@ public class XParser extends Parser {
 					char_literal6=(Token)match(input,27,FOLLOW_27_in_decl447);  
 					stream_27.add(char_literal6);
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:28: (type= 'int' |type= 'float' |type= 'string' )
+					// gfiles/X.g:56:28: (type= 'int' |type= 'float' |type= 'string' )
 					int alt2=3;
 					switch ( input.LA(1) ) {
 					case 39:
@@ -323,7 +323,7 @@ public class XParser extends Parser {
 					}
 					switch (alt2) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:29: type= 'int'
+							// gfiles/X.g:56:29: type= 'int'
 							{
 							type=(Token)match(input,39,FOLLOW_39_in_decl452);  
 							stream_39.add(type);
@@ -331,7 +331,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:42: type= 'float'
+							// gfiles/X.g:56:42: type= 'float'
 							{
 							type=(Token)match(input,36,FOLLOW_36_in_decl458);  
 							stream_36.add(type);
@@ -339,7 +339,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:57: type= 'string'
+							// gfiles/X.g:56:57: type= 'string'
 							{
 							type=(Token)match(input,43,FOLLOW_43_in_decl464);  
 							stream_43.add(type);
@@ -366,7 +366,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 56:76: -> ^( DECL ID $type 'read' )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:56:79: ^( DECL ID $type 'read' )
+						// gfiles/X.g:56:79: ^( DECL ID $type 'read' )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DECL, "DECL"), root_1);
@@ -384,7 +384,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:14: 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
+					// gfiles/X.g:57:14: 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
 					{
 					string_literal8=(Token)match(input,40,FOLLOW_40_in_decl495);  
 					stream_40.add(string_literal8);
@@ -395,7 +395,7 @@ public class XParser extends Parser {
 					char_literal10=(Token)match(input,27,FOLLOW_27_in_decl499);  
 					stream_27.add(char_literal10);
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:29: (type= 'int' |type= 'float' |type= 'string' )
+					// gfiles/X.g:57:29: (type= 'int' |type= 'float' |type= 'string' )
 					int alt3=3;
 					switch ( input.LA(1) ) {
 					case 39:
@@ -420,7 +420,7 @@ public class XParser extends Parser {
 					}
 					switch (alt3) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:30: type= 'int'
+							// gfiles/X.g:57:30: type= 'int'
 							{
 							type=(Token)match(input,39,FOLLOW_39_in_decl504);  
 							stream_39.add(type);
@@ -428,7 +428,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:43: type= 'float'
+							// gfiles/X.g:57:43: type= 'float'
 							{
 							type=(Token)match(input,36,FOLLOW_36_in_decl510);  
 							stream_36.add(type);
@@ -436,7 +436,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:58: type= 'string'
+							// gfiles/X.g:57:58: type= 'string'
 							{
 							type=(Token)match(input,43,FOLLOW_43_in_decl516);  
 							stream_43.add(type);
@@ -463,7 +463,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 57:77: -> ^( DECL ID $type 'print' )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:57:80: ^( DECL ID $type 'print' )
+						// gfiles/X.g:57:80: ^( DECL ID $type 'print' )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DECL, "DECL"), root_1);
@@ -481,7 +481,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:14: 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
+					// gfiles/X.g:58:14: 'read' 'print' ID ':' (type= 'int' |type= 'float' |type= 'string' ) ';'
 					{
 					string_literal12=(Token)match(input,42,FOLLOW_42_in_decl547);  
 					stream_42.add(string_literal12);
@@ -495,7 +495,7 @@ public class XParser extends Parser {
 					char_literal15=(Token)match(input,27,FOLLOW_27_in_decl553);  
 					stream_27.add(char_literal15);
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:36: (type= 'int' |type= 'float' |type= 'string' )
+					// gfiles/X.g:58:36: (type= 'int' |type= 'float' |type= 'string' )
 					int alt4=3;
 					switch ( input.LA(1) ) {
 					case 39:
@@ -520,7 +520,7 @@ public class XParser extends Parser {
 					}
 					switch (alt4) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:37: type= 'int'
+							// gfiles/X.g:58:37: type= 'int'
 							{
 							type=(Token)match(input,39,FOLLOW_39_in_decl558);  
 							stream_39.add(type);
@@ -528,7 +528,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:50: type= 'float'
+							// gfiles/X.g:58:50: type= 'float'
 							{
 							type=(Token)match(input,36,FOLLOW_36_in_decl564);  
 							stream_36.add(type);
@@ -536,7 +536,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 3 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:65: type= 'string'
+							// gfiles/X.g:58:65: type= 'string'
 							{
 							type=(Token)match(input,43,FOLLOW_43_in_decl570);  
 							stream_43.add(type);
@@ -563,7 +563,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 58:84: -> ^( DECL ID $type 'read' 'print' )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:58:87: ^( DECL ID $type 'read' 'print' )
+						// gfiles/X.g:58:87: ^( DECL ID $type 'read' 'print' )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DECL, "DECL"), root_1);
@@ -610,7 +610,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "decllist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:1: decllist : ( decl )* -> ^( DECLLIST ( decl )* ) ;
+	// gfiles/X.g:60:1: decllist : ( decl )* -> ^( DECLLIST ( decl )* ) ;
 	public final XParser.decllist_return decllist() throws RecognitionException {
 		XParser.decllist_return retval = new XParser.decllist_return();
 		retval.start = input.LT(1);
@@ -622,10 +622,10 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_decl=new RewriteRuleSubtreeStream(adaptor,"rule decl");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:9: ( ( decl )* -> ^( DECLLIST ( decl )* ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:15: ( decl )*
+			// gfiles/X.g:60:9: ( ( decl )* -> ^( DECLLIST ( decl )* ) )
+			// gfiles/X.g:60:15: ( decl )*
 			{
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:15: ( decl )*
+			// gfiles/X.g:60:15: ( decl )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -636,7 +636,7 @@ public class XParser extends Parser {
 
 				switch (alt6) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:15: decl
+					// gfiles/X.g:60:15: decl
 					{
 					pushFollow(FOLLOW_decl_in_decllist599);
 					decl17=decl();
@@ -664,11 +664,11 @@ public class XParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 			// 60:22: -> ^( DECLLIST ( decl )* )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:25: ^( DECLLIST ( decl )* )
+				// gfiles/X.g:60:25: ^( DECLLIST ( decl )* )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(DECLLIST, "DECLLIST"), root_1);
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:60:36: ( decl )*
+				// gfiles/X.g:60:36: ( decl )*
 				while ( stream_decl.hasNext() ) {
 					adaptor.addChild(root_1, stream_decl.nextTree());
 				}
@@ -711,7 +711,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:1: expr : multexpr ( ( '+' ^| '-' ^) multexpr )* ;
+	// gfiles/X.g:63:1: expr : multexpr ( ( '+' ^| '-' ^) multexpr )* ;
 	public final XParser.expr_return expr() throws RecognitionException {
 		XParser.expr_return retval = new XParser.expr_return();
 		retval.start = input.LT(1);
@@ -727,8 +727,8 @@ public class XParser extends Parser {
 		CommonTree char_literal20_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:5: ( multexpr ( ( '+' ^| '-' ^) multexpr )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:15: multexpr ( ( '+' ^| '-' ^) multexpr )*
+			// gfiles/X.g:63:5: ( multexpr ( ( '+' ^| '-' ^) multexpr )* )
+			// gfiles/X.g:63:15: multexpr ( ( '+' ^| '-' ^) multexpr )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -739,7 +739,7 @@ public class XParser extends Parser {
 
 			adaptor.addChild(root_0, multexpr18.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:24: ( ( '+' ^| '-' ^) multexpr )*
+			// gfiles/X.g:63:24: ( ( '+' ^| '-' ^) multexpr )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -750,9 +750,9 @@ public class XParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:25: ( '+' ^| '-' ^) multexpr
+					// gfiles/X.g:63:25: ( '+' ^| '-' ^) multexpr
 					{
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:25: ( '+' ^| '-' ^)
+					// gfiles/X.g:63:25: ( '+' ^| '-' ^)
 					int alt7=2;
 					int LA7_0 = input.LA(1);
 					if ( (LA7_0==23) ) {
@@ -770,7 +770,7 @@ public class XParser extends Parser {
 
 					switch (alt7) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:26: '+' ^
+							// gfiles/X.g:63:26: '+' ^
 							{
 							char_literal19=(Token)match(input,23,FOLLOW_23_in_expr630); 
 							char_literal19_tree = (CommonTree)adaptor.create(char_literal19);
@@ -779,7 +779,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:63:33: '-' ^
+							// gfiles/X.g:63:33: '-' ^
 							{
 							char_literal20=(Token)match(input,24,FOLLOW_24_in_expr635); 
 							char_literal20_tree = (CommonTree)adaptor.create(char_literal20);
@@ -833,7 +833,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "multexpr"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:1: multexpr : simpleexpr ( ( '*' ^| '/' ^) simpleexpr )* ;
+	// gfiles/X.g:64:1: multexpr : simpleexpr ( ( '*' ^| '/' ^) simpleexpr )* ;
 	public final XParser.multexpr_return multexpr() throws RecognitionException {
 		XParser.multexpr_return retval = new XParser.multexpr_return();
 		retval.start = input.LT(1);
@@ -849,8 +849,8 @@ public class XParser extends Parser {
 		CommonTree char_literal24_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:9: ( simpleexpr ( ( '*' ^| '/' ^) simpleexpr )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:14: simpleexpr ( ( '*' ^| '/' ^) simpleexpr )*
+			// gfiles/X.g:64:9: ( simpleexpr ( ( '*' ^| '/' ^) simpleexpr )* )
+			// gfiles/X.g:64:14: simpleexpr ( ( '*' ^| '/' ^) simpleexpr )*
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -861,7 +861,7 @@ public class XParser extends Parser {
 
 			adaptor.addChild(root_0, simpleexpr22.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:25: ( ( '*' ^| '/' ^) simpleexpr )*
+			// gfiles/X.g:64:25: ( ( '*' ^| '/' ^) simpleexpr )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -872,9 +872,9 @@ public class XParser extends Parser {
 
 				switch (alt10) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:26: ( '*' ^| '/' ^) simpleexpr
+					// gfiles/X.g:64:26: ( '*' ^| '/' ^) simpleexpr
 					{
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:26: ( '*' ^| '/' ^)
+					// gfiles/X.g:64:26: ( '*' ^| '/' ^)
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0==22) ) {
@@ -892,7 +892,7 @@ public class XParser extends Parser {
 
 					switch (alt9) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:27: '*' ^
+							// gfiles/X.g:64:27: '*' ^
 							{
 							char_literal23=(Token)match(input,22,FOLLOW_22_in_multexpr654); 
 							char_literal23_tree = (CommonTree)adaptor.create(char_literal23);
@@ -901,7 +901,7 @@ public class XParser extends Parser {
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:64:34: '/' ^
+							// gfiles/X.g:64:34: '/' ^
 							{
 							char_literal24=(Token)match(input,26,FOLLOW_26_in_multexpr659); 
 							char_literal24_tree = (CommonTree)adaptor.create(char_literal24);
@@ -955,7 +955,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "simpleexpr"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:65:1: simpleexpr : ( '(' ! expr ')' !| INTCONST | '-' INTCONST -> ^( UMINUS INTCONST ) | FLOATCONST | '-' FLOATCONST -> ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
+	// gfiles/X.g:65:1: simpleexpr : ( '(' ! expr ')' !| INTCONST | '-' INTCONST -> ^( UMINUS INTCONST ) | FLOATCONST | '-' FLOATCONST -> ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
 	public final XParser.simpleexpr_return simpleexpr() throws RecognitionException {
 		XParser.simpleexpr_return retval = new XParser.simpleexpr_return();
 		retval.start = input.LT(1);
@@ -989,7 +989,7 @@ public class XParser extends Parser {
 		RewriteRuleTokenStream stream_INTCONST=new RewriteRuleTokenStream(adaptor,"token INTCONST");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:65:11: ( '(' ! expr ')' !| INTCONST | '-' INTCONST -> ^( UMINUS INTCONST ) | FLOATCONST | '-' FLOATCONST -> ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
+			// gfiles/X.g:65:11: ( '(' ! expr ')' !| INTCONST | '-' INTCONST -> ^( UMINUS INTCONST ) | FLOATCONST | '-' FLOATCONST -> ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
 			int alt11=7;
 			switch ( input.LA(1) ) {
 			case 20:
@@ -1048,7 +1048,7 @@ public class XParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:65:15: '(' ! expr ')' !
+					// gfiles/X.g:65:15: '(' ! expr ')' !
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1064,7 +1064,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:66:15: INTCONST
+					// gfiles/X.g:66:15: INTCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1076,7 +1076,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:66:26: '-' INTCONST
+					// gfiles/X.g:66:26: '-' INTCONST
 					{
 					char_literal30=(Token)match(input,24,FOLLOW_24_in_simpleexpr700);  
 					stream_24.add(char_literal30);
@@ -1097,7 +1097,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 66:39: -> ^( UMINUS INTCONST )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:66:42: ^( UMINUS INTCONST )
+						// gfiles/X.g:66:42: ^( UMINUS INTCONST )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(UMINUS, "UMINUS"), root_1);
@@ -1113,7 +1113,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:67:15: FLOATCONST
+					// gfiles/X.g:67:15: FLOATCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1125,7 +1125,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:67:28: '-' FLOATCONST
+					// gfiles/X.g:67:28: '-' FLOATCONST
 					{
 					char_literal33=(Token)match(input,24,FOLLOW_24_in_simpleexpr730);  
 					stream_24.add(char_literal33);
@@ -1146,7 +1146,7 @@ public class XParser extends Parser {
 					root_0 = (CommonTree)adaptor.nil();
 					// 67:43: -> ^( UMINUS FLOATCONST )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:67:46: ^( UMINUS FLOATCONST )
+						// gfiles/X.g:67:46: ^( UMINUS FLOATCONST )
 						{
 						CommonTree root_1 = (CommonTree)adaptor.nil();
 						root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(UMINUS, "UMINUS"), root_1);
@@ -1162,7 +1162,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 6 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:68:15: ID
+					// gfiles/X.g:68:15: ID
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1174,7 +1174,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 7 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:68:20: STRINGCONST
+					// gfiles/X.g:68:20: STRINGCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1214,7 +1214,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "assignstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:71:1: assignstat : ID ':=' ^ expr ;
+	// gfiles/X.g:71:1: assignstat : ID ':=' ^ expr ;
 	public final XParser.assignstat_return assignstat() throws RecognitionException {
 		XParser.assignstat_return retval = new XParser.assignstat_return();
 		retval.start = input.LT(1);
@@ -1229,8 +1229,8 @@ public class XParser extends Parser {
 		CommonTree string_literal38_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:71:11: ( ID ':=' ^ expr )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:71:15: ID ':=' ^ expr
+			// gfiles/X.g:71:11: ( ID ':=' ^ expr )
+			// gfiles/X.g:71:15: ID ':=' ^ expr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1278,7 +1278,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "cond"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:1: cond : expr ( '<' ^| '>' ^| '=' ^) expr ;
+	// gfiles/X.g:74:1: cond : expr ( '<' ^| '>' ^| '=' ^) expr ;
 	public final XParser.cond_return cond() throws RecognitionException {
 		XParser.cond_return retval = new XParser.cond_return();
 		retval.start = input.LT(1);
@@ -1296,8 +1296,8 @@ public class XParser extends Parser {
 		CommonTree char_literal43_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:5: ( expr ( '<' ^| '>' ^| '=' ^) expr )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:15: expr ( '<' ^| '>' ^| '=' ^) expr
+			// gfiles/X.g:74:5: ( expr ( '<' ^| '>' ^| '=' ^) expr )
+			// gfiles/X.g:74:15: expr ( '<' ^| '>' ^| '=' ^) expr
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1308,7 +1308,7 @@ public class XParser extends Parser {
 
 			adaptor.addChild(root_0, expr40.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:20: ( '<' ^| '>' ^| '=' ^)
+			// gfiles/X.g:74:20: ( '<' ^| '>' ^| '=' ^)
 			int alt12=3;
 			switch ( input.LA(1) ) {
 			case 30:
@@ -1333,7 +1333,7 @@ public class XParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:21: '<' ^
+					// gfiles/X.g:74:21: '<' ^
 					{
 					char_literal41=(Token)match(input,30,FOLLOW_30_in_cond794); 
 					char_literal41_tree = (CommonTree)adaptor.create(char_literal41);
@@ -1342,7 +1342,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:27: '>' ^
+					// gfiles/X.g:74:27: '>' ^
 					{
 					char_literal42=(Token)match(input,32,FOLLOW_32_in_cond798); 
 					char_literal42_tree = (CommonTree)adaptor.create(char_literal42);
@@ -1351,7 +1351,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:74:33: '=' ^
+					// gfiles/X.g:74:33: '=' ^
 					{
 					char_literal43=(Token)match(input,31,FOLLOW_31_in_cond802); 
 					char_literal43_tree = (CommonTree)adaptor.create(char_literal43);
@@ -1397,7 +1397,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "condstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:77:1: condstat : 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )? ;
+	// gfiles/X.g:77:1: condstat : 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )? ;
 	public final XParser.condstat_return condstat() throws RecognitionException {
 		XParser.condstat_return retval = new XParser.condstat_return();
 		retval.start = input.LT(1);
@@ -1416,8 +1416,8 @@ public class XParser extends Parser {
 		CommonTree string_literal49_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:77:9: ( 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )? )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:77:15: 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )?
+			// gfiles/X.g:77:9: ( 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )? )
+			// gfiles/X.g:77:15: 'if' ^ cond 'then' ! stat ( options {greedy=true; } : 'else' ! stat )?
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1439,7 +1439,7 @@ public class XParser extends Parser {
 
 			adaptor.addChild(root_0, stat48.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:77:40: ( options {greedy=true; } : 'else' ! stat )?
+			// gfiles/X.g:77:40: ( options {greedy=true; } : 'else' ! stat )?
 			int alt13=2;
 			int LA13_0 = input.LA(1);
 			if ( (LA13_0==34) ) {
@@ -1447,7 +1447,7 @@ public class XParser extends Parser {
 			}
 			switch (alt13) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:77:65: 'else' ! stat
+					// gfiles/X.g:77:65: 'else' ! stat
 					{
 					string_literal49=(Token)match(input,34,FOLLOW_34_in_condstat839); 
 					pushFollow(FOLLOW_stat_in_condstat842);
@@ -1490,7 +1490,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "whilestat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:80:1: whilestat : 'while' '(' cond ')' stat -> ^( 'while' cond stat ) ;
+	// gfiles/X.g:80:1: whilestat : 'while' '(' cond ')' stat -> ^( 'while' cond stat ) ;
 	public final XParser.whilestat_return whilestat() throws RecognitionException {
 		XParser.whilestat_return retval = new XParser.whilestat_return();
 		retval.start = input.LT(1);
@@ -1513,8 +1513,8 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_cond=new RewriteRuleSubtreeStream(adaptor,"rule cond");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:80:10: ( 'while' '(' cond ')' stat -> ^( 'while' cond stat ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:80:15: 'while' '(' cond ')' stat
+			// gfiles/X.g:80:10: ( 'while' '(' cond ')' stat -> ^( 'while' cond stat ) )
+			// gfiles/X.g:80:15: 'while' '(' cond ')' stat
 			{
 			string_literal51=(Token)match(input,45,FOLLOW_45_in_whilestat855);  
 			stream_45.add(string_literal51);
@@ -1548,7 +1548,7 @@ public class XParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 			// 80:41: -> ^( 'while' cond stat )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:80:44: ^( 'while' cond stat )
+				// gfiles/X.g:80:44: ^( 'while' cond stat )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot(stream_45.nextNode(), root_1);
@@ -1591,7 +1591,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "forstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:81:1: forstat : 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat ;
+	// gfiles/X.g:81:1: forstat : 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat ;
 	public final XParser.forstat_return forstat() throws RecognitionException {
 		XParser.forstat_return retval = new XParser.forstat_return();
 		retval.start = input.LT(1);
@@ -1615,8 +1615,8 @@ public class XParser extends Parser {
 		CommonTree char_literal63_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:81:8: ( 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:81:15: 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat
+			// gfiles/X.g:81:8: ( 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat )
+			// gfiles/X.g:81:15: 'for' ^ '(' ! assignstat ';' ! cond ';' ! assignstat ')' ! stat
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1682,7 +1682,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "stat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
+	// gfiles/X.g:84:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
 	public final XParser.stat_return stat() throws RecognitionException {
 		XParser.stat_return retval = new XParser.stat_return();
 		retval.start = input.LT(1);
@@ -1697,7 +1697,7 @@ public class XParser extends Parser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:5: ( assignstat | condstat | whilestat | forstat | statlist )
+			// gfiles/X.g:84:5: ( assignstat | condstat | whilestat | forstat | statlist )
 			int alt14=5;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -1732,7 +1732,7 @@ public class XParser extends Parser {
 			}
 			switch (alt14) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:15: assignstat
+					// gfiles/X.g:84:15: assignstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1746,7 +1746,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:28: condstat
+					// gfiles/X.g:84:28: condstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1760,7 +1760,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:39: whilestat
+					// gfiles/X.g:84:39: whilestat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1774,7 +1774,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:51: forstat
+					// gfiles/X.g:84:51: forstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1788,7 +1788,7 @@ public class XParser extends Parser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:84:61: statlist
+					// gfiles/X.g:84:61: statlist
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1830,7 +1830,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "statlist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:1: statlist : 'begin' ( stat ';' )* 'end' -> ^( STATLIST ( stat )* ) ;
+	// gfiles/X.g:86:1: statlist : 'begin' ( stat ';' )* 'end' -> ^( STATLIST ( stat )* ) ;
 	public final XParser.statlist_return statlist() throws RecognitionException {
 		XParser.statlist_return retval = new XParser.statlist_return();
 		retval.start = input.LT(1);
@@ -1851,13 +1851,13 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_stat=new RewriteRuleSubtreeStream(adaptor,"rule stat");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:9: ( 'begin' ( stat ';' )* 'end' -> ^( STATLIST ( stat )* ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:18: 'begin' ( stat ';' )* 'end'
+			// gfiles/X.g:86:9: ( 'begin' ( stat ';' )* 'end' -> ^( STATLIST ( stat )* ) )
+			// gfiles/X.g:86:18: 'begin' ( stat ';' )* 'end'
 			{
 			string_literal70=(Token)match(input,33,FOLLOW_33_in_statlist951);  
 			stream_33.add(string_literal70);
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:26: ( stat ';' )*
+			// gfiles/X.g:86:26: ( stat ';' )*
 			loop15:
 			while (true) {
 				int alt15=2;
@@ -1868,7 +1868,7 @@ public class XParser extends Parser {
 
 				switch (alt15) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:27: stat ';'
+					// gfiles/X.g:86:27: stat ';'
 					{
 					pushFollow(FOLLOW_stat_in_statlist954);
 					stat71=stat();
@@ -1902,11 +1902,11 @@ public class XParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 			// 86:45: -> ^( STATLIST ( stat )* )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:48: ^( STATLIST ( stat )* )
+				// gfiles/X.g:86:48: ^( STATLIST ( stat )* )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot((CommonTree)adaptor.create(STATLIST, "STATLIST"), root_1);
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:86:59: ( stat )*
+				// gfiles/X.g:86:59: ( stat )*
 				while ( stream_stat.hasNext() ) {
 					adaptor.addChild(root_1, stream_stat.nextTree());
 				}
@@ -1949,7 +1949,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "program"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:89:1: program : 'program' ID ';' decllist statlist '.' EOF -> ^( 'program' ID decllist statlist ) ;
+	// gfiles/X.g:89:1: program : 'program' ID ';' decllist statlist '.' EOF -> ^( 'program' ID decllist statlist ) ;
 	public final XParser.program_return program() throws RecognitionException {
 		XParser.program_return retval = new XParser.program_return();
 		retval.start = input.LT(1);
@@ -1978,8 +1978,8 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_statlist=new RewriteRuleSubtreeStream(adaptor,"rule statlist");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:89:8: ( 'program' ID ';' decllist statlist '.' EOF -> ^( 'program' ID decllist statlist ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:89:15: 'program' ID ';' decllist statlist '.' EOF
+			// gfiles/X.g:89:8: ( 'program' ID ';' decllist statlist '.' EOF -> ^( 'program' ID decllist statlist ) )
+			// gfiles/X.g:89:15: 'program' ID ';' decllist statlist '.' EOF
 			{
 			string_literal74=(Token)match(input,41,FOLLOW_41_in_program983);  
 			stream_41.add(string_literal74);
@@ -2019,7 +2019,7 @@ public class XParser extends Parser {
 			root_0 = (CommonTree)adaptor.nil();
 			// 89:58: -> ^( 'program' ID decllist statlist )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\X.g:89:61: ^( 'program' ID decllist statlist )
+				// gfiles/X.g:89:61: ^( 'program' ID decllist statlist )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.nil();
 				root_1 = (CommonTree)adaptor.becomeRoot(stream_41.nextNode(), root_1);

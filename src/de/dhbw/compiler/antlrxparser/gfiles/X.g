@@ -15,7 +15,7 @@ options {
   language = Java;
   output = AST;
 }
- 
+
 // AST-Tokens
 tokens { 
   DECL; 

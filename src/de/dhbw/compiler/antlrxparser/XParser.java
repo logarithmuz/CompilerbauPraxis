@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g 2019-05-23 13:19:42
+// $ANTLR 3.5.2 gfiles/X.g 2019-05-23 18:48:27
 package de.dhbw.compiler.antlrxparser;
 
 import org.antlr.runtime.*;
@@ -85,7 +85,7 @@ public class XParser extends Parser {
 		return adaptor;
 	}
 	@Override public String[] getTokenNames() { return XParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g"; }
+	@Override public String getGrammarFileName() { return "gfiles/X.g"; }
 
 
 	public static class program_return extends ParserRuleReturnScope {
@@ -96,7 +96,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "program"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:1: program : 'program' ID ';' declist block '.' EOF -> ^( 'program' ID ^( DECLLIST ( declist )? ) block ) ;
+	// gfiles/X.g:44:1: program : 'program' ID ';' declist block '.' EOF -> ^( 'program' ID ^( DECLLIST ( declist )? ) block ) ;
 	public final XParser.program_return program() throws RecognitionException {
 		XParser.program_return retval = new XParser.program_return();
 		retval.start = input.LT(1);
@@ -125,32 +125,32 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_declist=new RewriteRuleSubtreeStream(adaptor,"rule declist");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:8: ( 'program' ID ';' declist block '.' EOF -> ^( 'program' ID ^( DECLLIST ( declist )? ) block ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:11: 'program' ID ';' declist block '.' EOF
+			// gfiles/X.g:44:8: ( 'program' ID ';' declist block '.' EOF -> ^( 'program' ID ^( DECLLIST ( declist )? ) block ) )
+			// gfiles/X.g:44:11: 'program' ID ';' declist block '.' EOF
 			{
-			string_literal1=(Token)match(input,39,FOLLOW_39_in_program308);  
+			string_literal1=(Token)match(input,39,FOLLOW_39_in_program307);  
 			stream_39.add(string_literal1);
 
-			ID2=(Token)match(input,ID,FOLLOW_ID_in_program310);  
+			ID2=(Token)match(input,ID,FOLLOW_ID_in_program309);  
 			stream_ID.add(ID2);
 
-			char_literal3=(Token)match(input,27,FOLLOW_27_in_program312);  
+			char_literal3=(Token)match(input,27,FOLLOW_27_in_program311);  
 			stream_27.add(char_literal3);
 
-			pushFollow(FOLLOW_declist_in_program314);
+			pushFollow(FOLLOW_declist_in_program313);
 			declist4=declist();
 			state._fsp--;
 
 			stream_declist.add(declist4.getTree());
-			pushFollow(FOLLOW_block_in_program316);
+			pushFollow(FOLLOW_block_in_program315);
 			block5=block();
 			state._fsp--;
 
 			stream_block.add(block5.getTree());
-			char_literal6=(Token)match(input,23,FOLLOW_23_in_program318);  
+			char_literal6=(Token)match(input,23,FOLLOW_23_in_program317);  
 			stream_23.add(char_literal6);
 
-			EOF7=(Token)match(input,EOF,FOLLOW_EOF_in_program320);  
+			EOF7=(Token)match(input,EOF,FOLLOW_EOF_in_program319);  
 			stream_EOF.add(EOF7);
 
 			// AST REWRITE
@@ -166,16 +166,16 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 44:50: -> ^( 'program' ID ^( DECLLIST ( declist )? ) block )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:53: ^( 'program' ID ^( DECLLIST ( declist )? ) block )
+				// gfiles/X.g:44:53: ^( 'program' ID ^( DECLLIST ( declist )? ) block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_39.nextNode(), root_1);
 				adaptor.addChild(root_1, stream_ID.nextNode());
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:68: ^( DECLLIST ( declist )? )
+				// gfiles/X.g:44:68: ^( DECLLIST ( declist )? )
 				{
 				Object root_2 = (Object)adaptor.nil();
 				root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(DECLLIST, "DECLLIST"), root_2);
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:44:79: ( declist )?
+				// gfiles/X.g:44:79: ( declist )?
 				if ( stream_declist.hasNext() ) {
 					adaptor.addChild(root_2, stream_declist.nextTree());
 				}
@@ -222,7 +222,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "declist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:45:1: declist : ( declaration )* ;
+	// gfiles/X.g:45:1: declist : ( declaration )* ;
 	public final XParser.declist_return declist() throws RecognitionException {
 		XParser.declist_return retval = new XParser.declist_return();
 		retval.start = input.LT(1);
@@ -233,13 +233,13 @@ public class XParser extends Parser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:45:8: ( ( declaration )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:45:11: ( declaration )*
+			// gfiles/X.g:45:8: ( ( declaration )* )
+			// gfiles/X.g:45:11: ( declaration )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:45:11: ( declaration )*
+			// gfiles/X.g:45:11: ( declaration )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -250,9 +250,9 @@ public class XParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:45:11: declaration
+					// gfiles/X.g:45:11: declaration
 					{
-					pushFollow(FOLLOW_declaration_in_declist344);
+					pushFollow(FOLLOW_declaration_in_declist343);
 					declaration8=declaration();
 					state._fsp--;
 
@@ -295,7 +295,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:46:1: block : 'begin' stmtlist 'end' -> ^( STATLIST ( stmtlist )? ) ;
+	// gfiles/X.g:46:1: block : 'begin' stmtlist 'end' -> ^( STATLIST ( stmtlist )? ) ;
 	public final XParser.block_return block() throws RecognitionException {
 		XParser.block_return retval = new XParser.block_return();
 		retval.start = input.LT(1);
@@ -313,18 +313,18 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_stmtlist=new RewriteRuleSubtreeStream(adaptor,"rule stmtlist");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:46:6: ( 'begin' stmtlist 'end' -> ^( STATLIST ( stmtlist )? ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:46:11: 'begin' stmtlist 'end'
+			// gfiles/X.g:46:6: ( 'begin' stmtlist 'end' -> ^( STATLIST ( stmtlist )? ) )
+			// gfiles/X.g:46:11: 'begin' stmtlist 'end'
 			{
-			string_literal9=(Token)match(input,31,FOLLOW_31_in_block354);  
+			string_literal9=(Token)match(input,31,FOLLOW_31_in_block353);  
 			stream_31.add(string_literal9);
 
-			pushFollow(FOLLOW_stmtlist_in_block356);
+			pushFollow(FOLLOW_stmtlist_in_block355);
 			stmtlist10=stmtlist();
 			state._fsp--;
 
 			stream_stmtlist.add(stmtlist10.getTree());
-			string_literal11=(Token)match(input,33,FOLLOW_33_in_block358);  
+			string_literal11=(Token)match(input,33,FOLLOW_33_in_block357);  
 			stream_33.add(string_literal11);
 
 			// AST REWRITE
@@ -340,11 +340,11 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 46:34: -> ^( STATLIST ( stmtlist )? )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:46:37: ^( STATLIST ( stmtlist )? )
+				// gfiles/X.g:46:37: ^( STATLIST ( stmtlist )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(STATLIST, "STATLIST"), root_1);
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:46:48: ( stmtlist )?
+				// gfiles/X.g:46:48: ( stmtlist )?
 				if ( stream_stmtlist.hasNext() ) {
 					adaptor.addChild(root_1, stream_stmtlist.nextTree());
 				}
@@ -387,7 +387,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "stmtlist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:47:1: stmtlist : ( stmtWithSemi )* ;
+	// gfiles/X.g:47:1: stmtlist : ( stmtWithSemi )* ;
 	public final XParser.stmtlist_return stmtlist() throws RecognitionException {
 		XParser.stmtlist_return retval = new XParser.stmtlist_return();
 		retval.start = input.LT(1);
@@ -398,13 +398,13 @@ public class XParser extends Parser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:47:9: ( ( stmtWithSemi )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:47:12: ( stmtWithSemi )*
+			// gfiles/X.g:47:9: ( ( stmtWithSemi )* )
+			// gfiles/X.g:47:12: ( stmtWithSemi )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:47:12: ( stmtWithSemi )*
+			// gfiles/X.g:47:12: ( stmtWithSemi )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -415,9 +415,9 @@ public class XParser extends Parser {
 
 				switch (alt2) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:47:12: stmtWithSemi
+					// gfiles/X.g:47:12: stmtWithSemi
 					{
-					pushFollow(FOLLOW_stmtWithSemi_in_stmtlist374);
+					pushFollow(FOLLOW_stmtWithSemi_in_stmtlist373);
 					stmtWithSemi12=stmtWithSemi();
 					state._fsp--;
 
@@ -460,7 +460,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "stmtWithSemi"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:49:1: stmtWithSemi : stmt ';' -> stmt ;
+	// gfiles/X.g:49:1: stmtWithSemi : stmt ';' -> stmt ;
 	public final XParser.stmtWithSemi_return stmtWithSemi() throws RecognitionException {
 		XParser.stmtWithSemi_return retval = new XParser.stmtWithSemi_return();
 		retval.start = input.LT(1);
@@ -475,15 +475,15 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_stmt=new RewriteRuleSubtreeStream(adaptor,"rule stmt");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:49:13: ( stmt ';' -> stmt )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:49:15: stmt ';'
+			// gfiles/X.g:49:13: ( stmt ';' -> stmt )
+			// gfiles/X.g:49:15: stmt ';'
 			{
-			pushFollow(FOLLOW_stmt_in_stmtWithSemi382);
+			pushFollow(FOLLOW_stmt_in_stmtWithSemi381);
 			stmt13=stmt();
 			state._fsp--;
 
 			stream_stmt.add(stmt13.getTree());
-			char_literal14=(Token)match(input,27,FOLLOW_27_in_stmtWithSemi384);  
+			char_literal14=(Token)match(input,27,FOLLOW_27_in_stmtWithSemi383);  
 			stream_27.add(char_literal14);
 
 			// AST REWRITE
@@ -534,7 +534,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "stmt"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:1: stmt : ( assignStmt | condStmt | whileStmt | forStmt | block );
+	// gfiles/X.g:50:1: stmt : ( assignStmt | condStmt | whileStmt | forStmt | block );
 	public final XParser.stmt_return stmt() throws RecognitionException {
 		XParser.stmt_return retval = new XParser.stmt_return();
 		retval.start = input.LT(1);
@@ -549,7 +549,7 @@ public class XParser extends Parser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:5: ( assignStmt | condStmt | whileStmt | forStmt | block )
+			// gfiles/X.g:50:5: ( assignStmt | condStmt | whileStmt | forStmt | block )
 			int alt3=5;
 			switch ( input.LA(1) ) {
 			case ID:
@@ -584,12 +584,12 @@ public class XParser extends Parser {
 			}
 			switch (alt3) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:9: assignStmt
+					// gfiles/X.g:50:9: assignStmt
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_assignStmt_in_stmt396);
+					pushFollow(FOLLOW_assignStmt_in_stmt395);
 					assignStmt15=assignStmt();
 					state._fsp--;
 
@@ -598,12 +598,12 @@ public class XParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:22: condStmt
+					// gfiles/X.g:50:22: condStmt
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_condStmt_in_stmt400);
+					pushFollow(FOLLOW_condStmt_in_stmt399);
 					condStmt16=condStmt();
 					state._fsp--;
 
@@ -612,12 +612,12 @@ public class XParser extends Parser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:33: whileStmt
+					// gfiles/X.g:50:33: whileStmt
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_whileStmt_in_stmt404);
+					pushFollow(FOLLOW_whileStmt_in_stmt403);
 					whileStmt17=whileStmt();
 					state._fsp--;
 
@@ -626,12 +626,12 @@ public class XParser extends Parser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:45: forStmt
+					// gfiles/X.g:50:45: forStmt
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_forStmt_in_stmt408);
+					pushFollow(FOLLOW_forStmt_in_stmt407);
 					forStmt18=forStmt();
 					state._fsp--;
 
@@ -640,12 +640,12 @@ public class XParser extends Parser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:50:55: block
+					// gfiles/X.g:50:55: block
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_block_in_stmt412);
+					pushFollow(FOLLOW_block_in_stmt411);
 					block19=block();
 					state._fsp--;
 
@@ -682,7 +682,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "declaration"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:1: declaration : ( modifier )? ID ':' type ';' -> ^( DECL ID type ( modifier )? ) ;
+	// gfiles/X.g:51:1: declaration : ( modifier )? ID ':' type ';' -> ^( DECL ID type ( modifier )? ) ;
 	public final XParser.declaration_return declaration() throws RecognitionException {
 		XParser.declaration_return retval = new XParser.declaration_return();
 		retval.start = input.LT(1);
@@ -705,10 +705,10 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:12: ( ( modifier )? ID ':' type ';' -> ^( DECL ID type ( modifier )? ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:14: ( modifier )? ID ':' type ';'
+			// gfiles/X.g:51:12: ( ( modifier )? ID ':' type ';' -> ^( DECL ID type ( modifier )? ) )
+			// gfiles/X.g:51:14: ( modifier )? ID ':' type ';'
 			{
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:14: ( modifier )?
+			// gfiles/X.g:51:14: ( modifier )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==38||LA4_0==40) ) {
@@ -716,9 +716,9 @@ public class XParser extends Parser {
 			}
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:14: modifier
+					// gfiles/X.g:51:14: modifier
 					{
-					pushFollow(FOLLOW_modifier_in_declaration418);
+					pushFollow(FOLLOW_modifier_in_declaration417);
 					modifier20=modifier();
 					state._fsp--;
 
@@ -728,18 +728,18 @@ public class XParser extends Parser {
 
 			}
 
-			ID21=(Token)match(input,ID,FOLLOW_ID_in_declaration421);  
+			ID21=(Token)match(input,ID,FOLLOW_ID_in_declaration420);  
 			stream_ID.add(ID21);
 
-			char_literal22=(Token)match(input,25,FOLLOW_25_in_declaration423);  
+			char_literal22=(Token)match(input,25,FOLLOW_25_in_declaration422);  
 			stream_25.add(char_literal22);
 
-			pushFollow(FOLLOW_type_in_declaration425);
+			pushFollow(FOLLOW_type_in_declaration424);
 			type23=type();
 			state._fsp--;
 
 			stream_type.add(type23.getTree());
-			char_literal24=(Token)match(input,27,FOLLOW_27_in_declaration427);  
+			char_literal24=(Token)match(input,27,FOLLOW_27_in_declaration426);  
 			stream_27.add(char_literal24);
 
 			// AST REWRITE
@@ -755,13 +755,13 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 51:40: -> ^( DECL ID type ( modifier )? )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:43: ^( DECL ID type ( modifier )? )
+				// gfiles/X.g:51:43: ^( DECL ID type ( modifier )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DECL, "DECL"), root_1);
 				adaptor.addChild(root_1, stream_ID.nextNode());
 				adaptor.addChild(root_1, stream_type.nextTree());
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:51:58: ( modifier )?
+				// gfiles/X.g:51:58: ( modifier )?
 				if ( stream_modifier.hasNext() ) {
 					adaptor.addChild(root_1, stream_modifier.nextTree());
 				}
@@ -804,7 +804,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "assignStmt"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:53:1: assignStmt : ID ':=' numExpr -> ^( ':=' ID numExpr ) ;
+	// gfiles/X.g:53:1: assignStmt : ID ':=' numExpr -> ^( ':=' ID numExpr ) ;
 	public final XParser.assignStmt_return assignStmt() throws RecognitionException {
 		XParser.assignStmt_return retval = new XParser.assignStmt_return();
 		retval.start = input.LT(1);
@@ -822,16 +822,16 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_numExpr=new RewriteRuleSubtreeStream(adaptor,"rule numExpr");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:53:11: ( ID ':=' numExpr -> ^( ':=' ID numExpr ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:53:14: ID ':=' numExpr
+			// gfiles/X.g:53:11: ( ID ':=' numExpr -> ^( ':=' ID numExpr ) )
+			// gfiles/X.g:53:14: ID ':=' numExpr
 			{
-			ID25=(Token)match(input,ID,FOLLOW_ID_in_assignStmt448);  
+			ID25=(Token)match(input,ID,FOLLOW_ID_in_assignStmt447);  
 			stream_ID.add(ID25);
 
-			string_literal26=(Token)match(input,26,FOLLOW_26_in_assignStmt450);  
+			string_literal26=(Token)match(input,26,FOLLOW_26_in_assignStmt449);  
 			stream_26.add(string_literal26);
 
-			pushFollow(FOLLOW_numExpr_in_assignStmt452);
+			pushFollow(FOLLOW_numExpr_in_assignStmt451);
 			numExpr27=numExpr();
 			state._fsp--;
 
@@ -849,7 +849,7 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 53:30: -> ^( ':=' ID numExpr )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:53:33: ^( ':=' ID numExpr )
+				// gfiles/X.g:53:33: ^( ':=' ID numExpr )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_26.nextNode(), root_1);
@@ -892,7 +892,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "condStmt"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:54:1: condStmt : 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )? ;
+	// gfiles/X.g:54:1: condStmt : 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )? ;
 	public final XParser.condStmt_return condStmt() throws RecognitionException {
 		XParser.condStmt_return retval = new XParser.condStmt_return();
 		retval.start = input.LT(1);
@@ -911,30 +911,30 @@ public class XParser extends Parser {
 		Object string_literal32_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:54:9: ( 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )? )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:54:13: 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )?
+			// gfiles/X.g:54:9: ( 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )? )
+			// gfiles/X.g:54:13: 'if' ^ cond 'then' ! stmt ( options {greedy=true; } : 'else' ! stmt )?
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			string_literal28=(Token)match(input,36,FOLLOW_36_in_condStmt470); 
+			string_literal28=(Token)match(input,36,FOLLOW_36_in_condStmt469); 
 			string_literal28_tree = (Object)adaptor.create(string_literal28);
 			root_0 = (Object)adaptor.becomeRoot(string_literal28_tree, root_0);
 
-			pushFollow(FOLLOW_cond_in_condStmt473);
+			pushFollow(FOLLOW_cond_in_condStmt472);
 			cond29=cond();
 			state._fsp--;
 
 			adaptor.addChild(root_0, cond29.getTree());
 
-			string_literal30=(Token)match(input,42,FOLLOW_42_in_condStmt475); 
-			pushFollow(FOLLOW_stmt_in_condStmt478);
+			string_literal30=(Token)match(input,42,FOLLOW_42_in_condStmt474); 
+			pushFollow(FOLLOW_stmt_in_condStmt477);
 			stmt31=stmt();
 			state._fsp--;
 
 			adaptor.addChild(root_0, stmt31.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:54:37: ( options {greedy=true; } : 'else' ! stmt )?
+			// gfiles/X.g:54:37: ( options {greedy=true; } : 'else' ! stmt )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==32) ) {
@@ -942,10 +942,10 @@ public class XParser extends Parser {
 			}
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:54:61: 'else' ! stmt
+					// gfiles/X.g:54:61: 'else' ! stmt
 					{
-					string_literal32=(Token)match(input,32,FOLLOW_32_in_condStmt489); 
-					pushFollow(FOLLOW_stmt_in_condStmt492);
+					string_literal32=(Token)match(input,32,FOLLOW_32_in_condStmt488); 
+					pushFollow(FOLLOW_stmt_in_condStmt491);
 					stmt33=stmt();
 					state._fsp--;
 
@@ -985,7 +985,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "whileStmt"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:55:1: whileStmt : 'while' '(' cond ')' stmt -> ^( 'while' cond stmt ) ;
+	// gfiles/X.g:55:1: whileStmt : 'while' '(' cond ')' stmt -> ^( 'while' cond stmt ) ;
 	public final XParser.whileStmt_return whileStmt() throws RecognitionException {
 		XParser.whileStmt_return retval = new XParser.whileStmt_return();
 		retval.start = input.LT(1);
@@ -1008,24 +1008,24 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_stmt=new RewriteRuleSubtreeStream(adaptor,"rule stmt");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:55:10: ( 'while' '(' cond ')' stmt -> ^( 'while' cond stmt ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:55:13: 'while' '(' cond ')' stmt
+			// gfiles/X.g:55:10: ( 'while' '(' cond ')' stmt -> ^( 'while' cond stmt ) )
+			// gfiles/X.g:55:13: 'while' '(' cond ')' stmt
 			{
-			string_literal34=(Token)match(input,43,FOLLOW_43_in_whileStmt501);  
+			string_literal34=(Token)match(input,43,FOLLOW_43_in_whileStmt500);  
 			stream_43.add(string_literal34);
 
-			char_literal35=(Token)match(input,18,FOLLOW_18_in_whileStmt503);  
+			char_literal35=(Token)match(input,18,FOLLOW_18_in_whileStmt502);  
 			stream_18.add(char_literal35);
 
-			pushFollow(FOLLOW_cond_in_whileStmt505);
+			pushFollow(FOLLOW_cond_in_whileStmt504);
 			cond36=cond();
 			state._fsp--;
 
 			stream_cond.add(cond36.getTree());
-			char_literal37=(Token)match(input,19,FOLLOW_19_in_whileStmt507);  
+			char_literal37=(Token)match(input,19,FOLLOW_19_in_whileStmt506);  
 			stream_19.add(char_literal37);
 
-			pushFollow(FOLLOW_stmt_in_whileStmt509);
+			pushFollow(FOLLOW_stmt_in_whileStmt508);
 			stmt38=stmt();
 			state._fsp--;
 
@@ -1043,7 +1043,7 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 55:39: -> ^( 'while' cond stmt )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:55:42: ^( 'while' cond stmt )
+				// gfiles/X.g:55:42: ^( 'while' cond stmt )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_43.nextNode(), root_1);
@@ -1086,7 +1086,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "forStmt"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:56:1: forStmt : 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt -> ^( 'for' assignStmt cond assignStmt stmt ) ;
+	// gfiles/X.g:56:1: forStmt : 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt -> ^( 'for' assignStmt cond assignStmt stmt ) ;
 	public final XParser.forStmt_return forStmt() throws RecognitionException {
 		XParser.forStmt_return retval = new XParser.forStmt_return();
 		retval.start = input.LT(1);
@@ -1117,40 +1117,40 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_stmt=new RewriteRuleSubtreeStream(adaptor,"rule stmt");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:56:8: ( 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt -> ^( 'for' assignStmt cond assignStmt stmt ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:56:11: 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt
+			// gfiles/X.g:56:8: ( 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt -> ^( 'for' assignStmt cond assignStmt stmt ) )
+			// gfiles/X.g:56:11: 'for' '(' assignStmt ';' cond ';' assignStmt ')' stmt
 			{
-			string_literal39=(Token)match(input,35,FOLLOW_35_in_forStmt526);  
+			string_literal39=(Token)match(input,35,FOLLOW_35_in_forStmt525);  
 			stream_35.add(string_literal39);
 
-			char_literal40=(Token)match(input,18,FOLLOW_18_in_forStmt528);  
+			char_literal40=(Token)match(input,18,FOLLOW_18_in_forStmt527);  
 			stream_18.add(char_literal40);
 
-			pushFollow(FOLLOW_assignStmt_in_forStmt530);
+			pushFollow(FOLLOW_assignStmt_in_forStmt529);
 			assignStmt41=assignStmt();
 			state._fsp--;
 
 			stream_assignStmt.add(assignStmt41.getTree());
-			char_literal42=(Token)match(input,27,FOLLOW_27_in_forStmt532);  
+			char_literal42=(Token)match(input,27,FOLLOW_27_in_forStmt531);  
 			stream_27.add(char_literal42);
 
-			pushFollow(FOLLOW_cond_in_forStmt534);
+			pushFollow(FOLLOW_cond_in_forStmt533);
 			cond43=cond();
 			state._fsp--;
 
 			stream_cond.add(cond43.getTree());
-			char_literal44=(Token)match(input,27,FOLLOW_27_in_forStmt536);  
+			char_literal44=(Token)match(input,27,FOLLOW_27_in_forStmt535);  
 			stream_27.add(char_literal44);
 
-			pushFollow(FOLLOW_assignStmt_in_forStmt538);
+			pushFollow(FOLLOW_assignStmt_in_forStmt537);
 			assignStmt45=assignStmt();
 			state._fsp--;
 
 			stream_assignStmt.add(assignStmt45.getTree());
-			char_literal46=(Token)match(input,19,FOLLOW_19_in_forStmt540);  
+			char_literal46=(Token)match(input,19,FOLLOW_19_in_forStmt539);  
 			stream_19.add(char_literal46);
 
-			pushFollow(FOLLOW_stmt_in_forStmt542);
+			pushFollow(FOLLOW_stmt_in_forStmt541);
 			stmt47=stmt();
 			state._fsp--;
 
@@ -1168,7 +1168,7 @@ public class XParser extends Parser {
 			root_0 = (Object)adaptor.nil();
 			// 56:65: -> ^( 'for' assignStmt cond assignStmt stmt )
 			{
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:56:68: ^( 'for' assignStmt cond assignStmt stmt )
+				// gfiles/X.g:56:68: ^( 'for' assignStmt cond assignStmt stmt )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_35.nextNode(), root_1);
@@ -1213,7 +1213,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "cond"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:58:1: cond : numExpr comperator ^ numExpr ;
+	// gfiles/X.g:58:1: cond : numExpr comperator ^ numExpr ;
 	public final XParser.cond_return cond() throws RecognitionException {
 		XParser.cond_return retval = new XParser.cond_return();
 		retval.start = input.LT(1);
@@ -1226,24 +1226,24 @@ public class XParser extends Parser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:58:5: ( numExpr comperator ^ numExpr )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:58:9: numExpr comperator ^ numExpr
+			// gfiles/X.g:58:5: ( numExpr comperator ^ numExpr )
+			// gfiles/X.g:58:9: numExpr comperator ^ numExpr
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_numExpr_in_cond565);
+			pushFollow(FOLLOW_numExpr_in_cond564);
 			numExpr48=numExpr();
 			state._fsp--;
 
 			adaptor.addChild(root_0, numExpr48.getTree());
 
-			pushFollow(FOLLOW_comperator_in_cond567);
+			pushFollow(FOLLOW_comperator_in_cond566);
 			comperator49=comperator();
 			state._fsp--;
 
 			root_0 = (Object)adaptor.becomeRoot(comperator49.getTree(), root_0);
-			pushFollow(FOLLOW_numExpr_in_cond570);
+			pushFollow(FOLLOW_numExpr_in_cond569);
 			numExpr50=numExpr();
 			state._fsp--;
 
@@ -1278,7 +1278,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "comperator"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:59:1: comperator : ( '<' | '=' | '>' );
+	// gfiles/X.g:59:1: comperator : ( '<' | '=' | '>' );
 	public final XParser.comperator_return comperator() throws RecognitionException {
 		XParser.comperator_return retval = new XParser.comperator_return();
 		retval.start = input.LT(1);
@@ -1290,8 +1290,8 @@ public class XParser extends Parser {
 		Object set51_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:59:11: ( '<' | '=' | '>' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:59:11: ( '<' | '=' | '>' )
+			// gfiles/X.g:
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1335,7 +1335,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "modifier"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:60:1: modifier : ( 'read' 'print' | 'read' | 'print' );
+	// gfiles/X.g:60:1: modifier : ( 'read' 'print' | 'read' | 'print' );
 	public final XParser.modifier_return modifier() throws RecognitionException {
 		XParser.modifier_return retval = new XParser.modifier_return();
 		retval.start = input.LT(1);
@@ -1353,7 +1353,7 @@ public class XParser extends Parser {
 		Object string_literal55_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:60:9: ( 'read' 'print' | 'read' | 'print' )
+			// gfiles/X.g:60:9: ( 'read' 'print' | 'read' | 'print' )
 			int alt6=3;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0==40) ) {
@@ -1390,40 +1390,40 @@ public class XParser extends Parser {
 
 			switch (alt6) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:60:12: 'read' 'print'
+					// gfiles/X.g:60:12: 'read' 'print'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					string_literal52=(Token)match(input,40,FOLLOW_40_in_modifier592); 
+					string_literal52=(Token)match(input,40,FOLLOW_40_in_modifier591); 
 					string_literal52_tree = (Object)adaptor.create(string_literal52);
 					adaptor.addChild(root_0, string_literal52_tree);
 
-					string_literal53=(Token)match(input,38,FOLLOW_38_in_modifier594); 
+					string_literal53=(Token)match(input,38,FOLLOW_38_in_modifier593); 
 					string_literal53_tree = (Object)adaptor.create(string_literal53);
 					adaptor.addChild(root_0, string_literal53_tree);
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:60:29: 'read'
+					// gfiles/X.g:60:29: 'read'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					string_literal54=(Token)match(input,40,FOLLOW_40_in_modifier598); 
+					string_literal54=(Token)match(input,40,FOLLOW_40_in_modifier597); 
 					string_literal54_tree = (Object)adaptor.create(string_literal54);
 					adaptor.addChild(root_0, string_literal54_tree);
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:60:38: 'print'
+					// gfiles/X.g:60:38: 'print'
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					string_literal55=(Token)match(input,38,FOLLOW_38_in_modifier602); 
+					string_literal55=(Token)match(input,38,FOLLOW_38_in_modifier601); 
 					string_literal55_tree = (Object)adaptor.create(string_literal55);
 					adaptor.addChild(root_0, string_literal55_tree);
 
@@ -1458,7 +1458,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "type"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:61:1: type : ( 'int' | 'float' | 'string' );
+	// gfiles/X.g:61:1: type : ( 'int' | 'float' | 'string' );
 	public final XParser.type_return type() throws RecognitionException {
 		XParser.type_return retval = new XParser.type_return();
 		retval.start = input.LT(1);
@@ -1470,8 +1470,8 @@ public class XParser extends Parser {
 		Object set56_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:61:5: ( 'int' | 'float' | 'string' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:61:5: ( 'int' | 'float' | 'string' )
+			// gfiles/X.g:
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -1515,7 +1515,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "numExpr"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:1: numExpr : numExpr2 ( ( '+' ^| '-' ^) numExpr2 )* ;
+	// gfiles/X.g:63:1: numExpr : numExpr2 ( ( '+' ^| '-' ^) numExpr2 )* ;
 	public final XParser.numExpr_return numExpr() throws RecognitionException {
 		XParser.numExpr_return retval = new XParser.numExpr_return();
 		retval.start = input.LT(1);
@@ -1531,19 +1531,19 @@ public class XParser extends Parser {
 		Object char_literal59_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:8: ( numExpr2 ( ( '+' ^| '-' ^) numExpr2 )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:12: numExpr2 ( ( '+' ^| '-' ^) numExpr2 )*
+			// gfiles/X.g:63:8: ( numExpr2 ( ( '+' ^| '-' ^) numExpr2 )* )
+			// gfiles/X.g:63:12: numExpr2 ( ( '+' ^| '-' ^) numExpr2 )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_numExpr2_in_numExpr627);
+			pushFollow(FOLLOW_numExpr2_in_numExpr626);
 			numExpr257=numExpr2();
 			state._fsp--;
 
 			adaptor.addChild(root_0, numExpr257.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:21: ( ( '+' ^| '-' ^) numExpr2 )*
+			// gfiles/X.g:63:21: ( ( '+' ^| '-' ^) numExpr2 )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -1554,9 +1554,9 @@ public class XParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:22: ( '+' ^| '-' ^) numExpr2
+					// gfiles/X.g:63:22: ( '+' ^| '-' ^) numExpr2
 					{
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:22: ( '+' ^| '-' ^)
+					// gfiles/X.g:63:22: ( '+' ^| '-' ^)
 					int alt7=2;
 					int LA7_0 = input.LA(1);
 					if ( (LA7_0==21) ) {
@@ -1574,18 +1574,18 @@ public class XParser extends Parser {
 
 					switch (alt7) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:23: '+' ^
+							// gfiles/X.g:63:23: '+' ^
 							{
-							char_literal58=(Token)match(input,21,FOLLOW_21_in_numExpr631); 
+							char_literal58=(Token)match(input,21,FOLLOW_21_in_numExpr630); 
 							char_literal58_tree = (Object)adaptor.create(char_literal58);
 							root_0 = (Object)adaptor.becomeRoot(char_literal58_tree, root_0);
 
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:63:30: '-' ^
+							// gfiles/X.g:63:30: '-' ^
 							{
-							char_literal59=(Token)match(input,22,FOLLOW_22_in_numExpr636); 
+							char_literal59=(Token)match(input,22,FOLLOW_22_in_numExpr635); 
 							char_literal59_tree = (Object)adaptor.create(char_literal59);
 							root_0 = (Object)adaptor.becomeRoot(char_literal59_tree, root_0);
 
@@ -1594,7 +1594,7 @@ public class XParser extends Parser {
 
 					}
 
-					pushFollow(FOLLOW_numExpr2_in_numExpr640);
+					pushFollow(FOLLOW_numExpr2_in_numExpr639);
 					numExpr260=numExpr2();
 					state._fsp--;
 
@@ -1637,7 +1637,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "numExpr2"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:1: numExpr2 : numExpr3 ( ( '*' ^| '/' ^) numExpr3 )* ;
+	// gfiles/X.g:64:1: numExpr2 : numExpr3 ( ( '*' ^| '/' ^) numExpr3 )* ;
 	public final XParser.numExpr2_return numExpr2() throws RecognitionException {
 		XParser.numExpr2_return retval = new XParser.numExpr2_return();
 		retval.start = input.LT(1);
@@ -1653,19 +1653,19 @@ public class XParser extends Parser {
 		Object char_literal63_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:9: ( numExpr3 ( ( '*' ^| '/' ^) numExpr3 )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:12: numExpr3 ( ( '*' ^| '/' ^) numExpr3 )*
+			// gfiles/X.g:64:9: ( numExpr3 ( ( '*' ^| '/' ^) numExpr3 )* )
+			// gfiles/X.g:64:12: numExpr3 ( ( '*' ^| '/' ^) numExpr3 )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_numExpr3_in_numExpr2650);
+			pushFollow(FOLLOW_numExpr3_in_numExpr2649);
 			numExpr361=numExpr3();
 			state._fsp--;
 
 			adaptor.addChild(root_0, numExpr361.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:21: ( ( '*' ^| '/' ^) numExpr3 )*
+			// gfiles/X.g:64:21: ( ( '*' ^| '/' ^) numExpr3 )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -1676,9 +1676,9 @@ public class XParser extends Parser {
 
 				switch (alt10) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:22: ( '*' ^| '/' ^) numExpr3
+					// gfiles/X.g:64:22: ( '*' ^| '/' ^) numExpr3
 					{
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:22: ( '*' ^| '/' ^)
+					// gfiles/X.g:64:22: ( '*' ^| '/' ^)
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0==20) ) {
@@ -1696,18 +1696,18 @@ public class XParser extends Parser {
 
 					switch (alt9) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:23: '*' ^
+							// gfiles/X.g:64:23: '*' ^
 							{
-							char_literal62=(Token)match(input,20,FOLLOW_20_in_numExpr2654); 
+							char_literal62=(Token)match(input,20,FOLLOW_20_in_numExpr2653); 
 							char_literal62_tree = (Object)adaptor.create(char_literal62);
 							root_0 = (Object)adaptor.becomeRoot(char_literal62_tree, root_0);
 
 							}
 							break;
 						case 2 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:64:30: '/' ^
+							// gfiles/X.g:64:30: '/' ^
 							{
-							char_literal63=(Token)match(input,24,FOLLOW_24_in_numExpr2659); 
+							char_literal63=(Token)match(input,24,FOLLOW_24_in_numExpr2658); 
 							char_literal63_tree = (Object)adaptor.create(char_literal63);
 							root_0 = (Object)adaptor.becomeRoot(char_literal63_tree, root_0);
 
@@ -1716,7 +1716,7 @@ public class XParser extends Parser {
 
 					}
 
-					pushFollow(FOLLOW_numExpr3_in_numExpr2663);
+					pushFollow(FOLLOW_numExpr3_in_numExpr2662);
 					numExpr364=numExpr3();
 					state._fsp--;
 
@@ -1759,7 +1759,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "numExpr3"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:1: numExpr3 : ( INTCONST | FLOATCONST | STRINGCONST | ID | '(' numExpr ')' -> numExpr |op= '-' number -> ^( UMINUS[op, \"UMINUS\"] number ) );
+	// gfiles/X.g:65:1: numExpr3 : ( INTCONST | FLOATCONST | STRINGCONST | ID | '(' numExpr ')' -> numExpr |op= '-' number -> ^( UMINUS[op, \"UMINUS\"] number ) );
 	public final XParser.numExpr3_return numExpr3() throws RecognitionException {
 		XParser.numExpr3_return retval = new XParser.numExpr3_return();
 		retval.start = input.LT(1);
@@ -1790,7 +1790,7 @@ public class XParser extends Parser {
 		RewriteRuleSubtreeStream stream_numExpr=new RewriteRuleSubtreeStream(adaptor,"rule numExpr");
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:9: ( INTCONST | FLOATCONST | STRINGCONST | ID | '(' numExpr ')' -> numExpr |op= '-' number -> ^( UMINUS[op, \"UMINUS\"] number ) )
+			// gfiles/X.g:65:9: ( INTCONST | FLOATCONST | STRINGCONST | ID | '(' numExpr ')' -> numExpr |op= '-' number -> ^( UMINUS[op, \"UMINUS\"] number ) )
 			int alt11=6;
 			switch ( input.LA(1) ) {
 			case INTCONST:
@@ -1830,65 +1830,65 @@ public class XParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:12: INTCONST
+					// gfiles/X.g:65:12: INTCONST
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					INTCONST65=(Token)match(input,INTCONST,FOLLOW_INTCONST_in_numExpr3673); 
+					INTCONST65=(Token)match(input,INTCONST,FOLLOW_INTCONST_in_numExpr3672); 
 					INTCONST65_tree = (Object)adaptor.create(INTCONST65);
 					adaptor.addChild(root_0, INTCONST65_tree);
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:23: FLOATCONST
+					// gfiles/X.g:65:23: FLOATCONST
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					FLOATCONST66=(Token)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_numExpr3677); 
+					FLOATCONST66=(Token)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_numExpr3676); 
 					FLOATCONST66_tree = (Object)adaptor.create(FLOATCONST66);
 					adaptor.addChild(root_0, FLOATCONST66_tree);
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:36: STRINGCONST
+					// gfiles/X.g:65:36: STRINGCONST
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					STRINGCONST67=(Token)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_numExpr3681); 
+					STRINGCONST67=(Token)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_numExpr3680); 
 					STRINGCONST67_tree = (Object)adaptor.create(STRINGCONST67);
 					adaptor.addChild(root_0, STRINGCONST67_tree);
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:50: ID
+					// gfiles/X.g:65:50: ID
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					ID68=(Token)match(input,ID,FOLLOW_ID_in_numExpr3685); 
+					ID68=(Token)match(input,ID,FOLLOW_ID_in_numExpr3684); 
 					ID68_tree = (Object)adaptor.create(ID68);
 					adaptor.addChild(root_0, ID68_tree);
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:55: '(' numExpr ')'
+					// gfiles/X.g:65:55: '(' numExpr ')'
 					{
-					char_literal69=(Token)match(input,18,FOLLOW_18_in_numExpr3689);  
+					char_literal69=(Token)match(input,18,FOLLOW_18_in_numExpr3688);  
 					stream_18.add(char_literal69);
 
-					pushFollow(FOLLOW_numExpr_in_numExpr3691);
+					pushFollow(FOLLOW_numExpr_in_numExpr3690);
 					numExpr70=numExpr();
 					state._fsp--;
 
 					stream_numExpr.add(numExpr70.getTree());
-					char_literal71=(Token)match(input,19,FOLLOW_19_in_numExpr3693);  
+					char_literal71=(Token)match(input,19,FOLLOW_19_in_numExpr3692);  
 					stream_19.add(char_literal71);
 
 					// AST REWRITE
@@ -1913,12 +1913,12 @@ public class XParser extends Parser {
 					}
 					break;
 				case 6 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:83: op= '-' number
+					// gfiles/X.g:65:83: op= '-' number
 					{
-					op=(Token)match(input,22,FOLLOW_22_in_numExpr3702);  
+					op=(Token)match(input,22,FOLLOW_22_in_numExpr3701);  
 					stream_22.add(op);
 
-					pushFollow(FOLLOW_number_in_numExpr3704);
+					pushFollow(FOLLOW_number_in_numExpr3703);
 					number72=number();
 					state._fsp--;
 
@@ -1936,7 +1936,7 @@ public class XParser extends Parser {
 					root_0 = (Object)adaptor.nil();
 					// 65:97: -> ^( UMINUS[op, \"UMINUS\"] number )
 					{
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:65:100: ^( UMINUS[op, \"UMINUS\"] number )
+						// gfiles/X.g:65:100: ^( UMINUS[op, \"UMINUS\"] number )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(UMINUS, op, "UMINUS"), root_1);
@@ -1980,7 +1980,7 @@ public class XParser extends Parser {
 
 
 	// $ANTLR start "number"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:66:1: number : ( INTCONST | FLOATCONST );
+	// gfiles/X.g:66:1: number : ( INTCONST | FLOATCONST );
 	public final XParser.number_return number() throws RecognitionException {
 		XParser.number_return retval = new XParser.number_return();
 		retval.start = input.LT(1);
@@ -1992,8 +1992,8 @@ public class XParser extends Parser {
 		Object set73_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:66:7: ( INTCONST | FLOATCONST )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:66:7: ( INTCONST | FLOATCONST )
+			// gfiles/X.g:
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -2032,75 +2032,75 @@ public class XParser extends Parser {
 
 
 
-	public static final BitSet FOLLOW_39_in_program308 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_ID_in_program310 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_program312 = new BitSet(new long[]{0x0000014080000200L});
-	public static final BitSet FOLLOW_declist_in_program314 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_block_in_program316 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_23_in_program318 = new BitSet(new long[]{0x0000000000000000L});
-	public static final BitSet FOLLOW_EOF_in_program320 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_declaration_in_declist344 = new BitSet(new long[]{0x0000014000000202L});
-	public static final BitSet FOLLOW_31_in_block354 = new BitSet(new long[]{0x0000081A80000200L});
-	public static final BitSet FOLLOW_stmtlist_in_block356 = new BitSet(new long[]{0x0000000200000000L});
-	public static final BitSet FOLLOW_33_in_block358 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_stmtWithSemi_in_stmtlist374 = new BitSet(new long[]{0x0000081880000202L});
-	public static final BitSet FOLLOW_stmt_in_stmtWithSemi382 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_stmtWithSemi384 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assignStmt_in_stmt396 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condStmt_in_stmt400 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whileStmt_in_stmt404 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forStmt_in_stmt408 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_block_in_stmt412 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_modifier_in_declaration418 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_ID_in_declaration421 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_25_in_declaration423 = new BitSet(new long[]{0x0000022400000000L});
-	public static final BitSet FOLLOW_type_in_declaration425 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_declaration427 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_assignStmt448 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_26_in_assignStmt450 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_numExpr_in_assignStmt452 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_36_in_condStmt470 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_cond_in_condStmt473 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_42_in_condStmt475 = new BitSet(new long[]{0x0000081880000200L});
-	public static final BitSet FOLLOW_stmt_in_condStmt478 = new BitSet(new long[]{0x0000000100000002L});
-	public static final BitSet FOLLOW_32_in_condStmt489 = new BitSet(new long[]{0x0000081880000200L});
-	public static final BitSet FOLLOW_stmt_in_condStmt492 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_43_in_whileStmt501 = new BitSet(new long[]{0x0000000000040000L});
-	public static final BitSet FOLLOW_18_in_whileStmt503 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_cond_in_whileStmt505 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_19_in_whileStmt507 = new BitSet(new long[]{0x0000081880000200L});
-	public static final BitSet FOLLOW_stmt_in_whileStmt509 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_35_in_forStmt526 = new BitSet(new long[]{0x0000000000040000L});
-	public static final BitSet FOLLOW_18_in_forStmt528 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_assignStmt_in_forStmt530 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_forStmt532 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_cond_in_forStmt534 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_27_in_forStmt536 = new BitSet(new long[]{0x0000000000000200L});
-	public static final BitSet FOLLOW_assignStmt_in_forStmt538 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_19_in_forStmt540 = new BitSet(new long[]{0x0000081880000200L});
-	public static final BitSet FOLLOW_stmt_in_forStmt542 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_numExpr_in_cond565 = new BitSet(new long[]{0x0000000070000000L});
-	public static final BitSet FOLLOW_comperator_in_cond567 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_numExpr_in_cond570 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_40_in_modifier592 = new BitSet(new long[]{0x0000004000000000L});
-	public static final BitSet FOLLOW_38_in_modifier594 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_40_in_modifier598 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_38_in_modifier602 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_numExpr2_in_numExpr627 = new BitSet(new long[]{0x0000000000600002L});
-	public static final BitSet FOLLOW_21_in_numExpr631 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_22_in_numExpr636 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_numExpr2_in_numExpr640 = new BitSet(new long[]{0x0000000000600002L});
-	public static final BitSet FOLLOW_numExpr3_in_numExpr2650 = new BitSet(new long[]{0x0000000001100002L});
-	public static final BitSet FOLLOW_20_in_numExpr2654 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_24_in_numExpr2659 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_numExpr3_in_numExpr2663 = new BitSet(new long[]{0x0000000001100002L});
-	public static final BitSet FOLLOW_INTCONST_in_numExpr3673 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_FLOATCONST_in_numExpr3677 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRINGCONST_in_numExpr3681 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_numExpr3685 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_18_in_numExpr3689 = new BitSet(new long[]{0x0000000000444700L});
-	public static final BitSet FOLLOW_numExpr_in_numExpr3691 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_19_in_numExpr3693 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_22_in_numExpr3702 = new BitSet(new long[]{0x0000000000000500L});
-	public static final BitSet FOLLOW_number_in_numExpr3704 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_39_in_program307 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_ID_in_program309 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_program311 = new BitSet(new long[]{0x0000014080000200L});
+	public static final BitSet FOLLOW_declist_in_program313 = new BitSet(new long[]{0x0000000080000000L});
+	public static final BitSet FOLLOW_block_in_program315 = new BitSet(new long[]{0x0000000000800000L});
+	public static final BitSet FOLLOW_23_in_program317 = new BitSet(new long[]{0x0000000000000000L});
+	public static final BitSet FOLLOW_EOF_in_program319 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_declaration_in_declist343 = new BitSet(new long[]{0x0000014000000202L});
+	public static final BitSet FOLLOW_31_in_block353 = new BitSet(new long[]{0x0000081A80000200L});
+	public static final BitSet FOLLOW_stmtlist_in_block355 = new BitSet(new long[]{0x0000000200000000L});
+	public static final BitSet FOLLOW_33_in_block357 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_stmtWithSemi_in_stmtlist373 = new BitSet(new long[]{0x0000081880000202L});
+	public static final BitSet FOLLOW_stmt_in_stmtWithSemi381 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_stmtWithSemi383 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assignStmt_in_stmt395 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condStmt_in_stmt399 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whileStmt_in_stmt403 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forStmt_in_stmt407 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_block_in_stmt411 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_modifier_in_declaration417 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_ID_in_declaration420 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_25_in_declaration422 = new BitSet(new long[]{0x0000022400000000L});
+	public static final BitSet FOLLOW_type_in_declaration424 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_declaration426 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_assignStmt447 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_26_in_assignStmt449 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_numExpr_in_assignStmt451 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_36_in_condStmt469 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_cond_in_condStmt472 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_42_in_condStmt474 = new BitSet(new long[]{0x0000081880000200L});
+	public static final BitSet FOLLOW_stmt_in_condStmt477 = new BitSet(new long[]{0x0000000100000002L});
+	public static final BitSet FOLLOW_32_in_condStmt488 = new BitSet(new long[]{0x0000081880000200L});
+	public static final BitSet FOLLOW_stmt_in_condStmt491 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_43_in_whileStmt500 = new BitSet(new long[]{0x0000000000040000L});
+	public static final BitSet FOLLOW_18_in_whileStmt502 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_cond_in_whileStmt504 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_19_in_whileStmt506 = new BitSet(new long[]{0x0000081880000200L});
+	public static final BitSet FOLLOW_stmt_in_whileStmt508 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_35_in_forStmt525 = new BitSet(new long[]{0x0000000000040000L});
+	public static final BitSet FOLLOW_18_in_forStmt527 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_assignStmt_in_forStmt529 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_forStmt531 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_cond_in_forStmt533 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_27_in_forStmt535 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_assignStmt_in_forStmt537 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_19_in_forStmt539 = new BitSet(new long[]{0x0000081880000200L});
+	public static final BitSet FOLLOW_stmt_in_forStmt541 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_numExpr_in_cond564 = new BitSet(new long[]{0x0000000070000000L});
+	public static final BitSet FOLLOW_comperator_in_cond566 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_numExpr_in_cond569 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_40_in_modifier591 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_38_in_modifier593 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_40_in_modifier597 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_38_in_modifier601 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_numExpr2_in_numExpr626 = new BitSet(new long[]{0x0000000000600002L});
+	public static final BitSet FOLLOW_21_in_numExpr630 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_22_in_numExpr635 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_numExpr2_in_numExpr639 = new BitSet(new long[]{0x0000000000600002L});
+	public static final BitSet FOLLOW_numExpr3_in_numExpr2649 = new BitSet(new long[]{0x0000000001100002L});
+	public static final BitSet FOLLOW_20_in_numExpr2653 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_24_in_numExpr2658 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_numExpr3_in_numExpr2662 = new BitSet(new long[]{0x0000000001100002L});
+	public static final BitSet FOLLOW_INTCONST_in_numExpr3672 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FLOATCONST_in_numExpr3676 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRINGCONST_in_numExpr3680 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_numExpr3684 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_18_in_numExpr3688 = new BitSet(new long[]{0x0000000000444700L});
+	public static final BitSet FOLLOW_numExpr_in_numExpr3690 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_19_in_numExpr3692 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_22_in_numExpr3701 = new BitSet(new long[]{0x0000000000000500L});
+	public static final BitSet FOLLOW_number_in_numExpr3703 = new BitSet(new long[]{0x0000000000000002L});
 }

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g 2019-05-23 17:33:59
+// $ANTLR 3.5.2 gfiles/AssignCount.g 2019-05-23 18:45:58
 package de.dhbw.compiler.antlrxtreegrammar;
 
 import org.antlr.runtime.*;
@@ -86,7 +86,7 @@ public class AssignCount extends TreeParser {
 		return adaptor;
 	}
 	@Override public String[] getTokenNames() { return AssignCount.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g"; }
+	@Override public String getGrammarFileName() { return "gfiles/AssignCount.g"; }
 
 
 
@@ -104,7 +104,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "decl"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:22:1: decl : ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) );
+	// gfiles/AssignCount.g:22:1: decl : ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) );
 	public final AssignCount.decl_return decl() throws RecognitionException {
 		AssignCount.decl_return retval = new AssignCount.decl_return();
 		retval.start = input.LT(1);
@@ -146,7 +146,7 @@ public class AssignCount extends TreeParser {
 		CommonTree string_literal16_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:22:5: ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) )
+			// gfiles/AssignCount.g:22:5: ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) )
 			int alt1=4;
 			int LA1_0 = input.LA(1);
 			if ( (LA1_0==DECL) ) {
@@ -262,7 +262,7 @@ public class AssignCount extends TreeParser {
 
 			switch (alt1) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:22:8: ^( DECL ID type )
+					// gfiles/AssignCount.g:22:8: ^( DECL ID type )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -303,7 +303,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:23:6: ^( DECL ID type 'read' )
+					// gfiles/AssignCount.g:23:6: ^( DECL ID type 'read' )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -351,7 +351,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:24:6: ^( DECL ID type 'print' )
+					// gfiles/AssignCount.g:24:6: ^( DECL ID type 'print' )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -399,7 +399,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:25:6: ^( DECL ID type 'read' 'print' )
+					// gfiles/AssignCount.g:25:6: ^( DECL ID type 'read' 'print' )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -478,7 +478,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "type"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:27:1: type : ( 'int' | 'float' | 'string' );
+	// gfiles/AssignCount.g:27:1: type : ( 'int' | 'float' | 'string' );
 	public final AssignCount.type_return type() throws RecognitionException {
 		AssignCount.type_return retval = new AssignCount.type_return();
 		retval.start = input.LT(1);
@@ -494,8 +494,8 @@ public class AssignCount extends TreeParser {
 		CommonTree set17_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:27:5: ( 'int' | 'float' | 'string' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:
+			// gfiles/AssignCount.g:27:5: ( 'int' | 'float' | 'string' )
+			// gfiles/AssignCount.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -543,7 +543,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "decllist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:29:1: decllist : ^( DECLLIST ( decl )* ) ;
+	// gfiles/AssignCount.g:29:1: decllist : ^( DECLLIST ( decl )* ) ;
 	public final AssignCount.decllist_return decllist() throws RecognitionException {
 		AssignCount.decllist_return retval = new AssignCount.decllist_return();
 		retval.start = input.LT(1);
@@ -560,8 +560,8 @@ public class AssignCount extends TreeParser {
 		CommonTree DECLLIST18_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:29:9: ( ^( DECLLIST ( decl )* ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:29:11: ^( DECLLIST ( decl )* )
+			// gfiles/AssignCount.g:29:9: ( ^( DECLLIST ( decl )* ) )
+			// gfiles/AssignCount.g:29:11: ^( DECLLIST ( decl )* )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -580,7 +580,7 @@ public class AssignCount extends TreeParser {
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:29:22: ( decl )*
+				// gfiles/AssignCount.g:29:22: ( decl )*
 				loop2:
 				while (true) {
 					int alt2=2;
@@ -591,7 +591,7 @@ public class AssignCount extends TreeParser {
 
 					switch (alt2) {
 					case 1 :
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:29:22: decl
+						// gfiles/AssignCount.g:29:22: decl
 						{
 						_last = (CommonTree)input.LT(1);
 						pushFollow(FOLLOW_decl_in_decllist146);
@@ -640,7 +640,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "expr"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:32:1: expr : ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
+	// gfiles/AssignCount.g:32:1: expr : ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
 	public final AssignCount.expr_return expr() throws RecognitionException {
 		AssignCount.expr_return retval = new AssignCount.expr_return();
 		retval.start = input.LT(1);
@@ -674,7 +674,7 @@ public class AssignCount extends TreeParser {
 		CommonTree STRINGCONST30_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:32:5: ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
+			// gfiles/AssignCount.g:32:5: ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
 			int alt3=7;
 			switch ( input.LA(1) ) {
 			case 22:
@@ -754,7 +754,7 @@ public class AssignCount extends TreeParser {
 			}
 			switch (alt3) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:32:8: ^( ( '+' | '-' | '*' | '/' ) expr expr )
+					// gfiles/AssignCount.g:32:8: ^( ( '+' | '-' | '*' | '/' ) expr expr )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -803,7 +803,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:33:6: INTCONST
+					// gfiles/AssignCount.g:33:6: INTCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -818,7 +818,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:33:17: ^( UMINUS INTCONST )
+					// gfiles/AssignCount.g:33:17: ^( UMINUS INTCONST )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -852,7 +852,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:34:6: FLOATCONST
+					// gfiles/AssignCount.g:34:6: FLOATCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -867,7 +867,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:34:19: ^( UMINUS FLOATCONST )
+					// gfiles/AssignCount.g:34:19: ^( UMINUS FLOATCONST )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -901,7 +901,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 6 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:35:6: ID
+					// gfiles/AssignCount.g:35:6: ID
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -916,7 +916,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 7 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:35:11: STRINGCONST
+					// gfiles/AssignCount.g:35:11: STRINGCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -955,7 +955,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "assignstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:38:1: assignstat : ^( ':=' ID expr ) ;
+	// gfiles/AssignCount.g:38:1: assignstat : ^( ':=' ID expr ) ;
 	public final AssignCount.assignstat_return assignstat() throws RecognitionException {
 		AssignCount.assignstat_return retval = new AssignCount.assignstat_return();
 		retval.start = input.LT(1);
@@ -974,8 +974,8 @@ public class AssignCount extends TreeParser {
 		CommonTree ID32_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:38:11: ( ^( ':=' ID expr ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:38:13: ^( ':=' ID expr )
+			// gfiles/AssignCount.g:38:11: ( ^( ':=' ID expr ) )
+			// gfiles/AssignCount.g:38:13: ^( ':=' ID expr )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1039,7 +1039,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "cond"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:41:1: cond : ^( comp expr expr ) ;
+	// gfiles/AssignCount.g:41:1: cond : ^( comp expr expr ) ;
 	public final AssignCount.cond_return cond() throws RecognitionException {
 		AssignCount.cond_return retval = new AssignCount.cond_return();
 		retval.start = input.LT(1);
@@ -1056,8 +1056,8 @@ public class AssignCount extends TreeParser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:41:5: ( ^( comp expr expr ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:41:8: ^( comp expr expr )
+			// gfiles/AssignCount.g:41:5: ( ^( comp expr expr ) )
+			// gfiles/AssignCount.g:41:8: ^( comp expr expr )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1120,7 +1120,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "comp"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:42:1: comp : ( '<' | '>' | '=' );
+	// gfiles/AssignCount.g:42:1: comp : ( '<' | '>' | '=' );
 	public final AssignCount.comp_return comp() throws RecognitionException {
 		AssignCount.comp_return retval = new AssignCount.comp_return();
 		retval.start = input.LT(1);
@@ -1136,8 +1136,8 @@ public class AssignCount extends TreeParser {
 		CommonTree set37_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:42:5: ( '<' | '>' | '=' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:
+			// gfiles/AssignCount.g:42:5: ( '<' | '>' | '=' )
+			// gfiles/AssignCount.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1185,7 +1185,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "condstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:45:1: condstat : ^( 'if' cond stat ( stat )? ) ;
+	// gfiles/AssignCount.g:45:1: condstat : ^( 'if' cond stat ( stat )? ) ;
 	public final AssignCount.condstat_return condstat() throws RecognitionException {
 		AssignCount.condstat_return retval = new AssignCount.condstat_return();
 		retval.start = input.LT(1);
@@ -1204,8 +1204,8 @@ public class AssignCount extends TreeParser {
 		CommonTree string_literal38_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:45:9: ( ^( 'if' cond stat ( stat )? ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:45:11: ^( 'if' cond stat ( stat )? )
+			// gfiles/AssignCount.g:45:9: ( ^( 'if' cond stat ( stat )? ) )
+			// gfiles/AssignCount.g:45:11: ^( 'if' cond stat ( stat )? )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1237,7 +1237,7 @@ public class AssignCount extends TreeParser {
 
 			adaptor.addChild(root_1, stat40.getTree());
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:45:28: ( stat )?
+			// gfiles/AssignCount.g:45:28: ( stat )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==STATLIST||LA4_0==28||(LA4_0 >= 37 && LA4_0 <= 38)||LA4_0==45) ) {
@@ -1245,7 +1245,7 @@ public class AssignCount extends TreeParser {
 			}
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:45:28: stat
+					// gfiles/AssignCount.g:45:28: stat
 					{
 					_last = (CommonTree)input.LT(1);
 					pushFollow(FOLLOW_stat_in_condstat278);
@@ -1290,7 +1290,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "whilestat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:48:1: whilestat : ^( 'while' cond stat ) ;
+	// gfiles/AssignCount.g:48:1: whilestat : ^( 'while' cond stat ) ;
 	public final AssignCount.whilestat_return whilestat() throws RecognitionException {
 		AssignCount.whilestat_return retval = new AssignCount.whilestat_return();
 		retval.start = input.LT(1);
@@ -1308,8 +1308,8 @@ public class AssignCount extends TreeParser {
 		CommonTree string_literal42_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:48:10: ( ^( 'while' cond stat ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:48:12: ^( 'while' cond stat )
+			// gfiles/AssignCount.g:48:10: ( ^( 'while' cond stat ) )
+			// gfiles/AssignCount.g:48:12: ^( 'while' cond stat )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1372,7 +1372,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "forstat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:49:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
+	// gfiles/AssignCount.g:49:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
 	public final AssignCount.forstat_return forstat() throws RecognitionException {
 		AssignCount.forstat_return retval = new AssignCount.forstat_return();
 		retval.start = input.LT(1);
@@ -1392,8 +1392,8 @@ public class AssignCount extends TreeParser {
 		CommonTree string_literal45_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:49:8: ( ^( 'for' assignstat cond assignstat stat ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:49:10: ^( 'for' assignstat cond assignstat stat )
+			// gfiles/AssignCount.g:49:8: ( ^( 'for' assignstat cond assignstat stat ) )
+			// gfiles/AssignCount.g:49:10: ^( 'for' assignstat cond assignstat stat )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1470,7 +1470,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "stat"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
+	// gfiles/AssignCount.g:52:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
 	public final AssignCount.stat_return stat() throws RecognitionException {
 		AssignCount.stat_return retval = new AssignCount.stat_return();
 		retval.start = input.LT(1);
@@ -1489,7 +1489,7 @@ public class AssignCount extends TreeParser {
 
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:5: ( assignstat | condstat | whilestat | forstat | statlist )
+			// gfiles/AssignCount.g:52:5: ( assignstat | condstat | whilestat | forstat | statlist )
 			int alt5=5;
 			switch ( input.LA(1) ) {
 			case 28:
@@ -1524,7 +1524,7 @@ public class AssignCount extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:8: assignstat
+					// gfiles/AssignCount.g:52:8: assignstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1539,7 +1539,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:21: condstat
+					// gfiles/AssignCount.g:52:21: condstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1554,7 +1554,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:32: whilestat
+					// gfiles/AssignCount.g:52:32: whilestat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1569,7 +1569,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:44: forstat
+					// gfiles/AssignCount.g:52:44: forstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1584,7 +1584,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 5 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:52:54: statlist
+					// gfiles/AssignCount.g:52:54: statlist
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -1623,7 +1623,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "statlist"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:54:1: statlist : ^( STATLIST ( stat )* ) ;
+	// gfiles/AssignCount.g:54:1: statlist : ^( STATLIST ( stat )* ) ;
 	public final AssignCount.statlist_return statlist() throws RecognitionException {
 		AssignCount.statlist_return retval = new AssignCount.statlist_return();
 		retval.start = input.LT(1);
@@ -1640,8 +1640,8 @@ public class AssignCount extends TreeParser {
 		CommonTree STATLIST55_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:54:9: ( ^( STATLIST ( stat )* ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:54:11: ^( STATLIST ( stat )* )
+			// gfiles/AssignCount.g:54:9: ( ^( STATLIST ( stat )* ) )
+			// gfiles/AssignCount.g:54:11: ^( STATLIST ( stat )* )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1660,7 +1660,7 @@ public class AssignCount extends TreeParser {
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:54:22: ( stat )*
+				// gfiles/AssignCount.g:54:22: ( stat )*
 				loop6:
 				while (true) {
 					int alt6=2;
@@ -1671,7 +1671,7 @@ public class AssignCount extends TreeParser {
 
 					switch (alt6) {
 					case 1 :
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:54:22: stat
+						// gfiles/AssignCount.g:54:22: stat
 						{
 						_last = (CommonTree)input.LT(1);
 						pushFollow(FOLLOW_stat_in_statlist347);
@@ -1720,7 +1720,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "program"
-	// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:57:1: program : ^( 'program' ID decllist statlist ) ;
+	// gfiles/AssignCount.g:57:1: program : ^( 'program' ID decllist statlist ) ;
 	public final AssignCount.program_return program() throws RecognitionException {
 		AssignCount.program_return retval = new AssignCount.program_return();
 		retval.start = input.LT(1);
@@ -1740,8 +1740,8 @@ public class AssignCount extends TreeParser {
 		CommonTree ID58_tree=null;
 
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:57:8: ( ^( 'program' ID decllist statlist ) )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\09.Antlr Baumgrammatiken\\CC-Praxis-Antlr Baumgrammatiken-Leer\\src\\de\\dhbw\\compiler\\antlrxtreegrammar\\AssignCount.g:57:10: ^( 'program' ID decllist statlist )
+			// gfiles/AssignCount.g:57:8: ( ^( 'program' ID decllist statlist ) )
+			// gfiles/AssignCount.g:57:10: ^( 'program' ID decllist statlist )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g 2019-05-23 13:19:42
+// $ANTLR 3.5.2 gfiles/X.g 2019-05-23 18:48:27
 package de.dhbw.compiler.antlrxparser;
 
 import org.antlr.runtime.*;
@@ -65,15 +65,15 @@ public class XLexer extends Lexer {
 	public XLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g"; }
+	@Override public String getGrammarFileName() { return "gfiles/X.g"; }
 
 	// $ANTLR start "T__18"
 	public final void mT__18() throws RecognitionException {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:9:7: ( '(' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:9:9: '('
+			// gfiles/X.g:9:7: ( '(' )
+			// gfiles/X.g:9:9: '('
 			{
 			match('('); if (state.failed) return;
 			}
@@ -92,8 +92,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:10:7: ( ')' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:10:9: ')'
+			// gfiles/X.g:10:7: ( ')' )
+			// gfiles/X.g:10:9: ')'
 			{
 			match(')'); if (state.failed) return;
 			}
@@ -112,8 +112,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:11:7: ( '*' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:11:9: '*'
+			// gfiles/X.g:11:7: ( '*' )
+			// gfiles/X.g:11:9: '*'
 			{
 			match('*'); if (state.failed) return;
 			}
@@ -132,8 +132,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__21;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:12:7: ( '+' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:12:9: '+'
+			// gfiles/X.g:12:7: ( '+' )
+			// gfiles/X.g:12:9: '+'
 			{
 			match('+'); if (state.failed) return;
 			}
@@ -152,8 +152,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__22;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:13:7: ( '-' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:13:9: '-'
+			// gfiles/X.g:13:7: ( '-' )
+			// gfiles/X.g:13:9: '-'
 			{
 			match('-'); if (state.failed) return;
 			}
@@ -172,8 +172,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__23;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:14:7: ( '.' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:14:9: '.'
+			// gfiles/X.g:14:7: ( '.' )
+			// gfiles/X.g:14:9: '.'
 			{
 			match('.'); if (state.failed) return;
 			}
@@ -192,8 +192,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__24;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:15:7: ( '/' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:15:9: '/'
+			// gfiles/X.g:15:7: ( '/' )
+			// gfiles/X.g:15:9: '/'
 			{
 			match('/'); if (state.failed) return;
 			}
@@ -212,8 +212,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:16:7: ( ':' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:16:9: ':'
+			// gfiles/X.g:16:7: ( ':' )
+			// gfiles/X.g:16:9: ':'
 			{
 			match(':'); if (state.failed) return;
 			}
@@ -232,8 +232,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:17:7: ( ':=' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:17:9: ':='
+			// gfiles/X.g:17:7: ( ':=' )
+			// gfiles/X.g:17:9: ':='
 			{
 			match(":="); if (state.failed) return;
 
@@ -253,8 +253,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:18:7: ( ';' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:18:9: ';'
+			// gfiles/X.g:18:7: ( ';' )
+			// gfiles/X.g:18:9: ';'
 			{
 			match(';'); if (state.failed) return;
 			}
@@ -273,8 +273,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:19:7: ( '<' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:19:9: '<'
+			// gfiles/X.g:19:7: ( '<' )
+			// gfiles/X.g:19:9: '<'
 			{
 			match('<'); if (state.failed) return;
 			}
@@ -293,8 +293,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:20:7: ( '=' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:20:9: '='
+			// gfiles/X.g:20:7: ( '=' )
+			// gfiles/X.g:20:9: '='
 			{
 			match('='); if (state.failed) return;
 			}
@@ -313,8 +313,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:21:7: ( '>' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:21:9: '>'
+			// gfiles/X.g:21:7: ( '>' )
+			// gfiles/X.g:21:9: '>'
 			{
 			match('>'); if (state.failed) return;
 			}
@@ -333,8 +333,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:22:7: ( 'begin' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:22:9: 'begin'
+			// gfiles/X.g:22:7: ( 'begin' )
+			// gfiles/X.g:22:9: 'begin'
 			{
 			match("begin"); if (state.failed) return;
 
@@ -354,8 +354,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:23:7: ( 'else' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:23:9: 'else'
+			// gfiles/X.g:23:7: ( 'else' )
+			// gfiles/X.g:23:9: 'else'
 			{
 			match("else"); if (state.failed) return;
 
@@ -375,8 +375,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:24:7: ( 'end' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:24:9: 'end'
+			// gfiles/X.g:24:7: ( 'end' )
+			// gfiles/X.g:24:9: 'end'
 			{
 			match("end"); if (state.failed) return;
 
@@ -396,8 +396,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:25:7: ( 'float' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:25:9: 'float'
+			// gfiles/X.g:25:7: ( 'float' )
+			// gfiles/X.g:25:9: 'float'
 			{
 			match("float"); if (state.failed) return;
 
@@ -417,8 +417,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__35;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:26:7: ( 'for' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:26:9: 'for'
+			// gfiles/X.g:26:7: ( 'for' )
+			// gfiles/X.g:26:9: 'for'
 			{
 			match("for"); if (state.failed) return;
 
@@ -438,8 +438,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__36;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:27:7: ( 'if' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:27:9: 'if'
+			// gfiles/X.g:27:7: ( 'if' )
+			// gfiles/X.g:27:9: 'if'
 			{
 			match("if"); if (state.failed) return;
 
@@ -459,8 +459,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__37;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:28:7: ( 'int' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:28:9: 'int'
+			// gfiles/X.g:28:7: ( 'int' )
+			// gfiles/X.g:28:9: 'int'
 			{
 			match("int"); if (state.failed) return;
 
@@ -480,8 +480,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__38;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:29:7: ( 'print' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:29:9: 'print'
+			// gfiles/X.g:29:7: ( 'print' )
+			// gfiles/X.g:29:9: 'print'
 			{
 			match("print"); if (state.failed) return;
 
@@ -501,8 +501,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__39;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:30:7: ( 'program' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:30:9: 'program'
+			// gfiles/X.g:30:7: ( 'program' )
+			// gfiles/X.g:30:9: 'program'
 			{
 			match("program"); if (state.failed) return;
 
@@ -522,8 +522,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__40;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:31:7: ( 'read' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:31:9: 'read'
+			// gfiles/X.g:31:7: ( 'read' )
+			// gfiles/X.g:31:9: 'read'
 			{
 			match("read"); if (state.failed) return;
 
@@ -543,8 +543,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__41;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:32:7: ( 'string' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:32:9: 'string'
+			// gfiles/X.g:32:7: ( 'string' )
+			// gfiles/X.g:32:9: 'string'
 			{
 			match("string"); if (state.failed) return;
 
@@ -564,8 +564,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__42;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:7: ( 'then' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:9: 'then'
+			// gfiles/X.g:33:7: ( 'then' )
+			// gfiles/X.g:33:9: 'then'
 			{
 			match("then"); if (state.failed) return;
 
@@ -585,8 +585,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = T__43;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:34:7: ( 'while' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:34:9: 'while'
+			// gfiles/X.g:34:7: ( 'while' )
+			// gfiles/X.g:34:9: 'while'
 			{
 			match("while"); if (state.failed) return;
 
@@ -604,8 +604,8 @@ public class XLexer extends Lexer {
 	// $ANTLR start "DIGIT0"
 	public final void mDIGIT0() throws RecognitionException {
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:30:16: ( '0' .. '9' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:30:16: ( '0' .. '9' )
+			// gfiles/X.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 				input.consume();
@@ -629,8 +629,8 @@ public class XLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:31:15: ( '1' .. '9' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:31:15: ( '1' .. '9' )
+			// gfiles/X.g:
 			{
 			if ( (input.LA(1) >= '1' && input.LA(1) <= '9') ) {
 				input.consume();
@@ -654,8 +654,8 @@ public class XLexer extends Lexer {
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:32:16: ( 'a' .. 'z' | 'A' .. 'Z' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+			// gfiles/X.g:32:16: ( 'a' .. 'z' | 'A' .. 'Z' )
+			// gfiles/X.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -679,7 +679,7 @@ public class XLexer extends Lexer {
 	// $ANTLR start "SYMBOL"
 	public final void mSYMBOL() throws RecognitionException {
 		try {
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:16: ( '\\\\\"' | '.' | ':' | ' ' )
+			// gfiles/X.g:33:16: ( '\\\\\"' | '.' | ':' | ' ' )
 			int alt1=4;
 			switch ( input.LA(1) ) {
 			case '\\':
@@ -710,26 +710,26 @@ public class XLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:18: '\\\\\"'
+					// gfiles/X.g:33:18: '\\\\\"'
 					{
 					match("\\\""); if (state.failed) return;
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:26: '.'
+					// gfiles/X.g:33:26: '.'
 					{
 					match('.'); if (state.failed) return;
 					}
 					break;
 				case 3 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:32: ':'
+					// gfiles/X.g:33:32: ':'
 					{
 					match(':'); if (state.failed) return;
 					}
 					break;
 				case 4 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:33:38: ' '
+					// gfiles/X.g:33:38: ' '
 					{
 					match(' '); if (state.failed) return;
 					}
@@ -748,12 +748,12 @@ public class XLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:35:3: ( LETTER ( LETTER | DIGIT0 )* )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:35:8: LETTER ( LETTER | DIGIT0 )*
+			// gfiles/X.g:35:3: ( LETTER ( LETTER | DIGIT0 )* )
+			// gfiles/X.g:35:8: LETTER ( LETTER | DIGIT0 )*
 			{
 			mLETTER(); if (state.failed) return;
 
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:35:15: ( LETTER | DIGIT0 )*
+			// gfiles/X.g:35:15: ( LETTER | DIGIT0 )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -764,7 +764,7 @@ public class XLexer extends Lexer {
 
 				switch (alt2) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+					// gfiles/X.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -800,7 +800,7 @@ public class XLexer extends Lexer {
 		try {
 			int _type = INTCONST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:36:9: ( DIGIT ( DIGIT0 )* | '0' )
+			// gfiles/X.g:36:9: ( DIGIT ( DIGIT0 )* | '0' )
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( ((LA4_0 >= '1' && LA4_0 <= '9')) ) {
@@ -819,11 +819,11 @@ public class XLexer extends Lexer {
 
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:36:12: DIGIT ( DIGIT0 )*
+					// gfiles/X.g:36:12: DIGIT ( DIGIT0 )*
 					{
 					mDIGIT(); if (state.failed) return;
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:36:18: ( DIGIT0 )*
+					// gfiles/X.g:36:18: ( DIGIT0 )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -834,7 +834,7 @@ public class XLexer extends Lexer {
 
 						switch (alt3) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+							// gfiles/X.g:
 							{
 							if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 								input.consume();
@@ -857,7 +857,7 @@ public class XLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:36:28: '0'
+					// gfiles/X.g:36:28: '0'
 					{
 					match('0'); if (state.failed) return;
 					}
@@ -878,16 +878,16 @@ public class XLexer extends Lexer {
 		try {
 			int _type = FLOATCONST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:11: ( ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )=> INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST | INTCONST ( '.' ( DIGIT0 )* )? )
+			// gfiles/X.g:37:11: ( ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )=> INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST | INTCONST ( '.' ( DIGIT0 )* )? )
 			int alt10=2;
 			alt10 = dfa10.predict(input);
 			switch (alt10) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:14: ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )=> INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST
+					// gfiles/X.g:37:14: ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )=> INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST
 					{
 					mINTCONST(); if (state.failed) return;
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:83: ( '.' ( DIGIT0 )* )?
+					// gfiles/X.g:37:83: ( '.' ( DIGIT0 )* )?
 					int alt6=2;
 					int LA6_0 = input.LA(1);
 					if ( (LA6_0=='.') ) {
@@ -895,10 +895,10 @@ public class XLexer extends Lexer {
 					}
 					switch (alt6) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:84: '.' ( DIGIT0 )*
+							// gfiles/X.g:37:84: '.' ( DIGIT0 )*
 							{
 							match('.'); if (state.failed) return;
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:88: ( DIGIT0 )*
+							// gfiles/X.g:37:88: ( DIGIT0 )*
 							loop5:
 							while (true) {
 								int alt5=2;
@@ -909,7 +909,7 @@ public class XLexer extends Lexer {
 
 								switch (alt5) {
 								case 1 :
-									// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+									// gfiles/X.g:
 									{
 									if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 										input.consume();
@@ -944,7 +944,7 @@ public class XLexer extends Lexer {
 						recover(mse);
 						throw mse;
 					}
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:107: ( '+' | '-' )?
+					// gfiles/X.g:37:107: ( '+' | '-' )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
 					if ( (LA7_0=='+'||LA7_0=='-') ) {
@@ -952,7 +952,7 @@ public class XLexer extends Lexer {
 					}
 					switch (alt7) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+							// gfiles/X.g:
 							{
 							if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
 								input.consume();
@@ -974,11 +974,11 @@ public class XLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:133: INTCONST ( '.' ( DIGIT0 )* )?
+					// gfiles/X.g:37:133: INTCONST ( '.' ( DIGIT0 )* )?
 					{
 					mINTCONST(); if (state.failed) return;
 
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:142: ( '.' ( DIGIT0 )* )?
+					// gfiles/X.g:37:142: ( '.' ( DIGIT0 )* )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0=='.') ) {
@@ -986,10 +986,10 @@ public class XLexer extends Lexer {
 					}
 					switch (alt9) {
 						case 1 :
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:143: '.' ( DIGIT0 )*
+							// gfiles/X.g:37:143: '.' ( DIGIT0 )*
 							{
 							match('.'); if (state.failed) return;
-							// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:147: ( DIGIT0 )*
+							// gfiles/X.g:37:147: ( DIGIT0 )*
 							loop8:
 							while (true) {
 								int alt8=2;
@@ -1000,7 +1000,7 @@ public class XLexer extends Lexer {
 
 								switch (alt8) {
 								case 1 :
-									// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+									// gfiles/X.g:
 									{
 									if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 										input.consume();
@@ -1043,11 +1043,11 @@ public class XLexer extends Lexer {
 		try {
 			int _type = STRINGCONST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:38:12: ( '\\\"' ( LETTER | SYMBOL )* '\\\"' )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:38:14: '\\\"' ( LETTER | SYMBOL )* '\\\"'
+			// gfiles/X.g:38:12: ( '\\\"' ( LETTER | SYMBOL )* '\\\"' )
+			// gfiles/X.g:38:14: '\\\"' ( LETTER | SYMBOL )* '\\\"'
 			{
 			match('\"'); if (state.failed) return;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:38:19: ( LETTER | SYMBOL )*
+			// gfiles/X.g:38:19: ( LETTER | SYMBOL )*
 			loop11:
 			while (true) {
 				int alt11=3;
@@ -1061,14 +1061,14 @@ public class XLexer extends Lexer {
 
 				switch (alt11) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:38:21: LETTER
+					// gfiles/X.g:38:21: LETTER
 					{
 					mLETTER(); if (state.failed) return;
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:38:30: SYMBOL
+					// gfiles/X.g:38:30: SYMBOL
 					{
 					mSYMBOL(); if (state.failed) return;
 
@@ -1097,10 +1097,10 @@ public class XLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:39:3: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+ )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:39:9: ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+
+			// gfiles/X.g:39:3: ( ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+ )
+			// gfiles/X.g:39:9: ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+
 			{
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:39:9: ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+
+			// gfiles/X.g:39:9: ( '\\t' | ' ' | '\\r' | '\\n' | '\\f' )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -1112,7 +1112,7 @@ public class XLexer extends Lexer {
 
 				switch (alt12) {
 				case 1 :
-					// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+					// gfiles/X.g:
 					{
 					if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||(input.LA(1) >= '\f' && input.LA(1) <= '\r')||input.LA(1)==' ' ) {
 						input.consume();
@@ -1153,8 +1153,8 @@ public class XLexer extends Lexer {
 		try {
 			int _type = INVALID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:40:8: ( . )
-			// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:40:13: .
+			// gfiles/X.g:40:8: ( . )
+			// gfiles/X.g:40:13: .
 			{
 			matchAny(); if (state.failed) return;
 			}
@@ -1170,229 +1170,229 @@ public class XLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:8: ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | ID | INTCONST | FLOATCONST | STRINGCONST | WS | INVALID )
+		// gfiles/X.g:1:8: ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | ID | INTCONST | FLOATCONST | STRINGCONST | WS | INVALID )
 		int alt13=32;
 		alt13 = dfa13.predict(input);
 		switch (alt13) {
 			case 1 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:10: T__18
+				// gfiles/X.g:1:10: T__18
 				{
 				mT__18(); if (state.failed) return;
 
 				}
 				break;
 			case 2 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:16: T__19
+				// gfiles/X.g:1:16: T__19
 				{
 				mT__19(); if (state.failed) return;
 
 				}
 				break;
 			case 3 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:22: T__20
+				// gfiles/X.g:1:22: T__20
 				{
 				mT__20(); if (state.failed) return;
 
 				}
 				break;
 			case 4 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:28: T__21
+				// gfiles/X.g:1:28: T__21
 				{
 				mT__21(); if (state.failed) return;
 
 				}
 				break;
 			case 5 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:34: T__22
+				// gfiles/X.g:1:34: T__22
 				{
 				mT__22(); if (state.failed) return;
 
 				}
 				break;
 			case 6 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:40: T__23
+				// gfiles/X.g:1:40: T__23
 				{
 				mT__23(); if (state.failed) return;
 
 				}
 				break;
 			case 7 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:46: T__24
+				// gfiles/X.g:1:46: T__24
 				{
 				mT__24(); if (state.failed) return;
 
 				}
 				break;
 			case 8 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:52: T__25
+				// gfiles/X.g:1:52: T__25
 				{
 				mT__25(); if (state.failed) return;
 
 				}
 				break;
 			case 9 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:58: T__26
+				// gfiles/X.g:1:58: T__26
 				{
 				mT__26(); if (state.failed) return;
 
 				}
 				break;
 			case 10 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:64: T__27
+				// gfiles/X.g:1:64: T__27
 				{
 				mT__27(); if (state.failed) return;
 
 				}
 				break;
 			case 11 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:70: T__28
+				// gfiles/X.g:1:70: T__28
 				{
 				mT__28(); if (state.failed) return;
 
 				}
 				break;
 			case 12 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:76: T__29
+				// gfiles/X.g:1:76: T__29
 				{
 				mT__29(); if (state.failed) return;
 
 				}
 				break;
 			case 13 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:82: T__30
+				// gfiles/X.g:1:82: T__30
 				{
 				mT__30(); if (state.failed) return;
 
 				}
 				break;
 			case 14 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:88: T__31
+				// gfiles/X.g:1:88: T__31
 				{
 				mT__31(); if (state.failed) return;
 
 				}
 				break;
 			case 15 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:94: T__32
+				// gfiles/X.g:1:94: T__32
 				{
 				mT__32(); if (state.failed) return;
 
 				}
 				break;
 			case 16 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:100: T__33
+				// gfiles/X.g:1:100: T__33
 				{
 				mT__33(); if (state.failed) return;
 
 				}
 				break;
 			case 17 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:106: T__34
+				// gfiles/X.g:1:106: T__34
 				{
 				mT__34(); if (state.failed) return;
 
 				}
 				break;
 			case 18 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:112: T__35
+				// gfiles/X.g:1:112: T__35
 				{
 				mT__35(); if (state.failed) return;
 
 				}
 				break;
 			case 19 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:118: T__36
+				// gfiles/X.g:1:118: T__36
 				{
 				mT__36(); if (state.failed) return;
 
 				}
 				break;
 			case 20 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:124: T__37
+				// gfiles/X.g:1:124: T__37
 				{
 				mT__37(); if (state.failed) return;
 
 				}
 				break;
 			case 21 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:130: T__38
+				// gfiles/X.g:1:130: T__38
 				{
 				mT__38(); if (state.failed) return;
 
 				}
 				break;
 			case 22 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:136: T__39
+				// gfiles/X.g:1:136: T__39
 				{
 				mT__39(); if (state.failed) return;
 
 				}
 				break;
 			case 23 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:142: T__40
+				// gfiles/X.g:1:142: T__40
 				{
 				mT__40(); if (state.failed) return;
 
 				}
 				break;
 			case 24 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:148: T__41
+				// gfiles/X.g:1:148: T__41
 				{
 				mT__41(); if (state.failed) return;
 
 				}
 				break;
 			case 25 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:154: T__42
+				// gfiles/X.g:1:154: T__42
 				{
 				mT__42(); if (state.failed) return;
 
 				}
 				break;
 			case 26 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:160: T__43
+				// gfiles/X.g:1:160: T__43
 				{
 				mT__43(); if (state.failed) return;
 
 				}
 				break;
 			case 27 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:166: ID
+				// gfiles/X.g:1:166: ID
 				{
 				mID(); if (state.failed) return;
 
 				}
 				break;
 			case 28 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:169: INTCONST
+				// gfiles/X.g:1:169: INTCONST
 				{
 				mINTCONST(); if (state.failed) return;
 
 				}
 				break;
 			case 29 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:178: FLOATCONST
+				// gfiles/X.g:1:178: FLOATCONST
 				{
 				mFLOATCONST(); if (state.failed) return;
 
 				}
 				break;
 			case 30 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:189: STRINGCONST
+				// gfiles/X.g:1:189: STRINGCONST
 				{
 				mSTRINGCONST(); if (state.failed) return;
 
 				}
 				break;
 			case 31 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:201: WS
+				// gfiles/X.g:1:201: WS
 				{
 				mWS(); if (state.failed) return;
 
 				}
 				break;
 			case 32 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:1:204: INVALID
+				// gfiles/X.g:1:204: INVALID
 				{
 				mINVALID(); if (state.failed) return;
 
@@ -1404,12 +1404,12 @@ public class XLexer extends Lexer {
 
 	// $ANTLR start synpred1_X
 	public final void synpred1_X_fragment() throws RecognitionException {
-		// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:14: ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )
-		// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:15: INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST
+		// gfiles/X.g:37:14: ( INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST )
+		// gfiles/X.g:37:15: INTCONST ( '.' ( DIGIT0 )* )? ( 'e' | 'E' ) ( '+' | '-' )? INTCONST
 		{
 		mINTCONST(); if (state.failed) return;
 
-		// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:24: ( '.' ( DIGIT0 )* )?
+		// gfiles/X.g:37:24: ( '.' ( DIGIT0 )* )?
 		int alt15=2;
 		int LA15_0 = input.LA(1);
 		if ( (LA15_0=='.') ) {
@@ -1417,10 +1417,10 @@ public class XLexer extends Lexer {
 		}
 		switch (alt15) {
 			case 1 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:25: '.' ( DIGIT0 )*
+				// gfiles/X.g:37:25: '.' ( DIGIT0 )*
 				{
 				match('.'); if (state.failed) return;
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:29: ( DIGIT0 )*
+				// gfiles/X.g:37:29: ( DIGIT0 )*
 				loop14:
 				while (true) {
 					int alt14=2;
@@ -1431,7 +1431,7 @@ public class XLexer extends Lexer {
 
 					switch (alt14) {
 					case 1 :
-						// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+						// gfiles/X.g:
 						{
 						if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 							input.consume();
@@ -1466,7 +1466,7 @@ public class XLexer extends Lexer {
 			recover(mse);
 			throw mse;
 		}
-		// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:37:48: ( '+' | '-' )?
+		// gfiles/X.g:37:48: ( '+' | '-' )?
 		int alt16=2;
 		int LA16_0 = input.LA(1);
 		if ( (LA16_0=='+'||LA16_0=='-') ) {
@@ -1474,7 +1474,7 @@ public class XLexer extends Lexer {
 		}
 		switch (alt16) {
 			case 1 :
-				// C:\\Users\\mahu\\OneDrive - student.dhbw-karlsruhe.de\\_Studium\\Theoriephase 4\\Compilerbau\\Übungen\\08.Antlr-Parser für X\\CC-Praxis-Antlr Parser fuer X-Leer\\CC-Praxis-Antlr Parser fuer X-Leer\\src\\de\\dhbw\\compiler\\antlrxparser\\X.g:
+				// gfiles/X.g:
 				{
 				if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
 					input.consume();
