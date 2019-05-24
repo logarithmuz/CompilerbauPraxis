@@ -20,5 +20,4 @@ public class SymbolTable extends HashMap<String, Symbol>{
 		for (Symbol s: this.values()) { res.append(s.toString()+"\n"); }
 		return res.toString();
 	}
-	
 }

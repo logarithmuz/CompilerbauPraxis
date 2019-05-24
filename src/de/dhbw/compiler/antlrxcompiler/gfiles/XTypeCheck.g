@@ -8,7 +8,16 @@ options {
 }
 
 tokens{
-  PLUS='+';
+    PLUS='+';
+    MINUS='-';
+    MULT='*';
+    DIV='/';
+
+    INT='int';
+    FLOAT='float';
+    STRING='String';
+
+    ASSIGN=':=';
 }
 
 @header {
@@ -19,29 +28,45 @@ import java.util.HashMap;
 
 @members {
 
-   private SymbolTable  symbols = SymbolTable.getInstance();  
-   
+   private SymbolTable  symbols = SymbolTable.getInstance();
+
 }
 
 
 // Deklarationen
-decl:		^(DECL ID type)
-			| ^(DECL ID type 'read')
-			| ^(DECL ID type 'print')
-			| ^(DECL ID type 'read' 'print');
+decl:		^(DECL ID t=('int' | 'float'| 'string') modifier){
+                if ($t.token.getType() == INT)
+                    symbols.put($ID.getText(), new Symbol($ID.getText(), XType.IntType));
+                if ($t.token.getType() == FLOAT)
+                    symbols.put($ID.getText(), new Symbol($ID.getText(), XType.FloatType));
+                if ($t.token.getType() == STRING)
+                    symbols.put($ID.getText(), new Symbol($ID.getText(), XType.StringType));
+                };
 
-type:		'int' | 'float' | 'string';
+modifier:   'read' | 'print' | 'read' 'print';
 
 decllist:	^(DECLLIST decl*);
 
 // Ausdr�cke
-expr:		^(('+' | '-' | '*' | '/') expr expr)
-			| INTCONST | ^(UMINUS INTCONST)
-			| FLOATCONST | ^(UMINUS FLOATCONST)
-			| ID | STRINGCONST;
+expr:		^(op=('+' | '-' | '*' | '/') r=expr l=expr ){
+                                    if ($r.tree.exprType == XType.IntType && $l.tree.exprType == XType.IntType)
+                                        $op.tree.exprType = XType.IntType;
+                                    if ($r.tree.exprType == XType.FloatType && $l.tree.exprType == XType.IntType
+                                      ||$r.tree.exprType == XType.IntType && $l.tree.exprType == XType.FloatType
+                                      ||$r.tree.exprType == XType.FloatType && $l.tree.exprType == XType.FloatType)
+                                        $op.tree.exprType = XType.FloatType;
+                                    }
+			| INTCONST              { $INTCONST.tree.exprType = XType.IntType; }
+			| ^(UMINUS INTCONST)    { $INTCONST.tree.exprType = XType.IntType; $UMINUS.tree.exprType = XType.IntType; }
+			| FLOATCONST            { $FLOATCONST.tree.exprType = XType.FloatType; }
+			| ^(UMINUS FLOATCONST)  { $FLOATCONST.tree.exprType = XType.FloatType; $UMINUS.tree.exprType = XType.FloatType; }
+			| ID                    { $ID.tree.exprType = symbols.get($ID.getText()).type; }
+			| STRINGCONST           { $STRINGCONST.tree.exprType = XType.StringType; } ;
 
 // Zuweisung
-assignstat:	^(':=' ID expr);
+assignstat:	^(assign=':=' ID expr) {
+                $ID.tree.exprType = symbols.get($ID.getText()).type;
+                $assign.tree.exprType = $ID.tree.exprType;};
 
 // Bedingungen
 cond:		^(comp expr expr);
@@ -61,4 +86,3 @@ statlist:	^(STATLIST stat*);
 
 // Programme
 program:	^('program' ID decllist statlist);
-

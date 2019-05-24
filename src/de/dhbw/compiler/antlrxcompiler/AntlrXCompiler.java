@@ -23,6 +23,8 @@ import org.antlr.runtime.tree.DOTTreeGenerator;
 import org.antlr.runtime.tree.Tree;
 import org.antlr.stringtemplate.StringTemplate;
 
+import static org.junit.Assert.assertEquals;
+
 public class AntlrXCompiler {
 
 	public static void saveToGrapvizDOT(Tree tree, String name) throws FileNotFoundException {
@@ -78,15 +80,29 @@ public class AntlrXCompiler {
 			"end.\n";
 	
 	public static void main(String[] args) throws Exception {
-		
-		XTreeAdaptor xTreeAdaptor = new XTreeAdaptor(); 
-		
-		ANTLRInputStream input = new ANTLRInputStream(new ByteArrayInputStream(TEST2.getBytes())); 
+
+		String test =	"program exprMul;\n"+
+				"  x: float;"+
+				"begin\n"+
+				"	x :=0*1;"+
+				"end.";
+
+		XTreeAdaptor xTreeAdaptor = new XTreeAdaptor();
+		ANTLRInputStream input = new ANTLRInputStream(new ByteArrayInputStream(test.getBytes()));
 		XLexer lexer = new XLexer(input);
 		XParser parser = new XParser(new CommonTokenStream(lexer));
 		parser.setTreeAdaptor(xTreeAdaptor);
-		CommonTree tree = parser.program().getTree();
-		
+		XTree out = parser.program().getTree();
+
+		XTypeCheck typecheck = new XTypeCheck(new CommonTreeNodeStream(xTreeAdaptor, out));
+		typecheck.setTreeAdaptor(xTreeAdaptor);
+		out = typecheck.program().getTree();
+
+		if (out!=null) {
+			System.out.println(out.toStringTree());
+		} else {
+			System.out.println("was null");
+		}
 		//TODO Weitere Stufen Aufrufen
 		
 	}

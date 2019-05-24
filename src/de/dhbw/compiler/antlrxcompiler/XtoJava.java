@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/XtoJava.g 2019-05-23 18:55:48
+// $ANTLR 3.5.2 gfiles/XtoJava.g 2019-05-24 16:06:24
 
     package de.dhbw.compiler.antlrxcompiler;
 
@@ -21,7 +21,7 @@ public class XtoJava extends TreeParser {
 		"')'", "'*'", "'+'", "'-'", "'.'", "'/'", "':'", "':='", "';'", "'<'", 
 		"'='", "'>'", "'begin'", "'else'", "'end'", "'float'", "'for'", "'if'", 
 		"'int'", "'print'", "'program'", "'read'", "'string'", "'then'", "'while'", 
-		"'todo'"
+		"STRING", "'todo'"
 	};
 	public static final int EOF=-1;
 	public static final int T__20=20;
@@ -66,8 +66,15 @@ public class XtoJava extends TreeParser {
 	public static final int UMINUS=17;
 	public static final int WS=18;
 	public static final int ZERO=19;
+	public static final int ASSIGN=28;
+	public static final int DIV=26;
+	public static final int FLOAT=36;
+	public static final int INT=39;
+	public static final int MINUS=24;
+	public static final int MULT=22;
 	public static final int PLUS=23;
-	public static final int T__46=46;
+	public static final int STRING=46;
+	public static final int T__47=47;
 
 	// delegates
 	public TreeParser[] getDelegates() {
@@ -129,7 +136,7 @@ public class XtoJava extends TreeParser {
 			// gfiles/XtoJava.g:20:8: ( 'todo' -> template( \"Hello World!\")
 			// gfiles/XtoJava.g:20:15: 'todo'
 			{
-			match(input,46,FOLLOW_46_in_program69); 
+			match(input,47,FOLLOW_47_in_program69); 
 			// TEMPLATE REWRITE
 			// 20:22: -> template( \"Hello World!\"
 			{
@@ -156,5 +163,5 @@ public class XtoJava extends TreeParser {
 
 
 
-	public static final BitSet FOLLOW_46_in_program69 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_47_in_program69 = new BitSet(new long[]{0x0000000000000002L});
 }

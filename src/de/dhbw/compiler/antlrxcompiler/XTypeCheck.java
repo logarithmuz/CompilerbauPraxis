@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-23 18:55:47
+// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-24 16:06:24
 
 package de.dhbw.compiler.antlrxcompiler;
    
@@ -20,7 +20,8 @@ public class XTypeCheck extends TreeParser {
 		"POSDIGIT", "STATLIST", "STRINGCONST", "UMINUS", "WS", "ZERO", "'('", 
 		"')'", "'*'", "'+'", "'-'", "'.'", "'/'", "':'", "':='", "';'", "'<'", 
 		"'='", "'>'", "'begin'", "'else'", "'end'", "'float'", "'for'", "'if'", 
-		"'int'", "'print'", "'program'", "'read'", "'string'", "'then'", "'while'"
+		"'int'", "'print'", "'program'", "'read'", "'string'", "'then'", "'while'", 
+		"STRING"
 	};
 	public static final int EOF=-1;
 	public static final int T__20=20;
@@ -65,7 +66,14 @@ public class XTypeCheck extends TreeParser {
 	public static final int UMINUS=17;
 	public static final int WS=18;
 	public static final int ZERO=19;
+	public static final int ASSIGN=28;
+	public static final int DIV=26;
+	public static final int FLOAT=36;
+	public static final int INT=39;
+	public static final int MINUS=24;
+	public static final int MULT=22;
 	public static final int PLUS=23;
+	public static final int STRING=46;
 
 	// delegates
 	public TreeParser[] getDelegates() {
@@ -95,8 +103,8 @@ public class XTypeCheck extends TreeParser {
 
 
 
-	   private SymbolTable  symbols = SymbolTable.getInstance();  
-	   
+	   private SymbolTable  symbols = SymbolTable.getInstance();
+
 
 
 	public static class decl_return extends TreeRuleReturnScope {
@@ -107,7 +115,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "decl"
-	// gfiles/XTypeCheck.g:28:1: decl : ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) );
+	// gfiles/XTypeCheck.g:37:1: decl : ^( DECL ID t= ( 'int' | 'float' | 'string' ) modifier ) ;
 	public final XTypeCheck.decl_return decl() throws RecognitionException {
 		XTypeCheck.decl_return retval = new XTypeCheck.decl_return();
 		retval.start = input.LT(1);
@@ -118,346 +126,81 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
+		XTree t=null;
 		XTree DECL1=null;
 		XTree ID2=null;
-		XTree DECL4=null;
-		XTree ID5=null;
-		XTree string_literal7=null;
-		XTree DECL8=null;
-		XTree ID9=null;
-		XTree string_literal11=null;
-		XTree DECL12=null;
-		XTree ID13=null;
-		XTree string_literal15=null;
-		XTree string_literal16=null;
-		TreeRuleReturnScope type3 =null;
-		TreeRuleReturnScope type6 =null;
-		TreeRuleReturnScope type10 =null;
-		TreeRuleReturnScope type14 =null;
+		TreeRuleReturnScope modifier3 =null;
 
+		XTree t_tree=null;
 		XTree DECL1_tree=null;
 		XTree ID2_tree=null;
-		XTree DECL4_tree=null;
-		XTree ID5_tree=null;
-		XTree string_literal7_tree=null;
-		XTree DECL8_tree=null;
-		XTree ID9_tree=null;
-		XTree string_literal11_tree=null;
-		XTree DECL12_tree=null;
-		XTree ID13_tree=null;
-		XTree string_literal15_tree=null;
-		XTree string_literal16_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:28:5: ( ^( DECL ID type ) | ^( DECL ID type 'read' ) | ^( DECL ID type 'print' ) | ^( DECL ID type 'read' 'print' ) )
-			int alt1=4;
-			int LA1_0 = input.LA(1);
-			if ( (LA1_0==DECL) ) {
-				int LA1_1 = input.LA(2);
-				if ( (LA1_1==DOWN) ) {
-					int LA1_2 = input.LA(3);
-					if ( (LA1_2==ID) ) {
-						int LA1_3 = input.LA(4);
-						if ( (LA1_3==36||LA1_3==39||LA1_3==43) ) {
-							switch ( input.LA(5) ) {
-							case UP:
-								{
-								alt1=1;
-								}
-								break;
-							case 42:
-								{
-								int LA1_6 = input.LA(6);
-								if ( (LA1_6==UP) ) {
-									alt1=2;
-								}
-								else if ( (LA1_6==40) ) {
-									alt1=4;
-								}
+			// gfiles/XTypeCheck.g:37:5: ( ^( DECL ID t= ( 'int' | 'float' | 'string' ) modifier ) )
+			// gfiles/XTypeCheck.g:37:8: ^( DECL ID t= ( 'int' | 'float' | 'string' ) modifier )
+			{
+			root_0 = (XTree)adaptor.nil();
 
-								else {
-									int nvaeMark = input.mark();
-									try {
-										for (int nvaeConsume = 0; nvaeConsume < 6 - 1; nvaeConsume++) {
-											input.consume();
-										}
-										NoViableAltException nvae =
-											new NoViableAltException("", 1, 6, input);
-										throw nvae;
-									} finally {
-										input.rewind(nvaeMark);
-									}
-								}
 
-								}
-								break;
-							case 40:
-								{
-								alt1=3;
-								}
-								break;
-							default:
-								int nvaeMark = input.mark();
-								try {
-									for (int nvaeConsume = 0; nvaeConsume < 5 - 1; nvaeConsume++) {
-										input.consume();
-									}
-									NoViableAltException nvae =
-										new NoViableAltException("", 1, 4, input);
-									throw nvae;
-								} finally {
-									input.rewind(nvaeMark);
-								}
-							}
-						}
+			_last = (XTree)input.LT(1);
+			{
+			XTree _save_last_1 = _last;
+			XTree _first_1 = null;
+			XTree root_1 = (XTree)adaptor.nil();
+			_last = (XTree)input.LT(1);
+			DECL1=(XTree)match(input,DECL,FOLLOW_DECL_in_decl147); 
+			DECL1_tree = (XTree)adaptor.dupNode(DECL1);
 
-						else {
-							int nvaeMark = input.mark();
-							try {
-								for (int nvaeConsume = 0; nvaeConsume < 4 - 1; nvaeConsume++) {
-									input.consume();
-								}
-								NoViableAltException nvae =
-									new NoViableAltException("", 1, 3, input);
-								throw nvae;
-							} finally {
-								input.rewind(nvaeMark);
-							}
-						}
 
-					}
+			root_1 = (XTree)adaptor.becomeRoot(DECL1_tree, root_1);
 
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 1, 2, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
-						}
-					}
+			match(input, Token.DOWN, null); 
+			_last = (XTree)input.LT(1);
+			ID2=(XTree)match(input,ID,FOLLOW_ID_in_decl149); 
+			ID2_tree = (XTree)adaptor.dupNode(ID2);
 
-				}
 
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 1, 1, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
+			adaptor.addChild(root_1, ID2_tree);
 
+			_last = (XTree)input.LT(1);
+			t=(XTree)input.LT(1);
+			if ( input.LA(1)==36||input.LA(1)==39||input.LA(1)==43 ) {
+				input.consume();
+				t_tree = (XTree)adaptor.dupNode(t);
+
+
+				adaptor.addChild(root_1, t_tree);
+
+				state.errorRecovery=false;
 			}
-
 			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 1, 0, input);
-				throw nvae;
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				throw mse;
 			}
 
-			switch (alt1) {
-				case 1 :
-					// gfiles/XTypeCheck.g:28:8: ^( DECL ID type )
-					{
-					root_0 = (XTree)adaptor.nil();
+			_last = (XTree)input.LT(1);
+			pushFollow(FOLLOW_modifier_in_decl164);
+			modifier3=modifier();
+			state._fsp--;
 
+			adaptor.addChild(root_1, modifier3.getTree());
 
-					_last = (XTree)input.LT(1);
-					{
-					XTree _save_last_1 = _last;
-					XTree _first_1 = null;
-					XTree root_1 = (XTree)adaptor.nil();
-					_last = (XTree)input.LT(1);
-					DECL1=(XTree)match(input,DECL,FOLLOW_DECL_in_decl80); 
-					DECL1_tree = (XTree)adaptor.dupNode(DECL1);
-
-
-					root_1 = (XTree)adaptor.becomeRoot(DECL1_tree, root_1);
-
-					match(input, Token.DOWN, null); 
-					_last = (XTree)input.LT(1);
-					ID2=(XTree)match(input,ID,FOLLOW_ID_in_decl82); 
-					ID2_tree = (XTree)adaptor.dupNode(ID2);
-
-
-					adaptor.addChild(root_1, ID2_tree);
-
-					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_type_in_decl84);
-					type3=type();
-					state._fsp--;
-
-					adaptor.addChild(root_1, type3.getTree());
-
-					match(input, Token.UP, null); 
-					adaptor.addChild(root_0, root_1);
-					_last = _save_last_1;
-					}
-
-
-					}
-					break;
-				case 2 :
-					// gfiles/XTypeCheck.g:29:6: ^( DECL ID type 'read' )
-					{
-					root_0 = (XTree)adaptor.nil();
-
-
-					_last = (XTree)input.LT(1);
-					{
-					XTree _save_last_1 = _last;
-					XTree _first_1 = null;
-					XTree root_1 = (XTree)adaptor.nil();
-					_last = (XTree)input.LT(1);
-					DECL4=(XTree)match(input,DECL,FOLLOW_DECL_in_decl93); 
-					DECL4_tree = (XTree)adaptor.dupNode(DECL4);
-
-
-					root_1 = (XTree)adaptor.becomeRoot(DECL4_tree, root_1);
-
-					match(input, Token.DOWN, null); 
-					_last = (XTree)input.LT(1);
-					ID5=(XTree)match(input,ID,FOLLOW_ID_in_decl95); 
-					ID5_tree = (XTree)adaptor.dupNode(ID5);
-
-
-					adaptor.addChild(root_1, ID5_tree);
-
-					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_type_in_decl97);
-					type6=type();
-					state._fsp--;
-
-					adaptor.addChild(root_1, type6.getTree());
-
-					_last = (XTree)input.LT(1);
-					string_literal7=(XTree)match(input,42,FOLLOW_42_in_decl99); 
-					string_literal7_tree = (XTree)adaptor.dupNode(string_literal7);
-
-
-					adaptor.addChild(root_1, string_literal7_tree);
-
-					match(input, Token.UP, null); 
-					adaptor.addChild(root_0, root_1);
-					_last = _save_last_1;
-					}
-
-
-					}
-					break;
-				case 3 :
-					// gfiles/XTypeCheck.g:30:6: ^( DECL ID type 'print' )
-					{
-					root_0 = (XTree)adaptor.nil();
-
-
-					_last = (XTree)input.LT(1);
-					{
-					XTree _save_last_1 = _last;
-					XTree _first_1 = null;
-					XTree root_1 = (XTree)adaptor.nil();
-					_last = (XTree)input.LT(1);
-					DECL8=(XTree)match(input,DECL,FOLLOW_DECL_in_decl108); 
-					DECL8_tree = (XTree)adaptor.dupNode(DECL8);
-
-
-					root_1 = (XTree)adaptor.becomeRoot(DECL8_tree, root_1);
-
-					match(input, Token.DOWN, null); 
-					_last = (XTree)input.LT(1);
-					ID9=(XTree)match(input,ID,FOLLOW_ID_in_decl110); 
-					ID9_tree = (XTree)adaptor.dupNode(ID9);
-
-
-					adaptor.addChild(root_1, ID9_tree);
-
-					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_type_in_decl112);
-					type10=type();
-					state._fsp--;
-
-					adaptor.addChild(root_1, type10.getTree());
-
-					_last = (XTree)input.LT(1);
-					string_literal11=(XTree)match(input,40,FOLLOW_40_in_decl114); 
-					string_literal11_tree = (XTree)adaptor.dupNode(string_literal11);
-
-
-					adaptor.addChild(root_1, string_literal11_tree);
-
-					match(input, Token.UP, null); 
-					adaptor.addChild(root_0, root_1);
-					_last = _save_last_1;
-					}
-
-
-					}
-					break;
-				case 4 :
-					// gfiles/XTypeCheck.g:31:6: ^( DECL ID type 'read' 'print' )
-					{
-					root_0 = (XTree)adaptor.nil();
-
-
-					_last = (XTree)input.LT(1);
-					{
-					XTree _save_last_1 = _last;
-					XTree _first_1 = null;
-					XTree root_1 = (XTree)adaptor.nil();
-					_last = (XTree)input.LT(1);
-					DECL12=(XTree)match(input,DECL,FOLLOW_DECL_in_decl123); 
-					DECL12_tree = (XTree)adaptor.dupNode(DECL12);
-
-
-					root_1 = (XTree)adaptor.becomeRoot(DECL12_tree, root_1);
-
-					match(input, Token.DOWN, null); 
-					_last = (XTree)input.LT(1);
-					ID13=(XTree)match(input,ID,FOLLOW_ID_in_decl125); 
-					ID13_tree = (XTree)adaptor.dupNode(ID13);
-
-
-					adaptor.addChild(root_1, ID13_tree);
-
-					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_type_in_decl127);
-					type14=type();
-					state._fsp--;
-
-					adaptor.addChild(root_1, type14.getTree());
-
-					_last = (XTree)input.LT(1);
-					string_literal15=(XTree)match(input,42,FOLLOW_42_in_decl129); 
-					string_literal15_tree = (XTree)adaptor.dupNode(string_literal15);
-
-
-					adaptor.addChild(root_1, string_literal15_tree);
-
-					_last = (XTree)input.LT(1);
-					string_literal16=(XTree)match(input,40,FOLLOW_40_in_decl131); 
-					string_literal16_tree = (XTree)adaptor.dupNode(string_literal16);
-
-
-					adaptor.addChild(root_1, string_literal16_tree);
-
-					match(input, Token.UP, null); 
-					adaptor.addChild(root_0, root_1);
-					_last = _save_last_1;
-					}
-
-
-					}
-					break;
-
+			match(input, Token.UP, null); 
+			adaptor.addChild(root_0, root_1);
+			_last = _save_last_1;
 			}
+
+
+
+			                if (t.token.getType() == INT)
+			                    symbols.put(ID2.getText(), new Symbol(ID2.getText(), XType.IntType));
+			                if (t.token.getType() == FLOAT)
+			                    symbols.put(ID2.getText(), new Symbol(ID2.getText(), XType.FloatType));
+			                if (t.token.getType() == STRING)
+			                    symbols.put(ID2.getText(), new Symbol(ID2.getText(), XType.StringType));
+			                
+			}
+
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
 
 		}
@@ -473,17 +216,17 @@ public class XTypeCheck extends TreeParser {
 	// $ANTLR end "decl"
 
 
-	public static class type_return extends TreeRuleReturnScope {
+	public static class modifier_return extends TreeRuleReturnScope {
 		XTree tree;
 		@Override
 		public XTree getTree() { return tree; }
 	};
 
 
-	// $ANTLR start "type"
-	// gfiles/XTypeCheck.g:33:1: type : ( 'int' | 'float' | 'string' );
-	public final XTypeCheck.type_return type() throws RecognitionException {
-		XTypeCheck.type_return retval = new XTypeCheck.type_return();
+	// $ANTLR start "modifier"
+	// gfiles/XTypeCheck.g:46:1: modifier : ( 'read' | 'print' | 'read' 'print' );
+	public final XTypeCheck.modifier_return modifier() throws RecognitionException {
+		XTypeCheck.modifier_return retval = new XTypeCheck.modifier_return();
 		retval.start = input.LT(1);
 
 		XTree root_0 = null;
@@ -492,37 +235,107 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree set17=null;
+		XTree string_literal4=null;
+		XTree string_literal5=null;
+		XTree string_literal6=null;
+		XTree string_literal7=null;
 
-		XTree set17_tree=null;
+		XTree string_literal4_tree=null;
+		XTree string_literal5_tree=null;
+		XTree string_literal6_tree=null;
+		XTree string_literal7_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:33:5: ( 'int' | 'float' | 'string' )
-			// gfiles/XTypeCheck.g:
-			{
-			root_0 = (XTree)adaptor.nil();
+			// gfiles/XTypeCheck.g:46:9: ( 'read' | 'print' | 'read' 'print' )
+			int alt1=3;
+			int LA1_0 = input.LA(1);
+			if ( (LA1_0==42) ) {
+				int LA1_1 = input.LA(2);
+				if ( (LA1_1==40) ) {
+					alt1=3;
+				}
+				else if ( (LA1_1==UP) ) {
+					alt1=1;
+				}
 
+				else {
+					int nvaeMark = input.mark();
+					try {
+						input.consume();
+						NoViableAltException nvae =
+							new NoViableAltException("", 1, 1, input);
+						throw nvae;
+					} finally {
+						input.rewind(nvaeMark);
+					}
+				}
 
-			_last = (XTree)input.LT(1);
-			set17=(XTree)input.LT(1);
-			if ( input.LA(1)==36||input.LA(1)==39||input.LA(1)==43 ) {
-				input.consume();
-				set17_tree = (XTree)adaptor.dupNode(set17);
-
-
-				adaptor.addChild(root_0, set17_tree);
-
-				state.errorRecovery=false;
 			}
+			else if ( (LA1_0==40) ) {
+				alt1=2;
+			}
+
 			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				throw mse;
+				NoViableAltException nvae =
+					new NoViableAltException("", 1, 0, input);
+				throw nvae;
 			}
 
-			 
+			switch (alt1) {
+				case 1 :
+					// gfiles/XTypeCheck.g:46:13: 'read'
+					{
+					root_0 = (XTree)adaptor.nil();
+
+
+					_last = (XTree)input.LT(1);
+					string_literal4=(XTree)match(input,42,FOLLOW_42_in_modifier175); 
+					string_literal4_tree = (XTree)adaptor.dupNode(string_literal4);
+
+
+					adaptor.addChild(root_0, string_literal4_tree);
+
+					}
+					break;
+				case 2 :
+					// gfiles/XTypeCheck.g:46:22: 'print'
+					{
+					root_0 = (XTree)adaptor.nil();
+
+
+					_last = (XTree)input.LT(1);
+					string_literal5=(XTree)match(input,40,FOLLOW_40_in_modifier179); 
+					string_literal5_tree = (XTree)adaptor.dupNode(string_literal5);
+
+
+					adaptor.addChild(root_0, string_literal5_tree);
+
+					}
+					break;
+				case 3 :
+					// gfiles/XTypeCheck.g:46:32: 'read' 'print'
+					{
+					root_0 = (XTree)adaptor.nil();
+
+
+					_last = (XTree)input.LT(1);
+					string_literal6=(XTree)match(input,42,FOLLOW_42_in_modifier183); 
+					string_literal6_tree = (XTree)adaptor.dupNode(string_literal6);
+
+
+					adaptor.addChild(root_0, string_literal6_tree);
+
+					_last = (XTree)input.LT(1);
+					string_literal7=(XTree)match(input,40,FOLLOW_40_in_modifier185); 
+					string_literal7_tree = (XTree)adaptor.dupNode(string_literal7);
+
+
+					adaptor.addChild(root_0, string_literal7_tree);
+
+					}
+					break;
 
 			}
-
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
 
 		}
@@ -535,7 +348,7 @@ public class XTypeCheck extends TreeParser {
 		}
 		return retval;
 	}
-	// $ANTLR end "type"
+	// $ANTLR end "modifier"
 
 
 	public static class decllist_return extends TreeRuleReturnScope {
@@ -546,7 +359,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "decllist"
-	// gfiles/XTypeCheck.g:35:1: decllist : ^( DECLLIST ( decl )* ) ;
+	// gfiles/XTypeCheck.g:48:1: decllist : ^( DECLLIST ( decl )* ) ;
 	public final XTypeCheck.decllist_return decllist() throws RecognitionException {
 		XTypeCheck.decllist_return retval = new XTypeCheck.decllist_return();
 		retval.start = input.LT(1);
@@ -557,14 +370,14 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree DECLLIST18=null;
-		TreeRuleReturnScope decl19 =null;
+		XTree DECLLIST8=null;
+		TreeRuleReturnScope decl9 =null;
 
-		XTree DECLLIST18_tree=null;
+		XTree DECLLIST8_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:35:9: ( ^( DECLLIST ( decl )* ) )
-			// gfiles/XTypeCheck.g:35:11: ^( DECLLIST ( decl )* )
+			// gfiles/XTypeCheck.g:48:9: ( ^( DECLLIST ( decl )* ) )
+			// gfiles/XTypeCheck.g:48:11: ^( DECLLIST ( decl )* )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -575,15 +388,15 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			DECLLIST18=(XTree)match(input,DECLLIST,FOLLOW_DECLLIST_in_decllist156); 
-			DECLLIST18_tree = (XTree)adaptor.dupNode(DECLLIST18);
+			DECLLIST8=(XTree)match(input,DECLLIST,FOLLOW_DECLLIST_in_decllist193); 
+			DECLLIST8_tree = (XTree)adaptor.dupNode(DECLLIST8);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(DECLLIST18_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(DECLLIST8_tree, root_1);
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// gfiles/XTypeCheck.g:35:22: ( decl )*
+				// gfiles/XTypeCheck.g:48:22: ( decl )*
 				loop2:
 				while (true) {
 					int alt2=2;
@@ -594,14 +407,14 @@ public class XTypeCheck extends TreeParser {
 
 					switch (alt2) {
 					case 1 :
-						// gfiles/XTypeCheck.g:35:22: decl
+						// gfiles/XTypeCheck.g:48:22: decl
 						{
 						_last = (XTree)input.LT(1);
-						pushFollow(FOLLOW_decl_in_decllist158);
-						decl19=decl();
+						pushFollow(FOLLOW_decl_in_decllist195);
+						decl9=decl();
 						state._fsp--;
 
-						adaptor.addChild(root_1, decl19.getTree());
+						adaptor.addChild(root_1, decl9.getTree());
 
 						}
 						break;
@@ -643,7 +456,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "expr"
-	// gfiles/XTypeCheck.g:38:1: expr : ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
+	// gfiles/XTypeCheck.g:51:1: expr : ( ^(op= ( '+' | '-' | '*' | '/' ) r= expr l= expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
 	public final XTypeCheck.expr_return expr() throws RecognitionException {
 		XTypeCheck.expr_return retval = new XTypeCheck.expr_return();
 		retval.start = input.LT(1);
@@ -654,30 +467,30 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree set20=null;
-		XTree INTCONST23=null;
-		XTree UMINUS24=null;
-		XTree INTCONST25=null;
-		XTree FLOATCONST26=null;
-		XTree UMINUS27=null;
-		XTree FLOATCONST28=null;
-		XTree ID29=null;
-		XTree STRINGCONST30=null;
-		TreeRuleReturnScope expr21 =null;
-		TreeRuleReturnScope expr22 =null;
+		XTree op=null;
+		XTree INTCONST10=null;
+		XTree UMINUS11=null;
+		XTree INTCONST12=null;
+		XTree FLOATCONST13=null;
+		XTree UMINUS14=null;
+		XTree FLOATCONST15=null;
+		XTree ID16=null;
+		XTree STRINGCONST17=null;
+		TreeRuleReturnScope r =null;
+		TreeRuleReturnScope l =null;
 
-		XTree set20_tree=null;
-		XTree INTCONST23_tree=null;
-		XTree UMINUS24_tree=null;
-		XTree INTCONST25_tree=null;
-		XTree FLOATCONST26_tree=null;
-		XTree UMINUS27_tree=null;
-		XTree FLOATCONST28_tree=null;
-		XTree ID29_tree=null;
-		XTree STRINGCONST30_tree=null;
+		XTree op_tree=null;
+		XTree INTCONST10_tree=null;
+		XTree UMINUS11_tree=null;
+		XTree INTCONST12_tree=null;
+		XTree FLOATCONST13_tree=null;
+		XTree UMINUS14_tree=null;
+		XTree FLOATCONST15_tree=null;
+		XTree ID16_tree=null;
+		XTree STRINGCONST17_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:38:5: ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
+			// gfiles/XTypeCheck.g:51:5: ( ^(op= ( '+' | '-' | '*' | '/' ) r= expr l= expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
 			int alt3=7;
 			switch ( input.LA(1) ) {
 			case 22:
@@ -757,7 +570,7 @@ public class XTypeCheck extends TreeParser {
 			}
 			switch (alt3) {
 				case 1 :
-					// gfiles/XTypeCheck.g:38:8: ^( ( '+' | '-' | '*' | '/' ) expr expr )
+					// gfiles/XTypeCheck.g:51:8: ^(op= ( '+' | '-' | '*' | '/' ) r= expr l= expr )
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -767,13 +580,13 @@ public class XTypeCheck extends TreeParser {
 					XTree _save_last_1 = _last;
 					XTree _first_1 = null;
 					XTree root_1 = (XTree)adaptor.nil();
-					set20=(XTree)input.LT(1);
+					op=(XTree)input.LT(1);
 					if ( (input.LA(1) >= 22 && input.LA(1) <= 24)||input.LA(1)==26 ) {
 						input.consume();
-						set20_tree = (XTree)adaptor.dupNode(set20);
+						op_tree = (XTree)adaptor.dupNode(op);
 
 
-						root_1 = (XTree)adaptor.becomeRoot(set20_tree, root_1);
+						root_1 = (XTree)adaptor.becomeRoot(op_tree, root_1);
 
 						state.errorRecovery=false;
 					}
@@ -784,18 +597,18 @@ public class XTypeCheck extends TreeParser {
 
 					match(input, Token.DOWN, null); 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_expr_in_expr186);
-					expr21=expr();
+					pushFollow(FOLLOW_expr_in_expr227);
+					r=expr();
 					state._fsp--;
 
-					adaptor.addChild(root_1, expr21.getTree());
+					adaptor.addChild(root_1, r.getTree());
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_expr_in_expr188);
-					expr22=expr();
+					pushFollow(FOLLOW_expr_in_expr231);
+					l=expr();
 					state._fsp--;
 
-					adaptor.addChild(root_1, expr22.getTree());
+					adaptor.addChild(root_1, l.getTree());
 
 					match(input, Token.UP, null); 
 					adaptor.addChild(root_0, root_1);
@@ -803,25 +616,34 @@ public class XTypeCheck extends TreeParser {
 					}
 
 
+
+					                                    if ((r!=null?((XTree)r.getTree()):null).exprType == XType.IntType && (l!=null?((XTree)l.getTree()):null).exprType == XType.IntType)
+					                                        op_tree.exprType = XType.IntType;
+					                                    if ((r!=null?((XTree)r.getTree()):null).exprType == XType.FloatType && (l!=null?((XTree)l.getTree()):null).exprType == XType.IntType
+					                                      ||(r!=null?((XTree)r.getTree()):null).exprType == XType.IntType && (l!=null?((XTree)l.getTree()):null).exprType == XType.FloatType
+					                                      ||(r!=null?((XTree)r.getTree()):null).exprType == XType.FloatType && (l!=null?((XTree)l.getTree()):null).exprType == XType.FloatType)
+					                                        op_tree.exprType = XType.FloatType;
+					                                    
 					}
 					break;
 				case 2 :
-					// gfiles/XTypeCheck.g:39:6: INTCONST
+					// gfiles/XTypeCheck.g:59:6: INTCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					INTCONST23=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr196); 
-					INTCONST23_tree = (XTree)adaptor.dupNode(INTCONST23);
+					INTCONST10=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr241); 
+					INTCONST10_tree = (XTree)adaptor.dupNode(INTCONST10);
 
 
-					adaptor.addChild(root_0, INTCONST23_tree);
+					adaptor.addChild(root_0, INTCONST10_tree);
 
+					 INTCONST10_tree.exprType = XType.IntType; 
 					}
 					break;
 				case 3 :
-					// gfiles/XTypeCheck.g:39:17: ^( UMINUS INTCONST )
+					// gfiles/XTypeCheck.g:60:6: ^( UMINUS INTCONST )
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -832,19 +654,19 @@ public class XTypeCheck extends TreeParser {
 					XTree _first_1 = null;
 					XTree root_1 = (XTree)adaptor.nil();
 					_last = (XTree)input.LT(1);
-					UMINUS24=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr201); 
-					UMINUS24_tree = (XTree)adaptor.dupNode(UMINUS24);
+					UMINUS11=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr264); 
+					UMINUS11_tree = (XTree)adaptor.dupNode(UMINUS11);
 
 
-					root_1 = (XTree)adaptor.becomeRoot(UMINUS24_tree, root_1);
+					root_1 = (XTree)adaptor.becomeRoot(UMINUS11_tree, root_1);
 
 					match(input, Token.DOWN, null); 
 					_last = (XTree)input.LT(1);
-					INTCONST25=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr203); 
-					INTCONST25_tree = (XTree)adaptor.dupNode(INTCONST25);
+					INTCONST12=(XTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr266); 
+					INTCONST12_tree = (XTree)adaptor.dupNode(INTCONST12);
 
 
-					adaptor.addChild(root_1, INTCONST25_tree);
+					adaptor.addChild(root_1, INTCONST12_tree);
 
 					match(input, Token.UP, null); 
 					adaptor.addChild(root_0, root_1);
@@ -852,25 +674,27 @@ public class XTypeCheck extends TreeParser {
 					}
 
 
+					 INTCONST12_tree.exprType = XType.IntType; UMINUS11_tree.exprType = XType.IntType; 
 					}
 					break;
 				case 4 :
-					// gfiles/XTypeCheck.g:40:6: FLOATCONST
+					// gfiles/XTypeCheck.g:61:6: FLOATCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					FLOATCONST26=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr211); 
-					FLOATCONST26_tree = (XTree)adaptor.dupNode(FLOATCONST26);
+					FLOATCONST13=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr279); 
+					FLOATCONST13_tree = (XTree)adaptor.dupNode(FLOATCONST13);
 
 
-					adaptor.addChild(root_0, FLOATCONST26_tree);
+					adaptor.addChild(root_0, FLOATCONST13_tree);
 
+					 FLOATCONST13_tree.exprType = XType.FloatType; 
 					}
 					break;
 				case 5 :
-					// gfiles/XTypeCheck.g:40:19: ^( UMINUS FLOATCONST )
+					// gfiles/XTypeCheck.g:62:6: ^( UMINUS FLOATCONST )
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -881,19 +705,19 @@ public class XTypeCheck extends TreeParser {
 					XTree _first_1 = null;
 					XTree root_1 = (XTree)adaptor.nil();
 					_last = (XTree)input.LT(1);
-					UMINUS27=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr216); 
-					UMINUS27_tree = (XTree)adaptor.dupNode(UMINUS27);
+					UMINUS14=(XTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr300); 
+					UMINUS14_tree = (XTree)adaptor.dupNode(UMINUS14);
 
 
-					root_1 = (XTree)adaptor.becomeRoot(UMINUS27_tree, root_1);
+					root_1 = (XTree)adaptor.becomeRoot(UMINUS14_tree, root_1);
 
 					match(input, Token.DOWN, null); 
 					_last = (XTree)input.LT(1);
-					FLOATCONST28=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr218); 
-					FLOATCONST28_tree = (XTree)adaptor.dupNode(FLOATCONST28);
+					FLOATCONST15=(XTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr302); 
+					FLOATCONST15_tree = (XTree)adaptor.dupNode(FLOATCONST15);
 
 
-					adaptor.addChild(root_1, FLOATCONST28_tree);
+					adaptor.addChild(root_1, FLOATCONST15_tree);
 
 					match(input, Token.UP, null); 
 					adaptor.addChild(root_0, root_1);
@@ -901,36 +725,39 @@ public class XTypeCheck extends TreeParser {
 					}
 
 
+					 FLOATCONST15_tree.exprType = XType.FloatType; UMINUS14_tree.exprType = XType.FloatType; 
 					}
 					break;
 				case 6 :
-					// gfiles/XTypeCheck.g:41:6: ID
+					// gfiles/XTypeCheck.g:63:6: ID
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					ID29=(XTree)match(input,ID,FOLLOW_ID_in_expr226); 
-					ID29_tree = (XTree)adaptor.dupNode(ID29);
+					ID16=(XTree)match(input,ID,FOLLOW_ID_in_expr313); 
+					ID16_tree = (XTree)adaptor.dupNode(ID16);
 
 
-					adaptor.addChild(root_0, ID29_tree);
+					adaptor.addChild(root_0, ID16_tree);
 
+					 ID16_tree.exprType = symbols.get(ID16.getText()).type; 
 					}
 					break;
 				case 7 :
-					// gfiles/XTypeCheck.g:41:11: STRINGCONST
+					// gfiles/XTypeCheck.g:64:6: STRINGCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					STRINGCONST30=(XTree)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_expr230); 
-					STRINGCONST30_tree = (XTree)adaptor.dupNode(STRINGCONST30);
+					STRINGCONST17=(XTree)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_expr341); 
+					STRINGCONST17_tree = (XTree)adaptor.dupNode(STRINGCONST17);
 
 
-					adaptor.addChild(root_0, STRINGCONST30_tree);
+					adaptor.addChild(root_0, STRINGCONST17_tree);
 
+					 STRINGCONST17_tree.exprType = XType.StringType; 
 					}
 					break;
 
@@ -958,7 +785,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "assignstat"
-	// gfiles/XTypeCheck.g:44:1: assignstat : ^( ':=' ID expr ) ;
+	// gfiles/XTypeCheck.g:67:1: assignstat : ^(assign= ':=' ID expr ) ;
 	public final XTypeCheck.assignstat_return assignstat() throws RecognitionException {
 		XTypeCheck.assignstat_return retval = new XTypeCheck.assignstat_return();
 		retval.start = input.LT(1);
@@ -969,16 +796,16 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree string_literal31=null;
-		XTree ID32=null;
-		TreeRuleReturnScope expr33 =null;
+		XTree assign=null;
+		XTree ID18=null;
+		TreeRuleReturnScope expr19 =null;
 
-		XTree string_literal31_tree=null;
-		XTree ID32_tree=null;
+		XTree assign_tree=null;
+		XTree ID18_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:44:11: ( ^( ':=' ID expr ) )
-			// gfiles/XTypeCheck.g:44:13: ^( ':=' ID expr )
+			// gfiles/XTypeCheck.g:67:11: ( ^(assign= ':=' ID expr ) )
+			// gfiles/XTypeCheck.g:67:13: ^(assign= ':=' ID expr )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -989,26 +816,26 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal31=(XTree)match(input,28,FOLLOW_28_in_assignstat239); 
-			string_literal31_tree = (XTree)adaptor.dupNode(string_literal31);
+			assign=(XTree)match(input,28,FOLLOW_28_in_assignstat365); 
+			assign_tree = (XTree)adaptor.dupNode(assign);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(string_literal31_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(assign_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			ID32=(XTree)match(input,ID,FOLLOW_ID_in_assignstat241); 
-			ID32_tree = (XTree)adaptor.dupNode(ID32);
+			ID18=(XTree)match(input,ID,FOLLOW_ID_in_assignstat367); 
+			ID18_tree = (XTree)adaptor.dupNode(ID18);
 
 
-			adaptor.addChild(root_1, ID32_tree);
+			adaptor.addChild(root_1, ID18_tree);
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_assignstat243);
-			expr33=expr();
+			pushFollow(FOLLOW_expr_in_assignstat369);
+			expr19=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr33.getTree());
+			adaptor.addChild(root_1, expr19.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1016,6 +843,9 @@ public class XTypeCheck extends TreeParser {
 			}
 
 
+
+			                ID18_tree.exprType = symbols.get(ID18.getText()).type;
+			                assign_tree.exprType = ID18_tree.exprType;
 			}
 
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
@@ -1041,7 +871,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "cond"
-	// gfiles/XTypeCheck.g:47:1: cond : ^( comp expr expr ) ;
+	// gfiles/XTypeCheck.g:72:1: cond : ^( comp expr expr ) ;
 	public final XTypeCheck.cond_return cond() throws RecognitionException {
 		XTypeCheck.cond_return retval = new XTypeCheck.cond_return();
 		retval.start = input.LT(1);
@@ -1052,14 +882,14 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		TreeRuleReturnScope comp34 =null;
-		TreeRuleReturnScope expr35 =null;
-		TreeRuleReturnScope expr36 =null;
+		TreeRuleReturnScope comp20 =null;
+		TreeRuleReturnScope expr21 =null;
+		TreeRuleReturnScope expr22 =null;
 
 
 		try {
-			// gfiles/XTypeCheck.g:47:5: ( ^( comp expr expr ) )
-			// gfiles/XTypeCheck.g:47:8: ^( comp expr expr )
+			// gfiles/XTypeCheck.g:72:5: ( ^( comp expr expr ) )
+			// gfiles/XTypeCheck.g:72:8: ^( comp expr expr )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1070,26 +900,26 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_comp_in_cond254);
-			comp34=comp();
+			pushFollow(FOLLOW_comp_in_cond382);
+			comp20=comp();
 			state._fsp--;
 
-			root_1 = (XTree)adaptor.becomeRoot(comp34.getTree(), root_1);
+			root_1 = (XTree)adaptor.becomeRoot(comp20.getTree(), root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond256);
-			expr35=expr();
+			pushFollow(FOLLOW_expr_in_cond384);
+			expr21=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr35.getTree());
+			adaptor.addChild(root_1, expr21.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond258);
-			expr36=expr();
+			pushFollow(FOLLOW_expr_in_cond386);
+			expr22=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr36.getTree());
+			adaptor.addChild(root_1, expr22.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1122,7 +952,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "comp"
-	// gfiles/XTypeCheck.g:48:1: comp : ( '<' | '>' | '=' );
+	// gfiles/XTypeCheck.g:73:1: comp : ( '<' | '>' | '=' );
 	public final XTypeCheck.comp_return comp() throws RecognitionException {
 		XTypeCheck.comp_return retval = new XTypeCheck.comp_return();
 		retval.start = input.LT(1);
@@ -1133,25 +963,25 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree set37=null;
+		XTree set23=null;
 
-		XTree set37_tree=null;
+		XTree set23_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:48:5: ( '<' | '>' | '=' )
+			// gfiles/XTypeCheck.g:73:5: ( '<' | '>' | '=' )
 			// gfiles/XTypeCheck.g:
 			{
 			root_0 = (XTree)adaptor.nil();
 
 
 			_last = (XTree)input.LT(1);
-			set37=(XTree)input.LT(1);
+			set23=(XTree)input.LT(1);
 			if ( (input.LA(1) >= 30 && input.LA(1) <= 32) ) {
 				input.consume();
-				set37_tree = (XTree)adaptor.dupNode(set37);
+				set23_tree = (XTree)adaptor.dupNode(set23);
 
 
-				adaptor.addChild(root_0, set37_tree);
+				adaptor.addChild(root_0, set23_tree);
 
 				state.errorRecovery=false;
 			}
@@ -1187,7 +1017,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "condstat"
-	// gfiles/XTypeCheck.g:51:1: condstat : ^( 'if' cond stat ( stat )? ) ;
+	// gfiles/XTypeCheck.g:76:1: condstat : ^( 'if' cond stat ( stat )? ) ;
 	public final XTypeCheck.condstat_return condstat() throws RecognitionException {
 		XTypeCheck.condstat_return retval = new XTypeCheck.condstat_return();
 		retval.start = input.LT(1);
@@ -1198,16 +1028,16 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree string_literal38=null;
-		TreeRuleReturnScope cond39 =null;
-		TreeRuleReturnScope stat40 =null;
-		TreeRuleReturnScope stat41 =null;
+		XTree string_literal24=null;
+		TreeRuleReturnScope cond25 =null;
+		TreeRuleReturnScope stat26 =null;
+		TreeRuleReturnScope stat27 =null;
 
-		XTree string_literal38_tree=null;
+		XTree string_literal24_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:51:9: ( ^( 'if' cond stat ( stat )? ) )
-			// gfiles/XTypeCheck.g:51:11: ^( 'if' cond stat ( stat )? )
+			// gfiles/XTypeCheck.g:76:9: ( ^( 'if' cond stat ( stat )? ) )
+			// gfiles/XTypeCheck.g:76:11: ^( 'if' cond stat ( stat )? )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1218,28 +1048,28 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal38=(XTree)match(input,38,FOLLOW_38_in_condstat281); 
-			string_literal38_tree = (XTree)adaptor.dupNode(string_literal38);
+			string_literal24=(XTree)match(input,38,FOLLOW_38_in_condstat409); 
+			string_literal24_tree = (XTree)adaptor.dupNode(string_literal24);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(string_literal38_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(string_literal24_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_condstat283);
-			cond39=cond();
+			pushFollow(FOLLOW_cond_in_condstat411);
+			cond25=cond();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond39.getTree());
+			adaptor.addChild(root_1, cond25.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_condstat285);
-			stat40=stat();
+			pushFollow(FOLLOW_stat_in_condstat413);
+			stat26=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, stat40.getTree());
+			adaptor.addChild(root_1, stat26.getTree());
 
-			// gfiles/XTypeCheck.g:51:28: ( stat )?
+			// gfiles/XTypeCheck.g:76:28: ( stat )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==STATLIST||LA4_0==28||(LA4_0 >= 37 && LA4_0 <= 38)||LA4_0==45) ) {
@@ -1247,14 +1077,14 @@ public class XTypeCheck extends TreeParser {
 			}
 			switch (alt4) {
 				case 1 :
-					// gfiles/XTypeCheck.g:51:28: stat
+					// gfiles/XTypeCheck.g:76:28: stat
 					{
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_stat_in_condstat287);
-					stat41=stat();
+					pushFollow(FOLLOW_stat_in_condstat415);
+					stat27=stat();
 					state._fsp--;
 
-					adaptor.addChild(root_1, stat41.getTree());
+					adaptor.addChild(root_1, stat27.getTree());
 
 					}
 					break;
@@ -1292,7 +1122,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "whilestat"
-	// gfiles/XTypeCheck.g:54:1: whilestat : ^( 'while' cond stat ) ;
+	// gfiles/XTypeCheck.g:79:1: whilestat : ^( 'while' cond stat ) ;
 	public final XTypeCheck.whilestat_return whilestat() throws RecognitionException {
 		XTypeCheck.whilestat_return retval = new XTypeCheck.whilestat_return();
 		retval.start = input.LT(1);
@@ -1303,15 +1133,15 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree string_literal42=null;
-		TreeRuleReturnScope cond43 =null;
-		TreeRuleReturnScope stat44 =null;
+		XTree string_literal28=null;
+		TreeRuleReturnScope cond29 =null;
+		TreeRuleReturnScope stat30 =null;
 
-		XTree string_literal42_tree=null;
+		XTree string_literal28_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:54:10: ( ^( 'while' cond stat ) )
-			// gfiles/XTypeCheck.g:54:12: ^( 'while' cond stat )
+			// gfiles/XTypeCheck.g:79:10: ( ^( 'while' cond stat ) )
+			// gfiles/XTypeCheck.g:79:12: ^( 'while' cond stat )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1322,26 +1152,26 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal42=(XTree)match(input,45,FOLLOW_45_in_whilestat299); 
-			string_literal42_tree = (XTree)adaptor.dupNode(string_literal42);
+			string_literal28=(XTree)match(input,45,FOLLOW_45_in_whilestat427); 
+			string_literal28_tree = (XTree)adaptor.dupNode(string_literal28);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(string_literal42_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(string_literal28_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_whilestat301);
-			cond43=cond();
+			pushFollow(FOLLOW_cond_in_whilestat429);
+			cond29=cond();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond43.getTree());
+			adaptor.addChild(root_1, cond29.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_whilestat303);
-			stat44=stat();
+			pushFollow(FOLLOW_stat_in_whilestat431);
+			stat30=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, stat44.getTree());
+			adaptor.addChild(root_1, stat30.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1374,7 +1204,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "forstat"
-	// gfiles/XTypeCheck.g:55:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
+	// gfiles/XTypeCheck.g:80:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
 	public final XTypeCheck.forstat_return forstat() throws RecognitionException {
 		XTypeCheck.forstat_return retval = new XTypeCheck.forstat_return();
 		retval.start = input.LT(1);
@@ -1385,17 +1215,17 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree string_literal45=null;
-		TreeRuleReturnScope assignstat46 =null;
-		TreeRuleReturnScope cond47 =null;
-		TreeRuleReturnScope assignstat48 =null;
-		TreeRuleReturnScope stat49 =null;
+		XTree string_literal31=null;
+		TreeRuleReturnScope assignstat32 =null;
+		TreeRuleReturnScope cond33 =null;
+		TreeRuleReturnScope assignstat34 =null;
+		TreeRuleReturnScope stat35 =null;
 
-		XTree string_literal45_tree=null;
+		XTree string_literal31_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:55:8: ( ^( 'for' assignstat cond assignstat stat ) )
-			// gfiles/XTypeCheck.g:55:10: ^( 'for' assignstat cond assignstat stat )
+			// gfiles/XTypeCheck.g:80:8: ( ^( 'for' assignstat cond assignstat stat ) )
+			// gfiles/XTypeCheck.g:80:10: ^( 'for' assignstat cond assignstat stat )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1406,40 +1236,40 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal45=(XTree)match(input,37,FOLLOW_37_in_forstat311); 
-			string_literal45_tree = (XTree)adaptor.dupNode(string_literal45);
+			string_literal31=(XTree)match(input,37,FOLLOW_37_in_forstat439); 
+			string_literal31_tree = (XTree)adaptor.dupNode(string_literal31);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(string_literal45_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(string_literal31_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat313);
-			assignstat46=assignstat();
+			pushFollow(FOLLOW_assignstat_in_forstat441);
+			assignstat32=assignstat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, assignstat46.getTree());
+			adaptor.addChild(root_1, assignstat32.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_forstat315);
-			cond47=cond();
+			pushFollow(FOLLOW_cond_in_forstat443);
+			cond33=cond();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond47.getTree());
+			adaptor.addChild(root_1, cond33.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat317);
-			assignstat48=assignstat();
+			pushFollow(FOLLOW_assignstat_in_forstat445);
+			assignstat34=assignstat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, assignstat48.getTree());
+			adaptor.addChild(root_1, assignstat34.getTree());
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_forstat319);
-			stat49=stat();
+			pushFollow(FOLLOW_stat_in_forstat447);
+			stat35=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, stat49.getTree());
+			adaptor.addChild(root_1, stat35.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1472,7 +1302,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "stat"
-	// gfiles/XTypeCheck.g:58:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
+	// gfiles/XTypeCheck.g:83:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
 	public final XTypeCheck.stat_return stat() throws RecognitionException {
 		XTypeCheck.stat_return retval = new XTypeCheck.stat_return();
 		retval.start = input.LT(1);
@@ -1483,15 +1313,15 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		TreeRuleReturnScope assignstat50 =null;
-		TreeRuleReturnScope condstat51 =null;
-		TreeRuleReturnScope whilestat52 =null;
-		TreeRuleReturnScope forstat53 =null;
-		TreeRuleReturnScope statlist54 =null;
+		TreeRuleReturnScope assignstat36 =null;
+		TreeRuleReturnScope condstat37 =null;
+		TreeRuleReturnScope whilestat38 =null;
+		TreeRuleReturnScope forstat39 =null;
+		TreeRuleReturnScope statlist40 =null;
 
 
 		try {
-			// gfiles/XTypeCheck.g:58:5: ( assignstat | condstat | whilestat | forstat | statlist )
+			// gfiles/XTypeCheck.g:83:5: ( assignstat | condstat | whilestat | forstat | statlist )
 			int alt5=5;
 			switch ( input.LA(1) ) {
 			case 28:
@@ -1526,77 +1356,77 @@ public class XTypeCheck extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// gfiles/XTypeCheck.g:58:8: assignstat
+					// gfiles/XTypeCheck.g:83:8: assignstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_assignstat_in_stat329);
-					assignstat50=assignstat();
+					pushFollow(FOLLOW_assignstat_in_stat457);
+					assignstat36=assignstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, assignstat50.getTree());
+					adaptor.addChild(root_0, assignstat36.getTree());
 
 					}
 					break;
 				case 2 :
-					// gfiles/XTypeCheck.g:58:21: condstat
+					// gfiles/XTypeCheck.g:83:21: condstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_condstat_in_stat333);
-					condstat51=condstat();
+					pushFollow(FOLLOW_condstat_in_stat461);
+					condstat37=condstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, condstat51.getTree());
+					adaptor.addChild(root_0, condstat37.getTree());
 
 					}
 					break;
 				case 3 :
-					// gfiles/XTypeCheck.g:58:32: whilestat
+					// gfiles/XTypeCheck.g:83:32: whilestat
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_whilestat_in_stat337);
-					whilestat52=whilestat();
+					pushFollow(FOLLOW_whilestat_in_stat465);
+					whilestat38=whilestat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, whilestat52.getTree());
+					adaptor.addChild(root_0, whilestat38.getTree());
 
 					}
 					break;
 				case 4 :
-					// gfiles/XTypeCheck.g:58:44: forstat
+					// gfiles/XTypeCheck.g:83:44: forstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_forstat_in_stat341);
-					forstat53=forstat();
+					pushFollow(FOLLOW_forstat_in_stat469);
+					forstat39=forstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, forstat53.getTree());
+					adaptor.addChild(root_0, forstat39.getTree());
 
 					}
 					break;
 				case 5 :
-					// gfiles/XTypeCheck.g:58:54: statlist
+					// gfiles/XTypeCheck.g:83:54: statlist
 					{
 					root_0 = (XTree)adaptor.nil();
 
 
 					_last = (XTree)input.LT(1);
-					pushFollow(FOLLOW_statlist_in_stat345);
-					statlist54=statlist();
+					pushFollow(FOLLOW_statlist_in_stat473);
+					statlist40=statlist();
 					state._fsp--;
 
-					adaptor.addChild(root_0, statlist54.getTree());
+					adaptor.addChild(root_0, statlist40.getTree());
 
 					}
 					break;
@@ -1625,7 +1455,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "statlist"
-	// gfiles/XTypeCheck.g:60:1: statlist : ^( STATLIST ( stat )* ) ;
+	// gfiles/XTypeCheck.g:85:1: statlist : ^( STATLIST ( stat )* ) ;
 	public final XTypeCheck.statlist_return statlist() throws RecognitionException {
 		XTypeCheck.statlist_return retval = new XTypeCheck.statlist_return();
 		retval.start = input.LT(1);
@@ -1636,14 +1466,14 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree STATLIST55=null;
-		TreeRuleReturnScope stat56 =null;
+		XTree STATLIST41=null;
+		TreeRuleReturnScope stat42 =null;
 
-		XTree STATLIST55_tree=null;
+		XTree STATLIST41_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:60:9: ( ^( STATLIST ( stat )* ) )
-			// gfiles/XTypeCheck.g:60:11: ^( STATLIST ( stat )* )
+			// gfiles/XTypeCheck.g:85:9: ( ^( STATLIST ( stat )* ) )
+			// gfiles/XTypeCheck.g:85:11: ^( STATLIST ( stat )* )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1654,15 +1484,15 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			STATLIST55=(XTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist353); 
-			STATLIST55_tree = (XTree)adaptor.dupNode(STATLIST55);
+			STATLIST41=(XTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist481); 
+			STATLIST41_tree = (XTree)adaptor.dupNode(STATLIST41);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(STATLIST55_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(STATLIST41_tree, root_1);
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// gfiles/XTypeCheck.g:60:22: ( stat )*
+				// gfiles/XTypeCheck.g:85:22: ( stat )*
 				loop6:
 				while (true) {
 					int alt6=2;
@@ -1673,14 +1503,14 @@ public class XTypeCheck extends TreeParser {
 
 					switch (alt6) {
 					case 1 :
-						// gfiles/XTypeCheck.g:60:22: stat
+						// gfiles/XTypeCheck.g:85:22: stat
 						{
 						_last = (XTree)input.LT(1);
-						pushFollow(FOLLOW_stat_in_statlist355);
-						stat56=stat();
+						pushFollow(FOLLOW_stat_in_statlist483);
+						stat42=stat();
 						state._fsp--;
 
-						adaptor.addChild(root_1, stat56.getTree());
+						adaptor.addChild(root_1, stat42.getTree());
 
 						}
 						break;
@@ -1722,7 +1552,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "program"
-	// gfiles/XTypeCheck.g:63:1: program : ^( 'program' ID decllist statlist ) ;
+	// gfiles/XTypeCheck.g:88:1: program : ^( 'program' ID decllist statlist ) ;
 	public final XTypeCheck.program_return program() throws RecognitionException {
 		XTypeCheck.program_return retval = new XTypeCheck.program_return();
 		retval.start = input.LT(1);
@@ -1733,17 +1563,17 @@ public class XTypeCheck extends TreeParser {
 		XTree _last = null;
 
 
-		XTree string_literal57=null;
-		XTree ID58=null;
-		TreeRuleReturnScope decllist59 =null;
-		TreeRuleReturnScope statlist60 =null;
+		XTree string_literal43=null;
+		XTree ID44=null;
+		TreeRuleReturnScope decllist45 =null;
+		TreeRuleReturnScope statlist46 =null;
 
-		XTree string_literal57_tree=null;
-		XTree ID58_tree=null;
+		XTree string_literal43_tree=null;
+		XTree ID44_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:63:8: ( ^( 'program' ID decllist statlist ) )
-			// gfiles/XTypeCheck.g:63:10: ^( 'program' ID decllist statlist )
+			// gfiles/XTypeCheck.g:88:8: ( ^( 'program' ID decllist statlist ) )
+			// gfiles/XTypeCheck.g:88:10: ^( 'program' ID decllist statlist )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1754,33 +1584,33 @@ public class XTypeCheck extends TreeParser {
 			XTree _first_1 = null;
 			XTree root_1 = (XTree)adaptor.nil();
 			_last = (XTree)input.LT(1);
-			string_literal57=(XTree)match(input,41,FOLLOW_41_in_program366); 
-			string_literal57_tree = (XTree)adaptor.dupNode(string_literal57);
+			string_literal43=(XTree)match(input,41,FOLLOW_41_in_program494); 
+			string_literal43_tree = (XTree)adaptor.dupNode(string_literal43);
 
 
-			root_1 = (XTree)adaptor.becomeRoot(string_literal57_tree, root_1);
+			root_1 = (XTree)adaptor.becomeRoot(string_literal43_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (XTree)input.LT(1);
-			ID58=(XTree)match(input,ID,FOLLOW_ID_in_program368); 
-			ID58_tree = (XTree)adaptor.dupNode(ID58);
+			ID44=(XTree)match(input,ID,FOLLOW_ID_in_program496); 
+			ID44_tree = (XTree)adaptor.dupNode(ID44);
 
 
-			adaptor.addChild(root_1, ID58_tree);
-
-			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_decllist_in_program370);
-			decllist59=decllist();
-			state._fsp--;
-
-			adaptor.addChild(root_1, decllist59.getTree());
+			adaptor.addChild(root_1, ID44_tree);
 
 			_last = (XTree)input.LT(1);
-			pushFollow(FOLLOW_statlist_in_program372);
-			statlist60=statlist();
+			pushFollow(FOLLOW_decllist_in_program498);
+			decllist45=decllist();
 			state._fsp--;
 
-			adaptor.addChild(root_1, statlist60.getTree());
+			adaptor.addChild(root_1, decllist45.getTree());
+
+			_last = (XTree)input.LT(1);
+			pushFollow(FOLLOW_statlist_in_program500);
+			statlist46=statlist();
+			state._fsp--;
+
+			adaptor.addChild(root_1, statlist46.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1808,62 +1638,54 @@ public class XTypeCheck extends TreeParser {
 
 
 
-	public static final BitSet FOLLOW_DECL_in_decl80 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_decl82 = new BitSet(new long[]{0x0000089000000000L});
-	public static final BitSet FOLLOW_type_in_decl84 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DECL_in_decl93 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_decl95 = new BitSet(new long[]{0x0000089000000000L});
-	public static final BitSet FOLLOW_type_in_decl97 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_42_in_decl99 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DECL_in_decl108 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_decl110 = new BitSet(new long[]{0x0000089000000000L});
-	public static final BitSet FOLLOW_type_in_decl112 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_40_in_decl114 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DECL_in_decl123 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_decl125 = new BitSet(new long[]{0x0000089000000000L});
-	public static final BitSet FOLLOW_type_in_decl127 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_42_in_decl129 = new BitSet(new long[]{0x0000010000000000L});
-	public static final BitSet FOLLOW_40_in_decl131 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DECLLIST_in_decllist156 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_decl_in_decllist158 = new BitSet(new long[]{0x0000000000000028L});
-	public static final BitSet FOLLOW_set_in_expr170 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expr_in_expr186 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_expr188 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_INTCONST_in_expr196 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UMINUS_in_expr201 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_expr203 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FLOATCONST_in_expr211 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UMINUS_in_expr216 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_expr218 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_ID_in_expr226 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRINGCONST_in_expr230 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_28_in_assignstat239 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_assignstat241 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_assignstat243 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_comp_in_cond254 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expr_in_cond256 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_cond258 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_38_in_condstat281 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_condstat283 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_condstat285 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_stat_in_condstat287 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_45_in_whilestat299 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_whilestat301 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_whilestat303 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_37_in_forstat311 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_assignstat_in_forstat313 = new BitSet(new long[]{0x00000001C0000000L});
-	public static final BitSet FOLLOW_cond_in_forstat315 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_assignstat_in_forstat317 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_forstat319 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_assignstat_in_stat329 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condstat_in_stat333 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whilestat_in_stat337 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forstat_in_stat341 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statlist_in_stat345 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STATLIST_in_statlist353 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_stat_in_statlist355 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_41_in_program366 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_program368 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_decllist_in_program370 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_statlist_in_program372 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_DECL_in_decl147 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_decl149 = new BitSet(new long[]{0x0000089000000000L});
+	public static final BitSet FOLLOW_set_in_decl153 = new BitSet(new long[]{0x0000050000000000L});
+	public static final BitSet FOLLOW_modifier_in_decl164 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_42_in_modifier175 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_40_in_modifier179 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_42_in_modifier183 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_40_in_modifier185 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DECLLIST_in_decllist193 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_decl_in_decllist195 = new BitSet(new long[]{0x0000000000000028L});
+	public static final BitSet FOLLOW_set_in_expr209 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expr_in_expr227 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_expr231 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_INTCONST_in_expr241 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UMINUS_in_expr264 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_INTCONST_in_expr266 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FLOATCONST_in_expr279 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UMINUS_in_expr300 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_FLOATCONST_in_expr302 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_ID_in_expr313 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRINGCONST_in_expr341 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_28_in_assignstat365 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_assignstat367 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_assignstat369 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_comp_in_cond382 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expr_in_cond384 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_cond386 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_38_in_condstat409 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_condstat411 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_condstat413 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_stat_in_condstat415 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_45_in_whilestat427 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_whilestat429 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_whilestat431 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_37_in_forstat439 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_assignstat_in_forstat441 = new BitSet(new long[]{0x00000001C0000000L});
+	public static final BitSet FOLLOW_cond_in_forstat443 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_assignstat_in_forstat445 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_forstat447 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_assignstat_in_stat457 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condstat_in_stat461 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whilestat_in_stat465 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forstat_in_stat469 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statlist_in_stat473 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STATLIST_in_statlist481 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_stat_in_statlist483 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_41_in_program494 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_program496 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_decllist_in_program498 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_statlist_in_program500 = new BitSet(new long[]{0x0000000000000008L});
 }
