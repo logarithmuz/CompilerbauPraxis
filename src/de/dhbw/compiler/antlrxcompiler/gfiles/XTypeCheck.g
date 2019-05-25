@@ -65,10 +65,10 @@ expr:		^(op=('+' | '-' | '*' | '/') r=expr l=expr ){
 
 // Zuweisung
 assignstat:	^(assign=':=' ID e=expr) {
-                if (symbols.containsKey($ID.getText())) $ID.tree.exprType = symbols.get($ID.getText()).type; else $ID.tree.exprType = XType.InvalidType;
+                if (symbols.containsKey($ID.getText())) $ID.tree.exprType = symbols.get($ID.getText()).type; else {$ID.tree.exprType = XType.InvalidType; System.out.println("Cannot resolve variable " + $ID.getText());}
                 if ($ID.tree.exprType == $e.tree.exprType) $assign.tree.exprType = $ID.tree.exprType;
                 else if ($ID.tree.exprType == XType.FloatType && $e.tree.exprType == XType.IntType) $assign.tree.exprType = XType.FloatType;
-                else $assign.tree.exprType = XType.InvalidType;};
+                else {$assign.tree.exprType = XType.InvalidType; System.out.println("Cannot assign " + $e.tree.exprType + " value to variable " + $ID.getText() + " with type " + $ID.tree.exprType);}};
 
 // Bedingungen
 cond:		^(c=comp l=expr r=expr) {if ($r.tree.exprType == $l.tree.exprType) $c.tree.exprType = $r.tree.exprType; else $c.tree.exprType = XType.InvalidType; };

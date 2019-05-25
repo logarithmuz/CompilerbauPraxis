@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-25 12:05:49
+// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-25 12:21:07
 
 package de.dhbw.compiler.antlrxcompiler;
    
@@ -858,10 +858,10 @@ public class XTypeCheck extends TreeParser {
 
 
 
-			                if (symbols.containsKey(ID18.getText())) ID18_tree.exprType = symbols.get(ID18.getText()).type; else ID18_tree.exprType = XType.InvalidType;
+			                if (symbols.containsKey(ID18.getText())) ID18_tree.exprType = symbols.get(ID18.getText()).type; else {ID18_tree.exprType = XType.InvalidType; System.out.println("Cannot resolve variable " + ID18.getText());}
 			                if (ID18_tree.exprType == (e!=null?((XTree)e.getTree()):null).exprType) assign_tree.exprType = ID18_tree.exprType;
 			                else if (ID18_tree.exprType == XType.FloatType && (e!=null?((XTree)e.getTree()):null).exprType == XType.IntType) assign_tree.exprType = XType.FloatType;
-			                else assign_tree.exprType = XType.InvalidType;
+			                else {assign_tree.exprType = XType.InvalidType; System.out.println("Cannot assign " + (e!=null?((XTree)e.getTree()):null).exprType + " value to variable " + ID18.getText() + " with type " + ID18_tree.exprType);}
 			}
 
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
