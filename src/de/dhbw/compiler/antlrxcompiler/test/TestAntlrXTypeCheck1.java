@@ -11,12 +11,20 @@
 
 package de.dhbw.compiler.antlrxcompiler.test;
 
+import de.dhbw.compiler.antlrxcompiler.SymbolTable;
+import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestAntlrXTypeCheck1 extends TypeCheckTest {
+
+	@Before
+	public void beforeTest(){
+		SymbolTable st = SymbolTable.getInstance();
+		st.clear();
+	}
 	
 	@Test
 	public void typecheck00Undefined() throws Exception {
