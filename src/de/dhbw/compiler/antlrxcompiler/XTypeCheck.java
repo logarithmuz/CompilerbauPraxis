@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-25 12:21:07
+// $ANTLR 3.5.2 gfiles/XTypeCheck.g 2019-05-25 12:29:13
 
 package de.dhbw.compiler.antlrxcompiler;
    
@@ -634,14 +634,15 @@ public class XTypeCheck extends TreeParser {
 					                                    if ((r!=null?((XTree)r.getTree()):null).exprType == (l!=null?((XTree)l.getTree()):null).exprType)
 					                                        op_tree.exprType = (r!=null?((XTree)r.getTree()):null).exprType;
 					                                    else if ((r!=null?((XTree)r.getTree()):null).exprType == XType.FloatType && (l!=null?((XTree)l.getTree()):null).exprType == XType.IntType
-					                                      ||(r!=null?((XTree)r.getTree()):null).exprType == XType.IntType && (l!=null?((XTree)l.getTree()):null).exprType == XType.FloatType)
+					                                      || (r!=null?((XTree)r.getTree()):null).exprType == XType.IntType && (l!=null?((XTree)l.getTree()):null).exprType == XType.FloatType)
 					                                        op_tree.exprType = XType.FloatType;
-					                                    else op_tree.exprType = XType.InvalidType;
+					                                    else
+					                                        op_tree.exprType = XType.InvalidType;
 					                                    
 					}
 					break;
 				case 2 :
-					// gfiles/XTypeCheck.g:59:6: INTCONST
+					// gfiles/XTypeCheck.g:60:6: INTCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -657,7 +658,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 3 :
-					// gfiles/XTypeCheck.g:60:6: ^( UMINUS INTCONST )
+					// gfiles/XTypeCheck.g:61:6: ^( UMINUS INTCONST )
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -688,11 +689,13 @@ public class XTypeCheck extends TreeParser {
 					}
 
 
-					 INTCONST12_tree.exprType = XType.IntType; UMINUS11_tree.exprType = XType.IntType; 
+					 INTCONST12_tree.exprType = XType.IntType;
+								                          UMINUS11_tree.exprType = XType.IntType;
+								                        
 					}
 					break;
 				case 4 :
-					// gfiles/XTypeCheck.g:61:6: FLOATCONST
+					// gfiles/XTypeCheck.g:64:6: FLOATCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -708,7 +711,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 5 :
-					// gfiles/XTypeCheck.g:62:6: ^( UMINUS FLOATCONST )
+					// gfiles/XTypeCheck.g:65:6: ^( UMINUS FLOATCONST )
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -739,11 +742,13 @@ public class XTypeCheck extends TreeParser {
 					}
 
 
-					 FLOATCONST15_tree.exprType = XType.FloatType; UMINUS14_tree.exprType = XType.FloatType; 
+					 FLOATCONST15_tree.exprType = XType.FloatType;
+								                          UMINUS14_tree.exprType = XType.FloatType;
+								                        
 					}
 					break;
 				case 6 :
-					// gfiles/XTypeCheck.g:63:6: STRINGCONST
+					// gfiles/XTypeCheck.g:68:6: STRINGCONST
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -759,7 +764,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 7 :
-					// gfiles/XTypeCheck.g:64:6: ID
+					// gfiles/XTypeCheck.g:69:6: ID
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -771,7 +776,11 @@ public class XTypeCheck extends TreeParser {
 
 					adaptor.addChild(root_0, ID17_tree);
 
-					 if (symbols.containsKey(ID17.getText())) ID17_tree.exprType = symbols.get(ID17.getText()).type; else ID17_tree.exprType = XType.InvalidType; 
+					 if (symbols.containsKey(ID17.getText()))
+								                            ID17_tree.exprType = symbols.get(ID17.getText()).type;
+								                          else
+								                            ID17_tree.exprType = XType.InvalidType;
+								                        
 					}
 					break;
 
@@ -799,7 +808,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "assignstat"
-	// gfiles/XTypeCheck.g:67:1: assignstat : ^(assign= ':=' ID e= expr ) ;
+	// gfiles/XTypeCheck.g:76:1: assignstat : ^(assign= ':=' ID e= expr ) ;
 	public final XTypeCheck.assignstat_return assignstat() throws RecognitionException {
 		XTypeCheck.assignstat_return retval = new XTypeCheck.assignstat_return();
 		retval.start = input.LT(1);
@@ -818,8 +827,8 @@ public class XTypeCheck extends TreeParser {
 		XTree ID18_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:67:11: ( ^(assign= ':=' ID e= expr ) )
-			// gfiles/XTypeCheck.g:67:13: ^(assign= ':=' ID e= expr )
+			// gfiles/XTypeCheck.g:76:11: ( ^(assign= ':=' ID e= expr ) )
+			// gfiles/XTypeCheck.g:76:13: ^(assign= ':=' ID e= expr )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -858,10 +867,22 @@ public class XTypeCheck extends TreeParser {
 
 
 
-			                if (symbols.containsKey(ID18.getText())) ID18_tree.exprType = symbols.get(ID18.getText()).type; else {ID18_tree.exprType = XType.InvalidType; System.out.println("Cannot resolve variable " + ID18.getText());}
-			                if (ID18_tree.exprType == (e!=null?((XTree)e.getTree()):null).exprType) assign_tree.exprType = ID18_tree.exprType;
-			                else if (ID18_tree.exprType == XType.FloatType && (e!=null?((XTree)e.getTree()):null).exprType == XType.IntType) assign_tree.exprType = XType.FloatType;
-			                else {assign_tree.exprType = XType.InvalidType; System.out.println("Cannot assign " + (e!=null?((XTree)e.getTree()):null).exprType + " value to variable " + ID18.getText() + " with type " + ID18_tree.exprType);}
+			                if (symbols.containsKey(ID18.getText())) {
+			                    ID18_tree.exprType = symbols.get(ID18.getText()).type;
+			                } else {
+			                    ID18_tree.exprType = XType.InvalidType;
+			                    System.out.println("Cannot resolve variable " + ID18.getText());
+			                }
+			                if (ID18_tree.exprType == (e!=null?((XTree)e.getTree()):null).exprType)
+			                    assign_tree.exprType = ID18_tree.exprType;
+			                else if (ID18_tree.exprType == XType.FloatType && (e!=null?((XTree)e.getTree()):null).exprType == XType.IntType)
+			                    assign_tree.exprType = XType.FloatType;
+			                else {
+			                    assign_tree.exprType = XType.InvalidType;
+			                    System.out.println("Cannot assign " + (e!=null?((XTree)e.getTree()):null).exprType + " value to variable " + ID18.getText() +
+			                                        " with type " + ID18_tree.exprType);
+			                }
+			                
 			}
 
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
@@ -887,7 +908,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "cond"
-	// gfiles/XTypeCheck.g:74:1: cond : ^(c= comp l= expr r= expr ) ;
+	// gfiles/XTypeCheck.g:95:1: cond : ^(c= comp l= expr r= expr ) ;
 	public final XTypeCheck.cond_return cond() throws RecognitionException {
 		XTypeCheck.cond_return retval = new XTypeCheck.cond_return();
 		retval.start = input.LT(1);
@@ -904,8 +925,8 @@ public class XTypeCheck extends TreeParser {
 
 
 		try {
-			// gfiles/XTypeCheck.g:74:5: ( ^(c= comp l= expr r= expr ) )
-			// gfiles/XTypeCheck.g:74:8: ^(c= comp l= expr r= expr )
+			// gfiles/XTypeCheck.g:95:5: ( ^(c= comp l= expr r= expr ) )
+			// gfiles/XTypeCheck.g:95:8: ^(c= comp l= expr r= expr )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -943,7 +964,10 @@ public class XTypeCheck extends TreeParser {
 			}
 
 
-			if ((r!=null?((XTree)r.getTree()):null).exprType == (l!=null?((XTree)l.getTree()):null).exprType) (c!=null?((XTree)c.getTree()):null).exprType = (r!=null?((XTree)r.getTree()):null).exprType; else (c!=null?((XTree)c.getTree()):null).exprType = XType.InvalidType; 
+			if ((r!=null?((XTree)r.getTree()):null).exprType == (l!=null?((XTree)l.getTree()):null).exprType)
+			                                        (c!=null?((XTree)c.getTree()):null).exprType = (r!=null?((XTree)r.getTree()):null).exprType;
+			                                    else
+			                                        (c!=null?((XTree)c.getTree()):null).exprType = XType.InvalidType; 
 			}
 
 			retval.tree = (XTree)adaptor.rulePostProcessing(root_0);
@@ -969,7 +993,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "comp"
-	// gfiles/XTypeCheck.g:75:1: comp : ( '<' | '>' | '=' );
+	// gfiles/XTypeCheck.g:99:1: comp : ( '<' | '>' | '=' );
 	public final XTypeCheck.comp_return comp() throws RecognitionException {
 		XTypeCheck.comp_return retval = new XTypeCheck.comp_return();
 		retval.start = input.LT(1);
@@ -985,7 +1009,7 @@ public class XTypeCheck extends TreeParser {
 		XTree set19_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:75:5: ( '<' | '>' | '=' )
+			// gfiles/XTypeCheck.g:99:5: ( '<' | '>' | '=' )
 			// gfiles/XTypeCheck.g:
 			{
 			root_0 = (XTree)adaptor.nil();
@@ -1034,7 +1058,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "condstat"
-	// gfiles/XTypeCheck.g:78:1: condstat : ^( 'if' cond stat ( stat )? ) ;
+	// gfiles/XTypeCheck.g:102:1: condstat : ^( 'if' cond stat ( stat )? ) ;
 	public final XTypeCheck.condstat_return condstat() throws RecognitionException {
 		XTypeCheck.condstat_return retval = new XTypeCheck.condstat_return();
 		retval.start = input.LT(1);
@@ -1053,8 +1077,8 @@ public class XTypeCheck extends TreeParser {
 		XTree string_literal20_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:78:9: ( ^( 'if' cond stat ( stat )? ) )
-			// gfiles/XTypeCheck.g:78:11: ^( 'if' cond stat ( stat )? )
+			// gfiles/XTypeCheck.g:102:9: ( ^( 'if' cond stat ( stat )? ) )
+			// gfiles/XTypeCheck.g:102:11: ^( 'if' cond stat ( stat )? )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1086,7 +1110,7 @@ public class XTypeCheck extends TreeParser {
 
 			adaptor.addChild(root_1, stat22.getTree());
 
-			// gfiles/XTypeCheck.g:78:28: ( stat )?
+			// gfiles/XTypeCheck.g:102:28: ( stat )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==STATLIST||LA5_0==28||(LA5_0 >= 37 && LA5_0 <= 38)||LA5_0==45) ) {
@@ -1094,7 +1118,7 @@ public class XTypeCheck extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// gfiles/XTypeCheck.g:78:28: stat
+					// gfiles/XTypeCheck.g:102:28: stat
 					{
 					_last = (XTree)input.LT(1);
 					pushFollow(FOLLOW_stat_in_condstat425);
@@ -1139,7 +1163,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "whilestat"
-	// gfiles/XTypeCheck.g:81:1: whilestat : ^( 'while' cond stat ) ;
+	// gfiles/XTypeCheck.g:105:1: whilestat : ^( 'while' cond stat ) ;
 	public final XTypeCheck.whilestat_return whilestat() throws RecognitionException {
 		XTypeCheck.whilestat_return retval = new XTypeCheck.whilestat_return();
 		retval.start = input.LT(1);
@@ -1157,8 +1181,8 @@ public class XTypeCheck extends TreeParser {
 		XTree string_literal24_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:81:10: ( ^( 'while' cond stat ) )
-			// gfiles/XTypeCheck.g:81:12: ^( 'while' cond stat )
+			// gfiles/XTypeCheck.g:105:10: ( ^( 'while' cond stat ) )
+			// gfiles/XTypeCheck.g:105:12: ^( 'while' cond stat )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1221,7 +1245,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "forstat"
-	// gfiles/XTypeCheck.g:82:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
+	// gfiles/XTypeCheck.g:106:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
 	public final XTypeCheck.forstat_return forstat() throws RecognitionException {
 		XTypeCheck.forstat_return retval = new XTypeCheck.forstat_return();
 		retval.start = input.LT(1);
@@ -1241,8 +1265,8 @@ public class XTypeCheck extends TreeParser {
 		XTree string_literal27_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:82:8: ( ^( 'for' assignstat cond assignstat stat ) )
-			// gfiles/XTypeCheck.g:82:10: ^( 'for' assignstat cond assignstat stat )
+			// gfiles/XTypeCheck.g:106:8: ( ^( 'for' assignstat cond assignstat stat ) )
+			// gfiles/XTypeCheck.g:106:10: ^( 'for' assignstat cond assignstat stat )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1319,7 +1343,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "stat"
-	// gfiles/XTypeCheck.g:85:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
+	// gfiles/XTypeCheck.g:109:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
 	public final XTypeCheck.stat_return stat() throws RecognitionException {
 		XTypeCheck.stat_return retval = new XTypeCheck.stat_return();
 		retval.start = input.LT(1);
@@ -1338,7 +1362,7 @@ public class XTypeCheck extends TreeParser {
 
 
 		try {
-			// gfiles/XTypeCheck.g:85:5: ( assignstat | condstat | whilestat | forstat | statlist )
+			// gfiles/XTypeCheck.g:109:5: ( assignstat | condstat | whilestat | forstat | statlist )
 			int alt6=5;
 			switch ( input.LA(1) ) {
 			case 28:
@@ -1373,7 +1397,7 @@ public class XTypeCheck extends TreeParser {
 			}
 			switch (alt6) {
 				case 1 :
-					// gfiles/XTypeCheck.g:85:8: assignstat
+					// gfiles/XTypeCheck.g:109:8: assignstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -1388,7 +1412,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 2 :
-					// gfiles/XTypeCheck.g:85:21: condstat
+					// gfiles/XTypeCheck.g:109:21: condstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -1403,7 +1427,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 3 :
-					// gfiles/XTypeCheck.g:85:32: whilestat
+					// gfiles/XTypeCheck.g:109:32: whilestat
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -1418,7 +1442,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 4 :
-					// gfiles/XTypeCheck.g:85:44: forstat
+					// gfiles/XTypeCheck.g:109:44: forstat
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -1433,7 +1457,7 @@ public class XTypeCheck extends TreeParser {
 					}
 					break;
 				case 5 :
-					// gfiles/XTypeCheck.g:85:54: statlist
+					// gfiles/XTypeCheck.g:109:54: statlist
 					{
 					root_0 = (XTree)adaptor.nil();
 
@@ -1472,7 +1496,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "statlist"
-	// gfiles/XTypeCheck.g:87:1: statlist : ^( STATLIST ( stat )* ) ;
+	// gfiles/XTypeCheck.g:111:1: statlist : ^( STATLIST ( stat )* ) ;
 	public final XTypeCheck.statlist_return statlist() throws RecognitionException {
 		XTypeCheck.statlist_return retval = new XTypeCheck.statlist_return();
 		retval.start = input.LT(1);
@@ -1489,8 +1513,8 @@ public class XTypeCheck extends TreeParser {
 		XTree STATLIST37_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:87:9: ( ^( STATLIST ( stat )* ) )
-			// gfiles/XTypeCheck.g:87:11: ^( STATLIST ( stat )* )
+			// gfiles/XTypeCheck.g:111:9: ( ^( STATLIST ( stat )* ) )
+			// gfiles/XTypeCheck.g:111:11: ^( STATLIST ( stat )* )
 			{
 			root_0 = (XTree)adaptor.nil();
 
@@ -1509,7 +1533,7 @@ public class XTypeCheck extends TreeParser {
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// gfiles/XTypeCheck.g:87:22: ( stat )*
+				// gfiles/XTypeCheck.g:111:22: ( stat )*
 				loop7:
 				while (true) {
 					int alt7=2;
@@ -1520,7 +1544,7 @@ public class XTypeCheck extends TreeParser {
 
 					switch (alt7) {
 					case 1 :
-						// gfiles/XTypeCheck.g:87:22: stat
+						// gfiles/XTypeCheck.g:111:22: stat
 						{
 						_last = (XTree)input.LT(1);
 						pushFollow(FOLLOW_stat_in_statlist493);
@@ -1569,7 +1593,7 @@ public class XTypeCheck extends TreeParser {
 
 
 	// $ANTLR start "program"
-	// gfiles/XTypeCheck.g:90:1: program : ^( 'program' ID decllist statlist ) ;
+	// gfiles/XTypeCheck.g:114:1: program : ^( 'program' ID decllist statlist ) ;
 	public final XTypeCheck.program_return program() throws RecognitionException {
 		XTypeCheck.program_return retval = new XTypeCheck.program_return();
 		retval.start = input.LT(1);
@@ -1589,8 +1613,8 @@ public class XTypeCheck extends TreeParser {
 		XTree ID40_tree=null;
 
 		try {
-			// gfiles/XTypeCheck.g:90:8: ( ^( 'program' ID decllist statlist ) )
-			// gfiles/XTypeCheck.g:90:10: ^( 'program' ID decllist statlist )
+			// gfiles/XTypeCheck.g:114:8: ( ^( 'program' ID decllist statlist ) )
+			// gfiles/XTypeCheck.g:114:10: ^( 'program' ID decllist statlist )
 			{
 			root_0 = (XTree)adaptor.nil();
 

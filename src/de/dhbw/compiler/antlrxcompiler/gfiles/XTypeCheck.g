@@ -52,26 +52,50 @@ expr:		^(op=('+' | '-' | '*' | '/') r=expr l=expr ){
                                     if ($r.tree.exprType == $l.tree.exprType)
                                         $op.tree.exprType = $r.tree.exprType;
                                     else if ($r.tree.exprType == XType.FloatType && $l.tree.exprType == XType.IntType
-                                      ||$r.tree.exprType == XType.IntType && $l.tree.exprType == XType.FloatType)
+                                      || $r.tree.exprType == XType.IntType && $l.tree.exprType == XType.FloatType)
                                         $op.tree.exprType = XType.FloatType;
-                                    else $op.tree.exprType = XType.InvalidType;
+                                    else
+                                        $op.tree.exprType = XType.InvalidType;
                                     }
 			| INTCONST              { $INTCONST.tree.exprType = XType.IntType; }
-			| ^(UMINUS INTCONST)    { $INTCONST.tree.exprType = XType.IntType; $UMINUS.tree.exprType = XType.IntType; }
+			| ^(UMINUS INTCONST)    { $INTCONST.tree.exprType = XType.IntType;
+			                          $UMINUS.tree.exprType = XType.IntType;
+			                        }
 			| FLOATCONST            { $FLOATCONST.tree.exprType = XType.FloatType; }
-			| ^(UMINUS FLOATCONST)  { $FLOATCONST.tree.exprType = XType.FloatType; $UMINUS.tree.exprType = XType.FloatType; }
+			| ^(UMINUS FLOATCONST)  { $FLOATCONST.tree.exprType = XType.FloatType;
+			                          $UMINUS.tree.exprType = XType.FloatType;
+			                        }
 			| STRINGCONST           { $STRINGCONST.tree.exprType = XType.StringType; }
-			| ID                    { if (symbols.containsKey($ID.getText())) $ID.tree.exprType = symbols.get($ID.getText()).type; else $ID.tree.exprType = XType.InvalidType; };
+			| ID                    { if (symbols.containsKey($ID.getText()))
+			                            $ID.tree.exprType = symbols.get($ID.getText()).type;
+			                          else
+			                            $ID.tree.exprType = XType.InvalidType;
+			                        };
 
 // Zuweisung
 assignstat:	^(assign=':=' ID e=expr) {
-                if (symbols.containsKey($ID.getText())) $ID.tree.exprType = symbols.get($ID.getText()).type; else {$ID.tree.exprType = XType.InvalidType; System.out.println("Cannot resolve variable " + $ID.getText());}
-                if ($ID.tree.exprType == $e.tree.exprType) $assign.tree.exprType = $ID.tree.exprType;
-                else if ($ID.tree.exprType == XType.FloatType && $e.tree.exprType == XType.IntType) $assign.tree.exprType = XType.FloatType;
-                else {$assign.tree.exprType = XType.InvalidType; System.out.println("Cannot assign " + $e.tree.exprType + " value to variable " + $ID.getText() + " with type " + $ID.tree.exprType);}};
+                if (symbols.containsKey($ID.getText())) {
+                    $ID.tree.exprType = symbols.get($ID.getText()).type;
+                } else {
+                    $ID.tree.exprType = XType.InvalidType;
+                    System.out.println("Cannot resolve variable " + $ID.getText());
+                }
+                if ($ID.tree.exprType == $e.tree.exprType)
+                    $assign.tree.exprType = $ID.tree.exprType;
+                else if ($ID.tree.exprType == XType.FloatType && $e.tree.exprType == XType.IntType)
+                    $assign.tree.exprType = XType.FloatType;
+                else {
+                    $assign.tree.exprType = XType.InvalidType;
+                    System.out.println("Cannot assign " + $e.tree.exprType + " value to variable " + $ID.getText() +
+                                        " with type " + $ID.tree.exprType);
+                }
+                };
 
 // Bedingungen
-cond:		^(c=comp l=expr r=expr) {if ($r.tree.exprType == $l.tree.exprType) $c.tree.exprType = $r.tree.exprType; else $c.tree.exprType = XType.InvalidType; };
+cond:		^(c=comp l=expr r=expr) {if ($r.tree.exprType == $l.tree.exprType)
+                                        $c.tree.exprType = $r.tree.exprType;
+                                    else
+                                        $c.tree.exprType = XType.InvalidType; };
 comp:		'<' |'>' |'=';
 
 // Bedingte Zuweisung
