@@ -34,7 +34,7 @@ import java.util.HashMap;
 
 
 // Deklarationen
-decl:		^(DECL ID t=('int' | 'float'| 'string') modifier){
+decl:		^(DECL ID t=('int' | 'float'| 'string') modifier?){
                 if ($t.token.getType() == INT)
                     symbols.put($ID.getText(), new Symbol($ID.getText(), XType.IntType));
                 if ($t.token.getType() == FLOAT)
