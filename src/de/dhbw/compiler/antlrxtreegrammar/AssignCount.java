@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/AssignCount.g 2019-05-23 18:45:58
+// $ANTLR 3.5.2 gfiles/AssignCount.g 2019-05-27 13:13:03
 package de.dhbw.compiler.antlrxtreegrammar;
 
 import org.antlr.runtime.*;
@@ -640,7 +640,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "expr"
-	// gfiles/AssignCount.g:32:1: expr : ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST );
+	// gfiles/AssignCount.g:32:1: expr : ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | ^( UMINUS ( INTCONST | FLOATCONST ) ) | INTCONST | FLOATCONST | ID | STRINGCONST );
 	public final AssignCount.expr_return expr() throws RecognitionException {
 		AssignCount.expr_return retval = new AssignCount.expr_return();
 		retval.start = input.LT(1);
@@ -652,30 +652,26 @@ public class AssignCount extends TreeParser {
 
 
 		CommonTree set20=null;
-		CommonTree INTCONST23=null;
-		CommonTree UMINUS24=null;
+		CommonTree UMINUS23=null;
+		CommonTree set24=null;
 		CommonTree INTCONST25=null;
 		CommonTree FLOATCONST26=null;
-		CommonTree UMINUS27=null;
-		CommonTree FLOATCONST28=null;
-		CommonTree ID29=null;
-		CommonTree STRINGCONST30=null;
+		CommonTree ID27=null;
+		CommonTree STRINGCONST28=null;
 		TreeRuleReturnScope expr21 =null;
 		TreeRuleReturnScope expr22 =null;
 
 		CommonTree set20_tree=null;
-		CommonTree INTCONST23_tree=null;
-		CommonTree UMINUS24_tree=null;
+		CommonTree UMINUS23_tree=null;
+		CommonTree set24_tree=null;
 		CommonTree INTCONST25_tree=null;
 		CommonTree FLOATCONST26_tree=null;
-		CommonTree UMINUS27_tree=null;
-		CommonTree FLOATCONST28_tree=null;
-		CommonTree ID29_tree=null;
-		CommonTree STRINGCONST30_tree=null;
+		CommonTree ID27_tree=null;
+		CommonTree STRINGCONST28_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:32:5: ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | INTCONST | ^( UMINUS INTCONST ) | FLOATCONST | ^( UMINUS FLOATCONST ) | ID | STRINGCONST )
-			int alt3=7;
+			// gfiles/AssignCount.g:32:5: ( ^( ( '+' | '-' | '*' | '/' ) expr expr ) | ^( UMINUS ( INTCONST | FLOATCONST ) ) | INTCONST | FLOATCONST | ID | STRINGCONST )
+			int alt3=6;
 			switch ( input.LA(1) ) {
 			case 22:
 			case 23:
@@ -685,51 +681,14 @@ public class AssignCount extends TreeParser {
 				alt3=1;
 				}
 				break;
-			case INTCONST:
+			case UMINUS:
 				{
 				alt3=2;
 				}
 				break;
-			case UMINUS:
+			case INTCONST:
 				{
-				int LA3_3 = input.LA(2);
-				if ( (LA3_3==DOWN) ) {
-					int LA3_7 = input.LA(3);
-					if ( (LA3_7==INTCONST) ) {
-						alt3=3;
-					}
-					else if ( (LA3_7==FLOATCONST) ) {
-						alt3=5;
-					}
-
-					else {
-						int nvaeMark = input.mark();
-						try {
-							for (int nvaeConsume = 0; nvaeConsume < 3 - 1; nvaeConsume++) {
-								input.consume();
-							}
-							NoViableAltException nvae =
-								new NoViableAltException("", 3, 7, input);
-							throw nvae;
-						} finally {
-							input.rewind(nvaeMark);
-						}
-					}
-
-				}
-
-				else {
-					int nvaeMark = input.mark();
-					try {
-						input.consume();
-						NoViableAltException nvae =
-							new NoViableAltException("", 3, 3, input);
-						throw nvae;
-					} finally {
-						input.rewind(nvaeMark);
-					}
-				}
-
+				alt3=3;
 				}
 				break;
 			case FLOATCONST:
@@ -739,12 +698,12 @@ public class AssignCount extends TreeParser {
 				break;
 			case ID:
 				{
-				alt3=6;
+				alt3=5;
 				}
 				break;
 			case STRINGCONST:
 				{
-				alt3=7;
+				alt3=6;
 				}
 				break;
 			default:
@@ -803,22 +762,7 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 2 :
-					// gfiles/AssignCount.g:33:6: INTCONST
-					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					_last = (CommonTree)input.LT(1);
-					INTCONST23=(CommonTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr185); 
-					INTCONST23_tree = (CommonTree)adaptor.dupNode(INTCONST23);
-
-
-					adaptor.addChild(root_0, INTCONST23_tree);
-
-					}
-					break;
-				case 3 :
-					// gfiles/AssignCount.g:33:17: ^( UMINUS INTCONST )
+					// gfiles/AssignCount.g:33:6: ^( UMINUS ( INTCONST | FLOATCONST ) )
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
@@ -829,19 +773,28 @@ public class AssignCount extends TreeParser {
 					CommonTree _first_1 = null;
 					CommonTree root_1 = (CommonTree)adaptor.nil();
 					_last = (CommonTree)input.LT(1);
-					UMINUS24=(CommonTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr190); 
-					UMINUS24_tree = (CommonTree)adaptor.dupNode(UMINUS24);
+					UMINUS23=(CommonTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr186); 
+					UMINUS23_tree = (CommonTree)adaptor.dupNode(UMINUS23);
 
 
-					root_1 = (CommonTree)adaptor.becomeRoot(UMINUS24_tree, root_1);
+					root_1 = (CommonTree)adaptor.becomeRoot(UMINUS23_tree, root_1);
 
 					match(input, Token.DOWN, null); 
 					_last = (CommonTree)input.LT(1);
-					INTCONST25=(CommonTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr192); 
-					INTCONST25_tree = (CommonTree)adaptor.dupNode(INTCONST25);
+					set24=(CommonTree)input.LT(1);
+					if ( input.LA(1)==FLOATCONST||input.LA(1)==INTCONST ) {
+						input.consume();
+						set24_tree = (CommonTree)adaptor.dupNode(set24);
 
 
-					adaptor.addChild(root_1, INTCONST25_tree);
+						adaptor.addChild(root_1, set24_tree);
+
+						state.errorRecovery=false;
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						throw mse;
+					}
 
 					match(input, Token.UP, null); 
 					adaptor.addChild(root_0, root_1);
@@ -851,14 +804,29 @@ public class AssignCount extends TreeParser {
 
 					}
 					break;
-				case 4 :
-					// gfiles/AssignCount.g:34:6: FLOATCONST
+				case 3 :
+					// gfiles/AssignCount.g:34:6: INTCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					FLOATCONST26=(CommonTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr200); 
+					INTCONST25=(CommonTree)match(input,INTCONST,FOLLOW_INTCONST_in_expr202); 
+					INTCONST25_tree = (CommonTree)adaptor.dupNode(INTCONST25);
+
+
+					adaptor.addChild(root_0, INTCONST25_tree);
+
+					}
+					break;
+				case 4 :
+					// gfiles/AssignCount.g:35:6: FLOATCONST
+					{
+					root_0 = (CommonTree)adaptor.nil();
+
+
+					_last = (CommonTree)input.LT(1);
+					FLOATCONST26=(CommonTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr209); 
 					FLOATCONST26_tree = (CommonTree)adaptor.dupNode(FLOATCONST26);
 
 
@@ -867,66 +835,32 @@ public class AssignCount extends TreeParser {
 					}
 					break;
 				case 5 :
-					// gfiles/AssignCount.g:34:19: ^( UMINUS FLOATCONST )
+					// gfiles/AssignCount.g:36:6: ID
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					{
-					CommonTree _save_last_1 = _last;
-					CommonTree _first_1 = null;
-					CommonTree root_1 = (CommonTree)adaptor.nil();
-					_last = (CommonTree)input.LT(1);
-					UMINUS27=(CommonTree)match(input,UMINUS,FOLLOW_UMINUS_in_expr205); 
-					UMINUS27_tree = (CommonTree)adaptor.dupNode(UMINUS27);
+					ID27=(CommonTree)match(input,ID,FOLLOW_ID_in_expr216); 
+					ID27_tree = (CommonTree)adaptor.dupNode(ID27);
 
 
-					root_1 = (CommonTree)adaptor.becomeRoot(UMINUS27_tree, root_1);
-
-					match(input, Token.DOWN, null); 
-					_last = (CommonTree)input.LT(1);
-					FLOATCONST28=(CommonTree)match(input,FLOATCONST,FOLLOW_FLOATCONST_in_expr207); 
-					FLOATCONST28_tree = (CommonTree)adaptor.dupNode(FLOATCONST28);
-
-
-					adaptor.addChild(root_1, FLOATCONST28_tree);
-
-					match(input, Token.UP, null); 
-					adaptor.addChild(root_0, root_1);
-					_last = _save_last_1;
-					}
-
+					adaptor.addChild(root_0, ID27_tree);
 
 					}
 					break;
 				case 6 :
-					// gfiles/AssignCount.g:35:6: ID
+					// gfiles/AssignCount.g:37:6: STRINGCONST
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					ID29=(CommonTree)match(input,ID,FOLLOW_ID_in_expr215); 
-					ID29_tree = (CommonTree)adaptor.dupNode(ID29);
+					STRINGCONST28=(CommonTree)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_expr223); 
+					STRINGCONST28_tree = (CommonTree)adaptor.dupNode(STRINGCONST28);
 
 
-					adaptor.addChild(root_0, ID29_tree);
-
-					}
-					break;
-				case 7 :
-					// gfiles/AssignCount.g:35:11: STRINGCONST
-					{
-					root_0 = (CommonTree)adaptor.nil();
-
-
-					_last = (CommonTree)input.LT(1);
-					STRINGCONST30=(CommonTree)match(input,STRINGCONST,FOLLOW_STRINGCONST_in_expr219); 
-					STRINGCONST30_tree = (CommonTree)adaptor.dupNode(STRINGCONST30);
-
-
-					adaptor.addChild(root_0, STRINGCONST30_tree);
+					adaptor.addChild(root_0, STRINGCONST28_tree);
 
 					}
 					break;
@@ -955,7 +889,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "assignstat"
-	// gfiles/AssignCount.g:38:1: assignstat : ^( ':=' ID expr ) ;
+	// gfiles/AssignCount.g:40:1: assignstat : ^( ':=' ID expr ) ;
 	public final AssignCount.assignstat_return assignstat() throws RecognitionException {
 		AssignCount.assignstat_return retval = new AssignCount.assignstat_return();
 		retval.start = input.LT(1);
@@ -966,16 +900,16 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree string_literal31=null;
-		CommonTree ID32=null;
-		TreeRuleReturnScope expr33 =null;
+		CommonTree string_literal29=null;
+		CommonTree ID30=null;
+		TreeRuleReturnScope expr31 =null;
 
-		CommonTree string_literal31_tree=null;
-		CommonTree ID32_tree=null;
+		CommonTree string_literal29_tree=null;
+		CommonTree ID30_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:38:11: ( ^( ':=' ID expr ) )
-			// gfiles/AssignCount.g:38:13: ^( ':=' ID expr )
+			// gfiles/AssignCount.g:40:11: ( ^( ':=' ID expr ) )
+			// gfiles/AssignCount.g:40:13: ^( ':=' ID expr )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -986,26 +920,26 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			string_literal31=(CommonTree)match(input,28,FOLLOW_28_in_assignstat228); 
-			string_literal31_tree = (CommonTree)adaptor.dupNode(string_literal31);
+			string_literal29=(CommonTree)match(input,28,FOLLOW_28_in_assignstat232); 
+			string_literal29_tree = (CommonTree)adaptor.dupNode(string_literal29);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(string_literal31_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(string_literal29_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			ID32=(CommonTree)match(input,ID,FOLLOW_ID_in_assignstat230); 
-			ID32_tree = (CommonTree)adaptor.dupNode(ID32);
+			ID30=(CommonTree)match(input,ID,FOLLOW_ID_in_assignstat234); 
+			ID30_tree = (CommonTree)adaptor.dupNode(ID30);
 
 
-			adaptor.addChild(root_1, ID32_tree);
+			adaptor.addChild(root_1, ID30_tree);
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_assignstat232);
-			expr33=expr();
+			pushFollow(FOLLOW_expr_in_assignstat236);
+			expr31=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr33.getTree());
+			adaptor.addChild(root_1, expr31.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1039,7 +973,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "cond"
-	// gfiles/AssignCount.g:41:1: cond : ^( comp expr expr ) ;
+	// gfiles/AssignCount.g:43:1: cond : ^( comp expr expr ) ;
 	public final AssignCount.cond_return cond() throws RecognitionException {
 		AssignCount.cond_return retval = new AssignCount.cond_return();
 		retval.start = input.LT(1);
@@ -1050,14 +984,14 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		TreeRuleReturnScope comp34 =null;
-		TreeRuleReturnScope expr35 =null;
-		TreeRuleReturnScope expr36 =null;
+		TreeRuleReturnScope comp32 =null;
+		TreeRuleReturnScope expr33 =null;
+		TreeRuleReturnScope expr34 =null;
 
 
 		try {
-			// gfiles/AssignCount.g:41:5: ( ^( comp expr expr ) )
-			// gfiles/AssignCount.g:41:8: ^( comp expr expr )
+			// gfiles/AssignCount.g:43:5: ( ^( comp expr expr ) )
+			// gfiles/AssignCount.g:43:8: ^( comp expr expr )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1068,26 +1002,26 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_comp_in_cond245);
-			comp34=comp();
+			pushFollow(FOLLOW_comp_in_cond249);
+			comp32=comp();
 			state._fsp--;
 
-			root_1 = (CommonTree)adaptor.becomeRoot(comp34.getTree(), root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(comp32.getTree(), root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond247);
-			expr35=expr();
+			pushFollow(FOLLOW_expr_in_cond251);
+			expr33=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr35.getTree());
+			adaptor.addChild(root_1, expr33.getTree());
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_expr_in_cond249);
-			expr36=expr();
+			pushFollow(FOLLOW_expr_in_cond253);
+			expr34=expr();
 			state._fsp--;
 
-			adaptor.addChild(root_1, expr36.getTree());
+			adaptor.addChild(root_1, expr34.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1120,7 +1054,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "comp"
-	// gfiles/AssignCount.g:42:1: comp : ( '<' | '>' | '=' );
+	// gfiles/AssignCount.g:44:1: comp : ( '<' | '>' | '=' );
 	public final AssignCount.comp_return comp() throws RecognitionException {
 		AssignCount.comp_return retval = new AssignCount.comp_return();
 		retval.start = input.LT(1);
@@ -1131,25 +1065,25 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree set37=null;
+		CommonTree set35=null;
 
-		CommonTree set37_tree=null;
+		CommonTree set35_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:42:5: ( '<' | '>' | '=' )
+			// gfiles/AssignCount.g:44:5: ( '<' | '>' | '=' )
 			// gfiles/AssignCount.g:
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
 
 			_last = (CommonTree)input.LT(1);
-			set37=(CommonTree)input.LT(1);
+			set35=(CommonTree)input.LT(1);
 			if ( (input.LA(1) >= 30 && input.LA(1) <= 32) ) {
 				input.consume();
-				set37_tree = (CommonTree)adaptor.dupNode(set37);
+				set35_tree = (CommonTree)adaptor.dupNode(set35);
 
 
-				adaptor.addChild(root_0, set37_tree);
+				adaptor.addChild(root_0, set35_tree);
 
 				state.errorRecovery=false;
 			}
@@ -1185,7 +1119,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "condstat"
-	// gfiles/AssignCount.g:45:1: condstat : ^( 'if' cond stat ( stat )? ) ;
+	// gfiles/AssignCount.g:47:1: condstat : ^( 'if' cond stat ( stat )? ) ;
 	public final AssignCount.condstat_return condstat() throws RecognitionException {
 		AssignCount.condstat_return retval = new AssignCount.condstat_return();
 		retval.start = input.LT(1);
@@ -1196,16 +1130,16 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree string_literal38=null;
-		TreeRuleReturnScope cond39 =null;
-		TreeRuleReturnScope stat40 =null;
-		TreeRuleReturnScope stat41 =null;
+		CommonTree string_literal36=null;
+		TreeRuleReturnScope cond37 =null;
+		TreeRuleReturnScope stat38 =null;
+		TreeRuleReturnScope stat39 =null;
 
-		CommonTree string_literal38_tree=null;
+		CommonTree string_literal36_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:45:9: ( ^( 'if' cond stat ( stat )? ) )
-			// gfiles/AssignCount.g:45:11: ^( 'if' cond stat ( stat )? )
+			// gfiles/AssignCount.g:47:9: ( ^( 'if' cond stat ( stat )? ) )
+			// gfiles/AssignCount.g:47:11: ^( 'if' cond stat ( stat )? )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1216,28 +1150,28 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			string_literal38=(CommonTree)match(input,38,FOLLOW_38_in_condstat272); 
-			string_literal38_tree = (CommonTree)adaptor.dupNode(string_literal38);
+			string_literal36=(CommonTree)match(input,38,FOLLOW_38_in_condstat276); 
+			string_literal36_tree = (CommonTree)adaptor.dupNode(string_literal36);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(string_literal38_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(string_literal36_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_condstat274);
-			cond39=cond();
+			pushFollow(FOLLOW_cond_in_condstat278);
+			cond37=cond();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond39.getTree());
+			adaptor.addChild(root_1, cond37.getTree());
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_condstat276);
-			stat40=stat();
+			pushFollow(FOLLOW_stat_in_condstat280);
+			stat38=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, stat40.getTree());
+			adaptor.addChild(root_1, stat38.getTree());
 
-			// gfiles/AssignCount.g:45:28: ( stat )?
+			// gfiles/AssignCount.g:47:28: ( stat )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==STATLIST||LA4_0==28||(LA4_0 >= 37 && LA4_0 <= 38)||LA4_0==45) ) {
@@ -1245,14 +1179,14 @@ public class AssignCount extends TreeParser {
 			}
 			switch (alt4) {
 				case 1 :
-					// gfiles/AssignCount.g:45:28: stat
+					// gfiles/AssignCount.g:47:28: stat
 					{
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_stat_in_condstat278);
-					stat41=stat();
+					pushFollow(FOLLOW_stat_in_condstat282);
+					stat39=stat();
 					state._fsp--;
 
-					adaptor.addChild(root_1, stat41.getTree());
+					adaptor.addChild(root_1, stat39.getTree());
 
 					}
 					break;
@@ -1290,7 +1224,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "whilestat"
-	// gfiles/AssignCount.g:48:1: whilestat : ^( 'while' cond stat ) ;
+	// gfiles/AssignCount.g:50:1: whilestat : ^( 'while' cond stat ) ;
 	public final AssignCount.whilestat_return whilestat() throws RecognitionException {
 		AssignCount.whilestat_return retval = new AssignCount.whilestat_return();
 		retval.start = input.LT(1);
@@ -1301,15 +1235,15 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree string_literal42=null;
-		TreeRuleReturnScope cond43 =null;
-		TreeRuleReturnScope stat44 =null;
+		CommonTree string_literal40=null;
+		TreeRuleReturnScope cond41 =null;
+		TreeRuleReturnScope stat42 =null;
 
-		CommonTree string_literal42_tree=null;
+		CommonTree string_literal40_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:48:10: ( ^( 'while' cond stat ) )
-			// gfiles/AssignCount.g:48:12: ^( 'while' cond stat )
+			// gfiles/AssignCount.g:50:10: ( ^( 'while' cond stat ) )
+			// gfiles/AssignCount.g:50:12: ^( 'while' cond stat )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1320,26 +1254,26 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			string_literal42=(CommonTree)match(input,45,FOLLOW_45_in_whilestat290); 
-			string_literal42_tree = (CommonTree)adaptor.dupNode(string_literal42);
+			string_literal40=(CommonTree)match(input,45,FOLLOW_45_in_whilestat294); 
+			string_literal40_tree = (CommonTree)adaptor.dupNode(string_literal40);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(string_literal42_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(string_literal40_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_whilestat292);
-			cond43=cond();
+			pushFollow(FOLLOW_cond_in_whilestat296);
+			cond41=cond();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond43.getTree());
+			adaptor.addChild(root_1, cond41.getTree());
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_whilestat294);
-			stat44=stat();
+			pushFollow(FOLLOW_stat_in_whilestat298);
+			stat42=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, stat44.getTree());
+			adaptor.addChild(root_1, stat42.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1372,7 +1306,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "forstat"
-	// gfiles/AssignCount.g:49:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
+	// gfiles/AssignCount.g:51:1: forstat : ^( 'for' assignstat cond assignstat stat ) ;
 	public final AssignCount.forstat_return forstat() throws RecognitionException {
 		AssignCount.forstat_return retval = new AssignCount.forstat_return();
 		retval.start = input.LT(1);
@@ -1383,17 +1317,17 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree string_literal45=null;
+		CommonTree string_literal43=null;
+		TreeRuleReturnScope assignstat44 =null;
+		TreeRuleReturnScope cond45 =null;
 		TreeRuleReturnScope assignstat46 =null;
-		TreeRuleReturnScope cond47 =null;
-		TreeRuleReturnScope assignstat48 =null;
-		TreeRuleReturnScope stat49 =null;
+		TreeRuleReturnScope stat47 =null;
 
-		CommonTree string_literal45_tree=null;
+		CommonTree string_literal43_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:49:8: ( ^( 'for' assignstat cond assignstat stat ) )
-			// gfiles/AssignCount.g:49:10: ^( 'for' assignstat cond assignstat stat )
+			// gfiles/AssignCount.g:51:8: ( ^( 'for' assignstat cond assignstat stat ) )
+			// gfiles/AssignCount.g:51:10: ^( 'for' assignstat cond assignstat stat )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1404,40 +1338,40 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			string_literal45=(CommonTree)match(input,37,FOLLOW_37_in_forstat302); 
-			string_literal45_tree = (CommonTree)adaptor.dupNode(string_literal45);
+			string_literal43=(CommonTree)match(input,37,FOLLOW_37_in_forstat306); 
+			string_literal43_tree = (CommonTree)adaptor.dupNode(string_literal43);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(string_literal45_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(string_literal43_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat304);
+			pushFollow(FOLLOW_assignstat_in_forstat308);
+			assignstat44=assignstat();
+			state._fsp--;
+
+			adaptor.addChild(root_1, assignstat44.getTree());
+
+			_last = (CommonTree)input.LT(1);
+			pushFollow(FOLLOW_cond_in_forstat310);
+			cond45=cond();
+			state._fsp--;
+
+			adaptor.addChild(root_1, cond45.getTree());
+
+			_last = (CommonTree)input.LT(1);
+			pushFollow(FOLLOW_assignstat_in_forstat312);
 			assignstat46=assignstat();
 			state._fsp--;
 
 			adaptor.addChild(root_1, assignstat46.getTree());
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_cond_in_forstat306);
-			cond47=cond();
+			pushFollow(FOLLOW_stat_in_forstat314);
+			stat47=stat();
 			state._fsp--;
 
-			adaptor.addChild(root_1, cond47.getTree());
-
-			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_assignstat_in_forstat308);
-			assignstat48=assignstat();
-			state._fsp--;
-
-			adaptor.addChild(root_1, assignstat48.getTree());
-
-			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_stat_in_forstat310);
-			stat49=stat();
-			state._fsp--;
-
-			adaptor.addChild(root_1, stat49.getTree());
+			adaptor.addChild(root_1, stat47.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1470,7 +1404,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "stat"
-	// gfiles/AssignCount.g:52:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
+	// gfiles/AssignCount.g:54:1: stat : ( assignstat | condstat | whilestat | forstat | statlist );
 	public final AssignCount.stat_return stat() throws RecognitionException {
 		AssignCount.stat_return retval = new AssignCount.stat_return();
 		retval.start = input.LT(1);
@@ -1481,15 +1415,15 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		TreeRuleReturnScope assignstat50 =null;
-		TreeRuleReturnScope condstat51 =null;
-		TreeRuleReturnScope whilestat52 =null;
-		TreeRuleReturnScope forstat53 =null;
-		TreeRuleReturnScope statlist54 =null;
+		TreeRuleReturnScope assignstat48 =null;
+		TreeRuleReturnScope condstat49 =null;
+		TreeRuleReturnScope whilestat50 =null;
+		TreeRuleReturnScope forstat51 =null;
+		TreeRuleReturnScope statlist52 =null;
 
 
 		try {
-			// gfiles/AssignCount.g:52:5: ( assignstat | condstat | whilestat | forstat | statlist )
+			// gfiles/AssignCount.g:54:5: ( assignstat | condstat | whilestat | forstat | statlist )
 			int alt5=5;
 			switch ( input.LA(1) ) {
 			case 28:
@@ -1524,77 +1458,77 @@ public class AssignCount extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// gfiles/AssignCount.g:52:8: assignstat
+					// gfiles/AssignCount.g:54:8: assignstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_assignstat_in_stat321);
-					assignstat50=assignstat();
+					pushFollow(FOLLOW_assignstat_in_stat325);
+					assignstat48=assignstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, assignstat50.getTree());
+					adaptor.addChild(root_0, assignstat48.getTree());
 
 					}
 					break;
 				case 2 :
-					// gfiles/AssignCount.g:52:21: condstat
+					// gfiles/AssignCount.g:54:21: condstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_condstat_in_stat325);
-					condstat51=condstat();
+					pushFollow(FOLLOW_condstat_in_stat329);
+					condstat49=condstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, condstat51.getTree());
+					adaptor.addChild(root_0, condstat49.getTree());
 
 					}
 					break;
 				case 3 :
-					// gfiles/AssignCount.g:52:32: whilestat
+					// gfiles/AssignCount.g:54:32: whilestat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_whilestat_in_stat329);
-					whilestat52=whilestat();
+					pushFollow(FOLLOW_whilestat_in_stat333);
+					whilestat50=whilestat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, whilestat52.getTree());
+					adaptor.addChild(root_0, whilestat50.getTree());
 
 					}
 					break;
 				case 4 :
-					// gfiles/AssignCount.g:52:44: forstat
+					// gfiles/AssignCount.g:54:44: forstat
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_forstat_in_stat333);
-					forstat53=forstat();
+					pushFollow(FOLLOW_forstat_in_stat337);
+					forstat51=forstat();
 					state._fsp--;
 
-					adaptor.addChild(root_0, forstat53.getTree());
+					adaptor.addChild(root_0, forstat51.getTree());
 
 					}
 					break;
 				case 5 :
-					// gfiles/AssignCount.g:52:54: statlist
+					// gfiles/AssignCount.g:54:54: statlist
 					{
 					root_0 = (CommonTree)adaptor.nil();
 
 
 					_last = (CommonTree)input.LT(1);
-					pushFollow(FOLLOW_statlist_in_stat337);
-					statlist54=statlist();
+					pushFollow(FOLLOW_statlist_in_stat341);
+					statlist52=statlist();
 					state._fsp--;
 
-					adaptor.addChild(root_0, statlist54.getTree());
+					adaptor.addChild(root_0, statlist52.getTree());
 
 					}
 					break;
@@ -1623,7 +1557,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "statlist"
-	// gfiles/AssignCount.g:54:1: statlist : ^( STATLIST ( stat )* ) ;
+	// gfiles/AssignCount.g:56:1: statlist : ^( STATLIST ( stat )* ) ;
 	public final AssignCount.statlist_return statlist() throws RecognitionException {
 		AssignCount.statlist_return retval = new AssignCount.statlist_return();
 		retval.start = input.LT(1);
@@ -1634,14 +1568,14 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree STATLIST55=null;
-		TreeRuleReturnScope stat56 =null;
+		CommonTree STATLIST53=null;
+		TreeRuleReturnScope stat54 =null;
 
-		CommonTree STATLIST55_tree=null;
+		CommonTree STATLIST53_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:54:9: ( ^( STATLIST ( stat )* ) )
-			// gfiles/AssignCount.g:54:11: ^( STATLIST ( stat )* )
+			// gfiles/AssignCount.g:56:9: ( ^( STATLIST ( stat )* ) )
+			// gfiles/AssignCount.g:56:11: ^( STATLIST ( stat )* )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1652,15 +1586,15 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			STATLIST55=(CommonTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist345); 
-			STATLIST55_tree = (CommonTree)adaptor.dupNode(STATLIST55);
+			STATLIST53=(CommonTree)match(input,STATLIST,FOLLOW_STATLIST_in_statlist349); 
+			STATLIST53_tree = (CommonTree)adaptor.dupNode(STATLIST53);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(STATLIST55_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(STATLIST53_tree, root_1);
 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// gfiles/AssignCount.g:54:22: ( stat )*
+				// gfiles/AssignCount.g:56:22: ( stat )*
 				loop6:
 				while (true) {
 					int alt6=2;
@@ -1671,14 +1605,14 @@ public class AssignCount extends TreeParser {
 
 					switch (alt6) {
 					case 1 :
-						// gfiles/AssignCount.g:54:22: stat
+						// gfiles/AssignCount.g:56:22: stat
 						{
 						_last = (CommonTree)input.LT(1);
-						pushFollow(FOLLOW_stat_in_statlist347);
-						stat56=stat();
+						pushFollow(FOLLOW_stat_in_statlist351);
+						stat54=stat();
 						state._fsp--;
 
-						adaptor.addChild(root_1, stat56.getTree());
+						adaptor.addChild(root_1, stat54.getTree());
 
 						}
 						break;
@@ -1720,7 +1654,7 @@ public class AssignCount extends TreeParser {
 
 
 	// $ANTLR start "program"
-	// gfiles/AssignCount.g:57:1: program : ^( 'program' ID decllist statlist ) ;
+	// gfiles/AssignCount.g:59:1: program : ^( 'program' ID decllist statlist ) ;
 	public final AssignCount.program_return program() throws RecognitionException {
 		AssignCount.program_return retval = new AssignCount.program_return();
 		retval.start = input.LT(1);
@@ -1731,17 +1665,17 @@ public class AssignCount extends TreeParser {
 		CommonTree _last = null;
 
 
-		CommonTree string_literal57=null;
-		CommonTree ID58=null;
-		TreeRuleReturnScope decllist59 =null;
-		TreeRuleReturnScope statlist60 =null;
+		CommonTree string_literal55=null;
+		CommonTree ID56=null;
+		TreeRuleReturnScope decllist57 =null;
+		TreeRuleReturnScope statlist58 =null;
 
-		CommonTree string_literal57_tree=null;
-		CommonTree ID58_tree=null;
+		CommonTree string_literal55_tree=null;
+		CommonTree ID56_tree=null;
 
 		try {
-			// gfiles/AssignCount.g:57:8: ( ^( 'program' ID decllist statlist ) )
-			// gfiles/AssignCount.g:57:10: ^( 'program' ID decllist statlist )
+			// gfiles/AssignCount.g:59:8: ( ^( 'program' ID decllist statlist ) )
+			// gfiles/AssignCount.g:59:10: ^( 'program' ID decllist statlist )
 			{
 			root_0 = (CommonTree)adaptor.nil();
 
@@ -1752,33 +1686,33 @@ public class AssignCount extends TreeParser {
 			CommonTree _first_1 = null;
 			CommonTree root_1 = (CommonTree)adaptor.nil();
 			_last = (CommonTree)input.LT(1);
-			string_literal57=(CommonTree)match(input,41,FOLLOW_41_in_program358); 
-			string_literal57_tree = (CommonTree)adaptor.dupNode(string_literal57);
+			string_literal55=(CommonTree)match(input,41,FOLLOW_41_in_program362); 
+			string_literal55_tree = (CommonTree)adaptor.dupNode(string_literal55);
 
 
-			root_1 = (CommonTree)adaptor.becomeRoot(string_literal57_tree, root_1);
+			root_1 = (CommonTree)adaptor.becomeRoot(string_literal55_tree, root_1);
 
 			match(input, Token.DOWN, null); 
 			_last = (CommonTree)input.LT(1);
-			ID58=(CommonTree)match(input,ID,FOLLOW_ID_in_program360); 
-			ID58_tree = (CommonTree)adaptor.dupNode(ID58);
+			ID56=(CommonTree)match(input,ID,FOLLOW_ID_in_program364); 
+			ID56_tree = (CommonTree)adaptor.dupNode(ID56);
 
 
-			adaptor.addChild(root_1, ID58_tree);
-
-			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_decllist_in_program362);
-			decllist59=decllist();
-			state._fsp--;
-
-			adaptor.addChild(root_1, decllist59.getTree());
+			adaptor.addChild(root_1, ID56_tree);
 
 			_last = (CommonTree)input.LT(1);
-			pushFollow(FOLLOW_statlist_in_program364);
-			statlist60=statlist();
+			pushFollow(FOLLOW_decllist_in_program366);
+			decllist57=decllist();
 			state._fsp--;
 
-			adaptor.addChild(root_1, statlist60.getTree());
+			adaptor.addChild(root_1, decllist57.getTree());
+
+			_last = (CommonTree)input.LT(1);
+			pushFollow(FOLLOW_statlist_in_program368);
+			statlist58=statlist();
+			state._fsp--;
+
+			adaptor.addChild(root_1, statlist58.getTree());
 
 			match(input, Token.UP, null); 
 			adaptor.addChild(root_0, root_1);
@@ -1827,41 +1761,39 @@ public class AssignCount extends TreeParser {
 	public static final BitSet FOLLOW_set_in_expr158 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expr_in_expr174 = new BitSet(new long[]{0x0000000005C30700L});
 	public static final BitSet FOLLOW_expr_in_expr176 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_INTCONST_in_expr185 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UMINUS_in_expr190 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_INTCONST_in_expr192 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FLOATCONST_in_expr200 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_UMINUS_in_expr205 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_FLOATCONST_in_expr207 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_ID_in_expr215 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STRINGCONST_in_expr219 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_28_in_assignstat228 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_assignstat230 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_assignstat232 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_comp_in_cond245 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expr_in_cond247 = new BitSet(new long[]{0x0000000005C30700L});
-	public static final BitSet FOLLOW_expr_in_cond249 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_38_in_condstat272 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_condstat274 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_condstat276 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_stat_in_condstat278 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_45_in_whilestat290 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_cond_in_whilestat292 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_whilestat294 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_37_in_forstat302 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_assignstat_in_forstat304 = new BitSet(new long[]{0x00000001C0000000L});
-	public static final BitSet FOLLOW_cond_in_forstat306 = new BitSet(new long[]{0x0000000010000000L});
-	public static final BitSet FOLLOW_assignstat_in_forstat308 = new BitSet(new long[]{0x0000206010008000L});
-	public static final BitSet FOLLOW_stat_in_forstat310 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_assignstat_in_stat321 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condstat_in_stat325 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whilestat_in_stat329 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forstat_in_stat333 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statlist_in_stat337 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_STATLIST_in_statlist345 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_stat_in_statlist347 = new BitSet(new long[]{0x0000206010008008L});
-	public static final BitSet FOLLOW_41_in_program358 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ID_in_program360 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_decllist_in_program362 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_statlist_in_program364 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_UMINUS_in_expr186 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_set_in_expr188 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_INTCONST_in_expr202 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_FLOATCONST_in_expr209 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_expr216 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STRINGCONST_in_expr223 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_28_in_assignstat232 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_assignstat234 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_assignstat236 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_comp_in_cond249 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expr_in_cond251 = new BitSet(new long[]{0x0000000005C30700L});
+	public static final BitSet FOLLOW_expr_in_cond253 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_38_in_condstat276 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_condstat278 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_condstat280 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_stat_in_condstat282 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_45_in_whilestat294 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_cond_in_whilestat296 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_whilestat298 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_37_in_forstat306 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_assignstat_in_forstat308 = new BitSet(new long[]{0x00000001C0000000L});
+	public static final BitSet FOLLOW_cond_in_forstat310 = new BitSet(new long[]{0x0000000010000000L});
+	public static final BitSet FOLLOW_assignstat_in_forstat312 = new BitSet(new long[]{0x0000206010008000L});
+	public static final BitSet FOLLOW_stat_in_forstat314 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_assignstat_in_stat325 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condstat_in_stat329 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whilestat_in_stat333 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forstat_in_stat337 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statlist_in_stat341 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_STATLIST_in_statlist349 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_stat_in_statlist351 = new BitSet(new long[]{0x0000206010008008L});
+	public static final BitSet FOLLOW_41_in_program362 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ID_in_program364 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_decllist_in_program366 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_statlist_in_program368 = new BitSet(new long[]{0x0000000000000008L});
 }

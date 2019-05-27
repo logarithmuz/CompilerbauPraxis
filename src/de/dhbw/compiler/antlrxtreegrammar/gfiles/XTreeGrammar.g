@@ -32,9 +32,11 @@ decllist:	^(DECLLIST decl*);
 
 // Ausdr�cke
 expr:		^(('+' | '-' | '*' | '/') expr expr) 
-			| INTCONST | ^(UMINUS INTCONST)
-			| FLOATCONST | ^(UMINUS FLOATCONST)
-			| ID | STRINGCONST;
+			| ^(UMINUS (INTCONST | FLOATCONST))
+			| INTCONST
+			| FLOATCONST
+			| ID
+			| STRINGCONST;
 
 // Zuweisung
 assignstat:	^(':=' ID expr);

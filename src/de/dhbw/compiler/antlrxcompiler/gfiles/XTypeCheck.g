@@ -28,7 +28,11 @@ import java.util.HashMap;
 
 @members {
 
-   private SymbolTable  symbols = SymbolTable.getInstance();
+    private SymbolTable  symbols = SymbolTable.getInstance();
+
+    private void error(XTree tree, String message) {
+        System.err.println("Error at "+tree.getLine()+","+tree.getCharPositionInLine()+": "+message);
+    }
 
 }
 
@@ -49,13 +53,17 @@ decllist:	^(DECLLIST decl*);
 
 // Ausdr�cke
 expr:		^(op=('+' | '-' | '*' | '/') r=expr l=expr ){
-                                    if ($r.tree.exprType == $l.tree.exprType)
-                                        $op.tree.exprType = $r.tree.exprType;
-                                    else if ($r.tree.exprType == XType.FloatType && $l.tree.exprType == XType.IntType
-                                      || $r.tree.exprType == XType.IntType && $l.tree.exprType == XType.FloatType)
-                                        $op.tree.exprType = XType.FloatType;
-                                    else
-                                        $op.tree.exprType = XType.InvalidType;
+                                      if ($l.tree.exprType==XType.IntType && $r.tree.exprType==XType.IntType) {
+                                        $op.tree.exprType=XType.IntType;
+                                      } else if (($l.tree.exprType==XType.IntType || $l.tree.exprType==XType.FloatType) &&
+                                                 ($r.tree.exprType==XType.IntType || $r.tree.exprType==XType.FloatType))   {
+                                        $op.tree.exprType=XType.FloatType;
+                                      } else if ($l.tree.exprType==XType.StringType && $r.tree.exprType==XType.StringType && $op.type==PLUS) {
+                                        $op.tree.exprType=XType.StringType;
+                                      } else {
+                                        $op.tree.exprType=XType.InvalidType;
+                                        error($op,$op.text+" is not valid for operands "+$l.tree.exprType+" and "+$r.tree.exprType+".");
+                                      }
                                     }
 			| INTCONST              { $INTCONST.tree.exprType = XType.IntType; }
 			| ^(UMINUS INTCONST)    { $INTCONST.tree.exprType = XType.IntType;
@@ -66,37 +74,44 @@ expr:		^(op=('+' | '-' | '*' | '/') r=expr l=expr ){
 			                          $UMINUS.tree.exprType = XType.FloatType;
 			                        }
 			| STRINGCONST           { $STRINGCONST.tree.exprType = XType.StringType; }
-			| ID                    { if (symbols.containsKey($ID.getText()))
-			                            $ID.tree.exprType = symbols.get($ID.getText()).type;
-			                          else
-			                            $ID.tree.exprType = XType.InvalidType;
+			| ID                    { if (!symbols.containsKey($ID.text)) {
+                                        $ID.tree.exprType=XType.InvalidType;
+                                        error($ID,"Variable "+$ID.text+" is not defined.");
+                                      } else {
+                                        $ID.tree.exprType=symbols.get($ID.text).type;
+                                      }
 			                        };
 
 // Zuweisung
-assignstat:	^(assign=':=' ID e=expr) {
-                if (symbols.containsKey($ID.getText())) {
-                    $ID.tree.exprType = symbols.get($ID.getText()).type;
+assignstat:	^(op=':=' ID e=expr) {
+                if (!symbols.containsKey($ID.text)) {
+                  $ID.tree.exprType=XType.InvalidType;
+                  $op.tree.exprType=XType.InvalidType;
+                  error($ID,"Variable "+$ID.text+" is not defined.");
                 } else {
-                    $ID.tree.exprType = XType.InvalidType;
-                    System.out.println("Cannot resolve variable " + $ID.getText());
-                }
-                if ($ID.tree.exprType == $e.tree.exprType)
-                    $assign.tree.exprType = $ID.tree.exprType;
-                else if ($ID.tree.exprType == XType.FloatType && $e.tree.exprType == XType.IntType)
-                    $assign.tree.exprType = XType.FloatType;
-                else {
-                    $assign.tree.exprType = XType.InvalidType;
-                    System.out.println("Cannot assign " + $e.tree.exprType + " value to variable " + $ID.getText() +
-                                        " with type " + $ID.tree.exprType);
+                  $ID.tree.exprType=symbols.get($ID.text).type;
+                  if ($ID.tree.exprType==XType.FloatType && $expr.tree.exprType==XType.IntType) {
+                    $op.tree.exprType=XType.FloatType;
+                  } else if ($ID.tree.exprType!=$expr.tree.exprType) {
+                    $op.tree.exprType=XType.InvalidType;
+                    error($op,"An expression of type "+$expr.tree.exprType+
+                              " cannot be assigned to a variable of type "+$ID.tree.exprType+".");
+                  } else {
+                    $op.tree.exprType=$ID.tree.exprType;
+                  }
                 }
                 };
 
 // Bedingungen
-cond:		^(c=comp l=expr r=expr) {if ($r.tree.exprType == $l.tree.exprType)
-                                        $c.tree.exprType = $r.tree.exprType;
-                                    else
-                                        $c.tree.exprType = XType.InvalidType; };
-comp:		'<' |'>' |'=';
+cond:		^(op=('<' |'>' |'=') l=expr r=expr) {
+                                    if ($l.tree.exprType==XType.StringType || $r.tree.exprType==XType.StringType) {
+                                        error($op,$op.text+" is not valid for string operands.");
+                                    } else if ($l.tree.exprType==XType.IntType && $r.tree.exprType==XType.IntType) {
+                                        $op.tree.exprType=XType.IntType;
+                                    } else {
+                                        $op.tree.exprType=XType.FloatType;
+                                    }
+                                    };
 
 // Bedingte Zuweisung
 condstat:	^('if' cond stat stat? );
