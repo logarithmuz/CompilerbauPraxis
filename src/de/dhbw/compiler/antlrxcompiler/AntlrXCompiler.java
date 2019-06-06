@@ -11,9 +11,7 @@
 
 package de.dhbw.compiler.antlrxcompiler;
 
-import java.io.ByteArrayInputStream;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
+import java.io.*;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -81,29 +79,28 @@ public class AntlrXCompiler {
 	
 	public static void main(String[] args) throws Exception {
 
-		String test =	"program exprMul;\n"+
-				"  x: float;"+
+		String test =	"program exprAll;\n"+
+				"  x: int;"+
+				"  y: int;"+
+				"  z: int;"+
 				"begin\n"+
-				"	x :=0*1;"+
+				"	x :=0*x+y;"+
 				"end.";
 
 		XTreeAdaptor xTreeAdaptor = new XTreeAdaptor();
-		ANTLRInputStream input = new ANTLRInputStream(new ByteArrayInputStream(test.getBytes()));
+		ANTLRInputStream input = new ANTLRInputStream(new ByteArrayInputStream(TEST.getBytes()));
 		XLexer lexer = new XLexer(input);
 		XParser parser = new XParser(new CommonTokenStream(lexer));
 		parser.setTreeAdaptor(xTreeAdaptor);
 		XTree out = parser.program().getTree();
 
-		XTypeCheck typecheck = new XTypeCheck(new CommonTreeNodeStream(xTreeAdaptor, out));
-		typecheck.setTreeAdaptor(xTreeAdaptor);
-		out = typecheck.program().getTree();
+		XtoJava xToJava = new XtoJava(new CommonTreeNodeStream(xTreeAdaptor, out));
+		StringTemplate template = (StringTemplate) xToJava.program().getTemplate();
+		System.out.println(template.toString());
 
-		if (out!=null) {
-			System.out.println(out.toStringTree());
-		} else {
-			System.out.println("was null");
-		}
-		//TODO Weitere Stufen Aufrufen
-		
+		FileWriter fw = new FileWriter(new File("src/de/dhbw/compiler/antlrxcompiler/test2.java"));
+		fw.write(template.toString());
+		fw.flush();
+		fw.close();
 	}
 }

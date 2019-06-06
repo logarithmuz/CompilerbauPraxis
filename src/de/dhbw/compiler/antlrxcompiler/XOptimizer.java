@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 gfiles/XOptimizer.g 2019-05-24 16:06:24
+// $ANTLR 3.5.2 gfiles/XOptimizer.g 2019-06-02 17:32:59
 
     package de.dhbw.compiler.antlrxcompiler;
 
@@ -20,8 +20,7 @@ public class XOptimizer extends TreeRewriter {
 		"POSDIGIT", "STATLIST", "STRINGCONST", "UMINUS", "WS", "ZERO", "'('", 
 		"')'", "'*'", "'+'", "'-'", "'.'", "'/'", "':'", "':='", "';'", "'<'", 
 		"'='", "'>'", "'begin'", "'else'", "'end'", "'float'", "'for'", "'if'", 
-		"'int'", "'print'", "'program'", "'read'", "'string'", "'then'", "'while'", 
-		"STRING"
+		"'int'", "'print'", "'program'", "'read'", "'string'", "'then'", "'while'"
 	};
 	public static final int EOF=-1;
 	public static final int T__20=20;
@@ -73,7 +72,7 @@ public class XOptimizer extends TreeRewriter {
 	public static final int MINUS=24;
 	public static final int MULT=22;
 	public static final int PLUS=23;
-	public static final int STRING=46;
+	public static final int STRING=43;
 
 	// delegates
 	public TreeRewriter[] getDelegates() {
