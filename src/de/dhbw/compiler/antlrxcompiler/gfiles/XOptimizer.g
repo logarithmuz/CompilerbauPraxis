@@ -15,6 +15,10 @@ options {
 }
 
 @members {
+
+    private int intValue;
+    private float floatValue;
+
     private String addString(String first, String last) {
       return first.substring(0, first.length()-1)+last.substring(1);
     }
@@ -57,7 +61,37 @@ options {
       
  }
 
+bottomup: combineConst | multZeroOne | addZero | subZero;
 
-bottomup: ;
 
+combineConst:     ^('+' x=STRINGCONST y=STRINGCONST)
+                  -> STRINGCONST[addString($x.text,$y.text)]
+                | ^('+' x=INTCONST y=INTCONST) -> INTCONST[opInt($x.text,$y.text,'+')]
+                | ^('-' x=INTCONST y=INTCONST) -> INTCONST[opInt($x.text,$y.text,'-')]
+                | ^('*' x=INTCONST y=INTCONST) -> INTCONST[opInt($x.text,$y.text,'*')]
+                | ^('/' x=INTCONST y=INTCONST) -> INTCONST[opInt($x.text,$y.text,'/')]
+                | ^('+' (x=FLOATCONST) (y=INTCONST | y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'+')]
+                | ^('-' (x=FLOATCONST) (y=INTCONST | y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'-')]
+                | ^('*' (x=FLOATCONST) (y=INTCONST | y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'*')]
+                | ^('/' (x=FLOATCONST) (y=INTCONST | y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'/')]
+                | ^('+' (x=INTCONST) (y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'+')]
+                | ^('-' (x=INTCONST) (y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'-')]
+                | ^('*' (x=INTCONST) (y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'*')]
+                | ^('/' (x=INTCONST) (y=FLOATCONST)) -> FLOATCONST[opFloat($x.text,$y.text,'/')]
+                | ^(UMINUS x=INTCONST) -> INTCONST["-"+$x.text]
+                | ^(UMINUS x=FLOATCONST) -> FLOATCONST["-"+$x.text];
 
+addZero:          ^('+' x=INTCONST {$x.text.equals("0")}? (^(op=('+' | '-' | '*' | '/' | ID) y=.* )))
+                    -> ^($op $y*)
+                | ^('+' ^(op=('+' | '-' | '*' | '/' | ID) y=.*) x=INTCONST {$x.text.equals("0")}?)
+                    -> ^($op $y*);
+
+subZero:          ^('-' ^(op=('+' | '-' | '*' | '/' | ID) y=.*) x=INTCONST {$x.text.equals("0")}?)
+                    -> ^($op $y*);
+
+multZeroOne:      ^('*' x=INTCONST {$x.text.equals("0")||$x.text.equals("1") }? (^(op=('+' | '-' | '*' | '/' | ID) y=.* )))
+                    -> {$x.text.equals("0") }? $x
+                    -> ^($op $y*)
+                | ^('*' ^(op=('+' | '-' | '*' | '/' | ID) y=.*) x=INTCONST {$x.text.equals("0")||$x.text.equals("0")}?)
+                    -> {$x.text.equals("0") }? $x
+                    -> ^($op $y*);
